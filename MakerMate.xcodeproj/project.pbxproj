@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
+		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
+		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
+		33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */; };
+		33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E02201AEC10095DAE6 /* RequestCell.swift */; };
+		33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */; };
 		33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5532200FEB400B242AE /* AppDelegate.swift */; };
-		33EBF5562200FEB400B242AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5552200FEB400B242AE /* ViewController.swift */; };
+		33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5552200FEB400B242AE /* ProfileViewController.swift */; };
 		33EBF5592200FEB400B242AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF5572200FEB400B242AE /* Main.storyboard */; };
 		33EBF55B2200FEB600B242AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF55A2200FEB600B242AE /* Assets.xcassets */; };
 		33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF55C2200FEB600B242AE /* LaunchScreen.storyboard */; };
@@ -16,9 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
+		33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
+		33D4B5E02201AEC10095DAE6 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		33EBF5502200FEB400B242AE /* MakerMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakerMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EBF5532200FEB400B242AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33EBF5552200FEB400B242AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33EBF5552200FEB400B242AE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		33EBF5582200FEB400B242AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33EBF55A2200FEB600B242AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33EBF55D2200FEB600B242AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +55,7 @@
 		33D4B5D0220197300095DAE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				33EBF5532200FEB400B242AE /* AppDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -57,6 +70,9 @@
 		33D4B5D2220197600095DAE6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				33EBF5552200FEB400B242AE /* ProfileViewController.swift */,
+				33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */,
+				33D4B5D822019D350095DAE6 /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -71,8 +87,38 @@
 		33D4B5D42201978D0095DAE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33D4B5DA2201AA990095DAE6 /* Fonts */,
+				33EBF55A2200FEB600B242AE /* Assets.xcassets */,
+				33EBF55C2200FEB600B242AE /* LaunchScreen.storyboard */,
+				33EBF55F2200FEB600B242AE /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33D4B5D522019B8F0095DAE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33EBF5572200FEB400B242AE /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33D4B5DA2201AA990095DAE6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */,
+				33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		33D4B5DF2201AE900095DAE6 /* CocoaClasses */ = {
+			isa = PBXGroup;
+			children = (
+				33D4B5E02201AEC10095DAE6 /* RequestCell.swift */,
+				33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */,
+			);
+			path = CocoaClasses;
 			sourceTree = "<group>";
 		};
 		33EBF5472200FEB400B242AE = {
@@ -96,17 +142,13 @@
 		33EBF5522200FEB400B242AE /* MakerMate */ = {
 			isa = PBXGroup;
 			children = (
-				33EBF5532200FEB400B242AE /* AppDelegate.swift */,
-				33EBF5552200FEB400B242AE /* ViewController.swift */,
-				33D4B5D42201978D0095DAE6 /* Supporting Files */,
+				33D4B5DF2201AE900095DAE6 /* CocoaClasses */,
 				33D4B5D3220197780095DAE6 /* Extensions */,
-				33D4B5D2220197600095DAE6 /* View Controllers */,
 				33D4B5D12201974B0095DAE6 /* Models */,
+				33D4B5D2220197600095DAE6 /* View Controllers */,
+				33D4B5D522019B8F0095DAE6 /* Views */,
 				33D4B5D0220197300095DAE6 /* Controllers */,
-				33EBF5572200FEB400B242AE /* Main.storyboard */,
-				33EBF55A2200FEB600B242AE /* Assets.xcassets */,
-				33EBF55C2200FEB600B242AE /* LaunchScreen.storyboard */,
-				33EBF55F2200FEB600B242AE /* Info.plist */,
+				33D4B5D42201978D0095DAE6 /* Supporting Files */,
 			);
 			path = MakerMate;
 			sourceTree = "<group>";
@@ -189,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */,
+				33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */,
+				33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */,
 				33EBF55B2200FEB600B242AE /* Assets.xcassets in Resources */,
 				33EBF5592200FEB400B242AE /* Main.storyboard in Resources */,
 			);
@@ -240,8 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33EBF5562200FEB400B242AE /* ViewController.swift in Sources */,
+				33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */,
+				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
+				33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */,
+				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
+				33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RZW73LTB7;
-				INFOPLIST_FILE = MakerMate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MakerMate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,7 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RZW73LTB7;
-				INFOPLIST_FILE = MakerMate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MakerMate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
