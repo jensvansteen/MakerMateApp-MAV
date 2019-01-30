@@ -59,10 +59,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             
-            if let scalingCell = cell as? ProjectCollectionViewCell {
-                scalingCell.layoutViews(project: true, projectName: "Annick", projectStep: "Prototyping")
-            }
-            
+            cell.layoutViews(project: true, projectName: "Annick", projectStep: "Prototyping")
+        
             DispatchQueue.main.async {
                 cell.setNeedsLayout()
                 cell.layoutIfNeeded()
