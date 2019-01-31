@@ -81,6 +81,31 @@ class RequestViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     
+    @IBAction func backToHome(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func displayActionSheet(_ sender: Any) {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        optionMenu.addAction(UIAlertAction(title: "Aanvraag later herhalen", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        optionMenu.addAction(UIAlertAction(title: "Aanvraag niet meer laten zien", style: UIAlertAction.Style.destructive, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        
+        optionMenu.addAction(UIAlertAction(title: "Annuleer", style: UIAlertAction.Style.cancel, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+    
+        // 5
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return intrest.count
     }

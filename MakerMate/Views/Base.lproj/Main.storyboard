@@ -166,7 +166,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aanvragen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZL-Ri-Rkh">
-                                                                <rect key="frame" x="20" y="14.5" width="86.5" height="21"/>
+                                                                <rect key="frame" x="20" y="12.5" width="94.5" height="25"/>
                                                                 <fontDescription key="fontDescription" name="NotoSerif" family="Noto Serif" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -342,7 +342,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mijn projecten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyJ-Cj-h8z">
-                                                                <rect key="frame" x="20" y="14.5" width="114.5" height="21"/>
+                                                                <rect key="frame" x="20" y="12.5" width="126" height="25"/>
                                                                 <fontDescription key="fontDescription" name="NotoSerif" family="Noto Serif" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -551,13 +551,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ontdek alle hacks " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i2-hW-seL">
-                                                        <rect key="frame" x="146" y="50.5" width="132.5" height="19"/>
+                                                        <rect key="frame" x="146" y="50.5" width="139.5" height="22"/>
                                                         <fontDescription key="fontDescription" name="NotoSerif" family="Noto Serif" pointSize="16"/>
                                                         <color key="textColor" red="0.25098039215686274" green="0.32941176470588235" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="RAI-Gg-VNe">
-                                                        <rect key="frame" x="279.5" y="54" width="19" height="12"/>
+                                                        <rect key="frame" x="286.5" y="55.5" width="19" height="12"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkI-Tb-szd">
                                                         <rect key="frame" x="27" y="119" width="321" height="1"/>
@@ -591,13 +591,13 @@
                                                 <rect key="frame" x="0.0" y="1018" width="375" height="400"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De Makermate Markt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8z-hK-5s4">
-                                                        <rect key="frame" x="74.5" y="50" width="226" height="28"/>
+                                                        <rect key="frame" x="58" y="50" width="259.5" height="33"/>
                                                         <fontDescription key="fontDescription" name="NotoSerif-Bold" family="Noto Serif" pointSize="24"/>
                                                         <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Materialen aanbieden en terugvinden bij andere Makermates, dat kan je hier doen." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ8-rW-apk">
-                                                        <rect key="frame" x="53.5" y="88" width="268" height="38.5"/>
+                                                        <rect key="frame" x="53.5" y="93" width="268" height="38.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="268" id="5Im-9W-Z2P"/>
                                                         </constraints>
@@ -606,14 +606,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blad" translatesAutoresizingMaskIntoConstraints="NO" id="luD-nQ-hlb">
-                                                        <rect key="frame" x="114" y="146.5" width="147" height="100"/>
+                                                        <rect key="frame" x="114" y="151.5" width="147" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="147" id="NEX-3o-3nI"/>
                                                             <constraint firstAttribute="height" constant="100" id="OQb-XC-xvP"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9v-6x-cE2">
-                                                        <rect key="frame" x="99.5" y="266.5" width="176" height="36"/>
+                                                        <rect key="frame" x="99.5" y="271.5" width="176" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="LxM-h4-EB6"/>
                                                         </constraints>
@@ -833,6 +833,9 @@
                                 <state key="normal" title="Aanvaarden">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backToHome:" destination="qSf-Sj-D8a" eventType="touchUpInside" id="w22-GR-xAB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAn-pn-us7">
                                 <rect key="frame" x="155.5" y="545" width="64" height="32"/>
@@ -840,6 +843,9 @@
                                 <state key="normal" title="Weigeren">
                                     <color key="titleColor" red="0.25098039215686274" green="0.32941176470588235" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayActionSheet:" destination="qSf-Sj-D8a" eventType="touchUpInside" id="YQk-ko-nK1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
