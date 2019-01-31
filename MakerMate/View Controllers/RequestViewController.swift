@@ -8,14 +8,43 @@
 
 import UIKit
 
-class RequestViewController: UIViewController {
+class RequestViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    let intrest = ["Dieren", "Winkelen", "Humor", "Iets gaan drinken"]
+    @IBOutlet weak var intrestsCollectionView: UICollectionView!
+    @IBOutlet weak var widthCollectionView: NSLayoutConstraint!
+    @IBOutlet weak var targetGroupName: UILabel!
+    @IBOutlet weak var targetGroupNameView: UIView!
+    @IBOutlet weak var widthLabelTagTargetGroup: NSLayoutConstraint!
+    @IBOutlet weak var requestShort: UILabel!
+    
+    var width: CGFloat = 0 {
+        didSet {
+            widthCollectionView.constant = width
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        self.intrestsCollectionView.delegate = self
+        self.intrestsCollectionView.dataSource = self
+
+        let widthContent = intrestsCollectionView.contentSize.width
+        print("this widht of the content is \(widthContent)")
+        
+        setTextShort()
+        
         setupNavigationBar()
+    }
+    
+  
+    func setTextShort() {
+        let currentText = requestShort.text
+        let newText = "\"\(currentText!)\""
+        requestShort.text = newText
     }
     
     
@@ -49,6 +78,31 @@ class RequestViewController: UIViewController {
     
     @objc func backToMain() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return intrest.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! IntrestHomeCollectionViewCell
+        cell.intrestLabel.text = intrest[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let size = CGSize(width: 200, height: 23)
+        var estimedSizeText: CGRect?
+        if let font = UIFont(name: "Avenir Next", size: 10) {
+            let attributes = [NSAttributedString.Key.font: font]
+            estimedSizeText = NSString(string: intrest[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            
+            width += (estimedSizeText!.width + 20 + 10)
+            return CGSize(width: estimedSizeText!.width + 20, height: 23)
+        }
+        return CGSize(width: 40, height: 23)
     }
 
     /*

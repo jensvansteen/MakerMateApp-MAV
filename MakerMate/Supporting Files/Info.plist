@@ -38,6 +38,7 @@
 	<array>
 		<string>NotoSerif-Regular.ttf</string>
 		<string>NotoSerif-Bold.ttf</string>
+		<string>NotoSerif-Italic.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
