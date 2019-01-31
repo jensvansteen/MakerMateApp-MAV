@@ -10,15 +10,15 @@ import UIKit
 
 class RequestCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let collectionViewData = ["Dieren", "Winkelen", "Iets gaan drinken"]
+    var collectionViewData = [""]
     
-   
+    
     @IBOutlet weak var nameRequest: UILabel!
     @IBOutlet weak var infoRequest: UILabel!
     @IBOutlet weak var nameLocation: UILabel!
     @IBOutlet weak var intrestsCollectionView: UICollectionView!
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,21 +39,19 @@ class RequestCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionViewData[indexPath.row] != nil {
+        
+        
+        let size = CGSize(width: 200, height: 40)
+        var estimedSizeText: CGRect?
+        if let font = UIFont(name: "Avenir Next", size: 10) {
+            let attributes = [NSAttributedString.Key.font: font]
+            estimedSizeText = NSString(string: collectionViewData[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
             
-            let size = CGSize(width: 200, height: 40)
-            var estimedSizeText: CGRect?
-            if let font = UIFont(name: "Avenir Next", size: 10) {
-                 let attributes = [NSAttributedString.Key.font: font]
-                estimedSizeText = NSString(string: collectionViewData[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-                 print("the size is \(estimedSizeText)")
-            }
-            
-           
             return CGSize(width: estimedSizeText!.width + 20, height: 23)
         }
         return CGSize(width: 40, height: 23)
     }
+    
     
 }
 

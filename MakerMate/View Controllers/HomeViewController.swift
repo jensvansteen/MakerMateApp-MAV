@@ -30,6 +30,25 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         projectsCollectionView.delegate = self;
         projectsCollectionView.dataSource = self;
         // Do any additional setup after loading the view.
+        
+        
+    }
+    
+   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -42,7 +61,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView.tag == 1 {
             return names.count
         } else if collectionView.tag == 2 {
-            return 3
+            return names.count + 1
         } else {
             return 0
         }
@@ -52,6 +71,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "requestCell", for: indexPath) as! RequestCell
             cell.nameRequest.text = names[indexPath.row]
+            cell.collectionViewData = ["Dieren", "Winkelen", "Iets gaan drinken"]
             print(names[indexPath.row])
             return cell
         } else if collectionView.tag == 2 {
@@ -59,7 +79,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             
-            cell.layoutViews(project: true, projectName: "Annick", projectStep: "Prototyping")
+            if indexPath.row < names.count {
+                cell.layoutViews(project: true, projectName: "Annick", projectStep: "Prototyping")
+            } else {
+                cell.layoutViews(project: false, projectName: "Annick", projectStep: "Prototyping")
+            }
+            
+            
         
             DispatchQueue.main.async {
                 cell.setNeedsLayout()
@@ -84,9 +110,25 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //carousel.didScroll()
         
-        
-        
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowRequest" {
+            
+            if let cell = sender as? RequestCell,
+                let indexPath = self.requestsCollectionView.indexPath(for: cell) {
+                
+            }
+            
+        }
+        
+            
+        }
+
 
     
     /*
