@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		336659C522050FDD00CE65C3 /* ScalingCarousel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336659C422050FDD00CE65C3 /* ScalingCarousel.framework */; };
 		3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB552202E9F3003FF236 /* RequestViewController.swift */; };
 		3381CB592202EE83003FF236 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB582202EE83003FF236 /* BackButton.swift */; };
 		3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */; };
@@ -16,6 +17,9 @@
 		3381CB6422039569003FF236 /* LockedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3381CB6322039569003FF236 /* LockedView.xib */; };
 		3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB652203A4CA003FF236 /* stapUIView.swift */; };
 		3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */; };
+		3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB692204EB68003FF236 /* UIViewBorder.swift */; };
+		3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */; };
+		3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */; };
 		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
@@ -32,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		336659C422050FDD00CE65C3 /* ScalingCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ScalingCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3381CB552202E9F3003FF236 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		3381CB582202EE83003FF236 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRequestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -41,6 +46,9 @@
 		3381CB6322039569003FF236 /* LockedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedView.xib; sourceTree = "<group>"; };
 		3381CB652203A4CA003FF236 /* stapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stapUIView.swift; sourceTree = "<group>"; };
 		3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stepsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3381CB692204EB68003FF236 /* UIViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewBorder.swift; sourceTree = "<group>"; };
+		3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStartenViewController.swift; sourceTree = "<group>"; };
+		3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1AanvraagViewController.swift; sourceTree = "<group>"; };
 		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
@@ -65,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336659C522050FDD00CE65C3 /* ScalingCarousel.framework in Frameworks */,
 				406780833F7FCCF4AD3B7554 /* Pods_MakerMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +98,15 @@
 			path = Nibs;
 			sourceTree = "<group>";
 		};
+		3381CB6D2204FFBF003FF236 /* Aanvraag */ = {
+			isa = PBXGroup;
+			children = (
+				3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */,
+				3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */,
+			);
+			path = Aanvraag;
+			sourceTree = "<group>";
+		};
 		33D4B5D0220197300095DAE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +125,7 @@
 		33D4B5D2220197600095DAE6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3381CB6D2204FFBF003FF236 /* Aanvraag */,
 				33EBF5552200FEB400B242AE /* ProfileViewController.swift */,
 				33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */,
 				33D4B5D822019D350095DAE6 /* HomeViewController.swift */,
@@ -119,6 +138,7 @@
 		33D4B5D3220197780095DAE6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3381CB692204EB68003FF236 /* UIViewBorder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 		B471F51279CA3A2CD4FB208E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				336659C422050FDD00CE65C3 /* ScalingCarousel.framework */,
 				9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */,
 			);
 			name = Frameworks;
@@ -338,14 +359,17 @@
 				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
 				3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */,
 				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
+				3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */,
 				33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */,
 				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
 				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
+				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
 				3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */,
 				33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */,
+				3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@ target 'MakerMate' do
   use_frameworks!
   
   pod 'ScalingCarousel'
+  pod 'IQKeyboardManagerSwift'
 
   # Pods for MakerMate
 
