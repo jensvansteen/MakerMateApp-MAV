@@ -11,6 +11,11 @@
 		3381CB592202EE83003FF236 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB582202EE83003FF236 /* BackButton.swift */; };
 		3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */; };
 		3381CB5D22035654003FF236 /* NotoSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3381CB5C22035348003FF236 /* NotoSerif-Italic.ttf */; };
+		3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */; };
+		3381CB6222038605003FF236 /* AanvragenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3381CB6122038605003FF236 /* AanvragenView.xib */; };
+		3381CB6422039569003FF236 /* LockedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3381CB6322039569003FF236 /* LockedView.xib */; };
+		3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB652203A4CA003FF236 /* stapUIView.swift */; };
+		3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */; };
 		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
@@ -31,6 +36,11 @@
 		3381CB582202EE83003FF236 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRequestCollectionViewCell.swift; sourceTree = "<group>"; };
 		3381CB5C22035348003FF236 /* NotoSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Italic.ttf"; sourceTree = "<group>"; };
+		3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsProjectViewController.swift; sourceTree = "<group>"; };
+		3381CB6122038605003FF236 /* AanvragenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AanvragenView.xib; sourceTree = "<group>"; };
+		3381CB6322039569003FF236 /* LockedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedView.xib; sourceTree = "<group>"; };
+		3381CB652203A4CA003FF236 /* stapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stapUIView.swift; sourceTree = "<group>"; };
+		3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stepsCollectionViewCell.swift; sourceTree = "<group>"; };
 		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
@@ -70,6 +80,15 @@
 			path = CustomElements;
 			sourceTree = "<group>";
 		};
+		3381CB60220385D1003FF236 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				3381CB6122038605003FF236 /* AanvragenView.xib */,
+				3381CB6322039569003FF236 /* LockedView.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
 		33D4B5D0220197300095DAE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +111,7 @@
 				33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */,
 				33D4B5D822019D350095DAE6 /* HomeViewController.swift */,
 				3381CB552202E9F3003FF236 /* RequestViewController.swift */,
+				3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -139,6 +159,8 @@
 				33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */,
 				33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */,
 				3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */,
+				3381CB652203A4CA003FF236 /* stapUIView.swift */,
+				3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */,
 			);
 			path = CocoaClasses;
 			sourceTree = "<group>";
@@ -164,6 +186,7 @@
 		33EBF5522200FEB400B242AE /* MakerMate */ = {
 			isa = PBXGroup;
 			children = (
+				3381CB60220385D1003FF236 /* Nibs */,
 				3381CB572202EE6C003FF236 /* CustomElements */,
 				33D4B5DF2201AE900095DAE6 /* CocoaClasses */,
 				33D4B5D3220197780095DAE6 /* Extensions */,
@@ -254,11 +277,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */,
+				3381CB6222038605003FF236 /* AanvragenView.xib in Resources */,
 				33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */,
 				3381CB5D22035654003FF236 /* NotoSerif-Italic.ttf in Resources */,
 				33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */,
 				33EBF55B2200FEB600B242AE /* Assets.xcassets in Resources */,
 				33EBF5592200FEB400B242AE /* Main.storyboard in Resources */,
+				3381CB6422039569003FF236 /* LockedView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,11 +336,14 @@
 				33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */,
 				33D4B60322022D420095DAE6 /* IntrestHomeCollectionViewCell.swift in Sources */,
 				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
+				3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */,
 				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
 				33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */,
 				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
+				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
+				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
 				3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */,
 				33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */,
 			);
