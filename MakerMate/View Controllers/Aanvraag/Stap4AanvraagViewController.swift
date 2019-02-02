@@ -15,6 +15,7 @@ class Stap4AanvraagViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,9 @@ class Stap4AanvraagViewController: UIViewController, UITextViewDelegate {
         configureTextGesture()
         // Do any additional setup after loading the view.
         
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(handlePop))
-//        backView.addGestureRecognizer(tap)
-//        backView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handlePop))
+        backView.addGestureRecognizer(tap)
+        backView.isUserInteractionEnabled = true
         
         
     }
@@ -101,24 +102,6 @@ class Stap4AanvraagViewController: UIViewController, UITextViewDelegate {
     @objc func handlePop() {
         self.navigationController?.popViewController(animated: false)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+ 
     
 }

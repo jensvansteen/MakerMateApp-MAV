@@ -89,7 +89,7 @@ class Stap3AanvraagViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func configureTextGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Stap1AanvraagViewController.handleTap))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Stap3AanvraagViewController.handleTap))
         view.addGestureRecognizer(tapGesture)
     }
     
