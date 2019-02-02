@@ -1,60 +1,43 @@
 //
-//  Stap1AanvraagViewController.swift
+//  Stap3AanvraagViewController.swift
 //  MakerMate
 //
-//  Created by Jens Van Steen on 01/02/2019.
+//  Created by Jens Van Steen on 02/02/2019.
 //  Copyright © 2019 Jens Van Steen. All rights reserved.
 //
 
 import UIKit
 
-class Stap1AanvraagViewController: UIViewController, UITextFieldDelegate {
+class Stap3AanvraagViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var firstnameField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var requestField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
-    private var fieldsFilledIn = false
+    @IBOutlet weak var backView: UIView!
+    
+    var fieldsFilledIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.nameField.delegate = self
-        self.firstnameField.delegate = self
-        self.emailTextField.delegate = self
-        self.phoneTextField.delegate = self
+        
+        self.requestField.delegate = self
         
         
         configureTextGesture()
         // Do any additional setup after loading the view.
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handlePop))
+        backView.addGestureRecognizer(tap)
+        backView.isUserInteractionEnabled = true
+        
+        
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        // Hide the Navigation Bar
-//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//    }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-    
     
     
     @IBAction func didEndOnExit(_ sender: UITextField) {
         sender.resignFirstResponder()
     }
     
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if(navigationController!.viewControllers.count > 1){
-            return true
-        }
-        return false
-    }
-
+    
     @IBAction func EditingStarted(_ sender: UITextField) {
         sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         sender.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -79,7 +62,7 @@ class Stap1AanvraagViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func goToNextView(_ sender: UIButton) {
         if fieldsFilledIn {
-            performSegue(withIdentifier: "GoToStep2", sender: nil)
+            performSegue(withIdentifier: "GoToStep4", sender: nil)
         } else {
             let alert = UIAlertController(title: "Er missen velden", message: "Gelieve in te vullen", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -89,7 +72,7 @@ class Stap1AanvraagViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func checkFields() {
-        if nameField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && firstnameField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && emailTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && phoneTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+        if requestField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
             fieldsFilledIn = true
             nextButton.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.5843137255, alpha: 1)
             nextButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -114,8 +97,10 @@ class Stap1AanvraagViewController: UIViewController, UITextFieldDelegate {
     @objc func handleTap() {
         view.endEditing(true)
     }
-
-
+    
+    @objc func handlePop() {
+        self.navigationController?.popViewController(animated: false)
+    }
     /*
     // MARK: - Navigation
 

@@ -21,7 +21,13 @@ class ProjectStartenViewController: UIViewController {
         stepView.addGestureRecognizer(tap)
         stepView.isUserInteractionEnabled = true
 
-       
+    }
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if(navigationController!.viewControllers.count > 1){
+            return true
+        }
+        return false
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -45,5 +51,20 @@ class ProjectStartenViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+//        initialScrollDone = false
+        
+        if segue.identifier == "showRequest" {
+            
+//            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+//            let activeGuide = ActiveGuide(context: context)
+//            activeGuide.guideId = guides[cellInCenter!].id
+            
+        }
+    }
 
 }

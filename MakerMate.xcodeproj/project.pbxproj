@@ -21,6 +21,9 @@
 		3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */; };
 		3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */; };
 		338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */; };
+		338679D32205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D22205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift */; };
+		338679D52205DA1300ADD9B5 /* customNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D42205DA1300ADD9B5 /* customNavigation.swift */; };
+		338679D72205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */; };
 		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
@@ -51,6 +54,9 @@
 		3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStartenViewController.swift; sourceTree = "<group>"; };
 		3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1AanvraagViewController.swift; sourceTree = "<group>"; };
 		338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aanvraagSteps.swift; sourceTree = "<group>"; };
+		338679D22205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap2AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679D42205DA1300ADD9B5 /* customNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customNavigation.swift; sourceTree = "<group>"; };
+		338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3AanvraagViewController.swift; sourceTree = "<group>"; };
 		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 			children = (
 				3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */,
 				3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */,
+				338679D22205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift */,
+				338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */,
 			);
 			path = Aanvraag;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 				3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */,
 				3381CB652203A4CA003FF236 /* stapUIView.swift */,
 				3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */,
+				338679D42205DA1300ADD9B5 /* customNavigation.swift */,
 			);
 			path = CocoaClasses;
 			sourceTree = "<group>";
@@ -360,7 +369,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */,
+				338679D72205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift in Sources */,
 				33D4B60322022D420095DAE6 /* IntrestHomeCollectionViewCell.swift in Sources */,
+				338679D32205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift in Sources */,
 				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
 				3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */,
 				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
@@ -376,6 +387,7 @@
 				3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */,
 				33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */,
 				3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */,
+				338679D52205DA1300ADD9B5 /* customNavigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
