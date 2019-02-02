@@ -69,7 +69,15 @@ class Stap2AanvraagViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func goToNextView(_ sender: UIButton) {
         if fieldsFilledIn {
-            performSegue(withIdentifier: "GoToStep3", sender: nil)
+            if let zipumberCheck = Int(postalField.text!) {
+                aanvraagSteps.sharedInstance.setStep2(adress: streetField.text!, city: cityField.text!, province: provinceField.text!, zip: zipumberCheck)
+                performSegue(withIdentifier: "GoToStep3", sender: nil)
+            } else {
+                let alert = UIAlertController(title: "postcode mag geen letters bevatten", message: "Gelieve te corrigeren", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(action )
+                present(alert, animated: true, completion: nil)
+            }
         } else {
             let alert = UIAlertController(title: "Er missen velden", message: "Gelieve in te vullen", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)

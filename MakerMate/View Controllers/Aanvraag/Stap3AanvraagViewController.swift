@@ -62,6 +62,7 @@ class Stap3AanvraagViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func goToNextView(_ sender: UIButton) {
         if fieldsFilledIn {
+            aanvraagSteps.sharedInstance.setStep3(wish: requestField.text!)
             performSegue(withIdentifier: "GoToStep4", sender: nil)
         } else {
             let alert = UIAlertController(title: "Er missen velden", message: "Gelieve in te vullen", preferredStyle: .alert)

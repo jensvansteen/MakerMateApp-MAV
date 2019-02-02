@@ -30,20 +30,7 @@ class Stap1AanvraagViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        // Hide the Navigation Bar
-//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//    }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-    
-    
-    
+
     @IBAction func didEndOnExit(_ sender: UITextField) {
         sender.resignFirstResponder()
     }
@@ -79,7 +66,15 @@ class Stap1AanvraagViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func goToNextView(_ sender: UIButton) {
         if fieldsFilledIn {
-            performSegue(withIdentifier: "GoToStep2", sender: nil)
+            if let phonenumberCheck = Int(phoneTextField.text!) {
+                aanvraagSteps.sharedInstance.setStep1(name: nameField.text!, firstName: firstnameField.text!, email: emailTextField.text!, phoneNumber: phonenumberCheck)
+                performSegue(withIdentifier: "GoToStep2", sender: nil)
+            } else {
+                let alert = UIAlertController(title: "Telefoonnummer mag geen letters bevatten", message: "Gelieve te corrigeren", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(action )
+                present(alert, animated: true, completion: nil)
+            }
         } else {
             let alert = UIAlertController(title: "Er missen velden", message: "Gelieve in te vullen", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)

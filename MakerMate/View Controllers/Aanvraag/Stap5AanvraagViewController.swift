@@ -80,6 +80,22 @@ class Stap5AanvraagViewController: UIViewController {
     
         @IBAction func goToNextView(_ sender: UIButton) {
             if selectedGroup != nil {
+                let nameGroup: String
+                switch selectedGroup {
+                case 0:
+                    nameGroup = "kinderen"
+                case 1:
+                    nameGroup = "jongeren"
+                case 2:
+                    nameGroup = "volwassenen"
+                case 3:
+                    nameGroup = "ouderen"
+                case .none:
+                    nameGroup = "Geen leeftijd"
+                case .some:
+                    nameGroup = "Geen leeftijd"
+                }
+                aanvraagSteps.sharedInstance.setStep5(targetGroup: nameGroup)
                 performSegue(withIdentifier: "ShowSummary", sender: nil)
             } else {
                 let alert = UIAlertController(title: "Selecteer een groep", message: "Gelieve te selecteren", preferredStyle: .alert)
@@ -129,6 +145,10 @@ class Stap5AanvraagViewController: UIViewController {
     @objc func handlePop() {
         self.navigationController?.popViewController(animated: false)
     }
+    
+ 
+    
+  
     
     
 }

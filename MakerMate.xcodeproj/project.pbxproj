@@ -26,6 +26,7 @@
 		338679D72205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */; };
 		338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D82205F01E00ADD9B5 /* Stap4AanvraagViewController.swift */; };
 		338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */; };
+		338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */; };
 		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
@@ -61,6 +62,7 @@
 		338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3AanvraagViewController.swift; sourceTree = "<group>"; };
 		338679D82205F01E00ADD9B5 /* Stap4AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap4AanvraagViewController.swift; sourceTree = "<group>"; };
 		338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap5AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverzichtAanvraagViewController.swift; sourceTree = "<group>"; };
 		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */,
 				338679D82205F01E00ADD9B5 /* Stap4AanvraagViewController.swift */,
 				338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */,
+				338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */,
 			);
 			path = Aanvraag;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */,
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
 				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
+				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,
 				3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */,
 				33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */,
 				3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */,
