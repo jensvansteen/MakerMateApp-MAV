@@ -20,6 +20,7 @@
 		3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB692204EB68003FF236 /* UIViewBorder.swift */; };
 		3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */; };
 		3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */; };
+		338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */; };
 		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
@@ -49,6 +50,7 @@
 		3381CB692204EB68003FF236 /* UIViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewBorder.swift; sourceTree = "<group>"; };
 		3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStartenViewController.swift; sourceTree = "<group>"; };
 		3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aanvraagSteps.swift; sourceTree = "<group>"; };
 		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		33D4B5D12201974B0095DAE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,10 +339,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +368,7 @@
 				33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */,
 				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
+				338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
 				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,

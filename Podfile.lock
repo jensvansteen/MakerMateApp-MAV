@@ -1,9 +1,9 @@
 PODS:
-  - IQKeyboardManagerSwift (6.0.3)
+  - IQKeyboardManagerSwift (6.0.4)
   - ScalingCarousel (2.3)
 
 DEPENDENCIES:
-  - IQKeyboardManagerSwift
+  - IQKeyboardManagerSwift (= 6.0.4)
   - ScalingCarousel
 
 SPEC REPOS:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - ScalingCarousel
 
 SPEC CHECKSUMS:
-  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   ScalingCarousel: ee866c34c01b784b6edf9009f12ea73935517e3e
 
-PODFILE CHECKSUM: e8c91086aa7b3ad17fb173fccedfeb98f5d9aa3b
+PODFILE CHECKSUM: 4d6f455714c9cfb022094e52c02a53e362958cf0
 
 COCOAPODS: 1.5.3
