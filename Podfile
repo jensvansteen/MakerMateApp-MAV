@@ -7,6 +7,8 @@ target 'MakerMate' do
   
   pod 'ScalingCarousel'
   pod 'IQKeyboardManagerSwift', '6.0.4'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 
   # Pods for MakerMate
 

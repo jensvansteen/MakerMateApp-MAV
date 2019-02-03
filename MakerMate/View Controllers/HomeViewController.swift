@@ -8,18 +8,25 @@
 
 import UIKit
 import ScalingCarousel
+import Firebase
+import FirebaseFirestore
 
 var initialScrollDone = false;
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     let names = ["Marie-thérése", "Den bompa", "Anick"]
+    
+    private var projects = [Project]()
+    private var projectsCollectionRef: CollectionReference!
+    
+    var db: Firestore!
  
-    @IBOutlet weak var nameProject: UILabel!
-    @IBOutlet weak var requestsCollectionView: UICollectionView!
-    @IBOutlet weak var projectsCollectionView: ScalingCarouselView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet private weak var nameProject: UILabel!
+    @IBOutlet private weak var requestsCollectionView: UICollectionView!
+    @IBOutlet private weak var projectsCollectionView: ScalingCarouselView!
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +37,49 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         projectsCollectionView.delegate = self;
         projectsCollectionView.dataSource = self;
         // Do any additional setup after loading the view.
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        
+        projectsCollectionRef = Firestore.firestore().collection("Projects")
         
         
+        showFireBaseData()
     }
     
-   
+  
+    func showFireBaseData() {
+        db.collection("Projects").addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    print("Error fetching document: \(error!)")
+                    return
+                }
+                let source = document.metadata.hasPendingWrites ? "Local" : "Server"
+                print("\(source)")
+        }
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        projectsCollectionRef.getDocuments { (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching docs: \(error)")
+            } else {
+                guard let snap = snapshot else {return}
+                for document in snap.documents {
+                    print(document.data())
+                    let data = document.data()
+                    let project = Project(name: data["name"] as! String, firstName: data["firstName"] as! String, email: data["email"] as! String, phoneNumber: data["phoneNumber"] as! Int, adress: data["adress"] as! String, city: data["city"] as! String, province: data["province"] as! String, zip: data["zip"] as! Int, wish: data["wish"] as! String, description: data["description"] as! String, targetGroup: data["targetGroup"] as! String)
+                    self.projects.append(project)
+                }
+                self.projectsCollectionView.reloadData()
+            }
+        }
+        
         
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -61,7 +103,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView.tag == 1 {
             return names.count
         } else if collectionView.tag == 2 {
-            return names.count + 1
+            return projects.count + 1
         } else {
             return 0
         }
@@ -76,26 +118,35 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return cell
         } else if collectionView.tag == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCell", for: indexPath) as! ProjectCollectionViewCell
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
+//            cell.setNeedsLayout()
+//            cell.layoutIfNeeded()
+            if indexPath.row == 0 {
+                    print("hello")
+                }
+                
             
-            if indexPath.row < names.count {
-                cell.layoutViews(project: true, projectName: "Annick", projectStep: "Prototyping")
-            } else {
-                cell.layoutViews(project: false, projectName: "Annick", projectStep: "Prototyping")
-            }
-            
-            
-        
-            DispatchQueue.main.async {
+            if indexPath.row < projects.count {
+                cell.layoutProject(project: projects[indexPath.row])
+//                print("\(indexPath.row): \(projects[indexPath.row].firstName!)")
                 cell.setNeedsLayout()
                 cell.layoutIfNeeded()
+            } else {
+                cell.layoutStart()
             }
             
             return cell
         } else {
             let cell = UICollectionViewCell()
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.tag == 2 {
+            if indexPath.row == projects.count {
+                performSegue(withIdentifier: "makeRequest", sender: nil)
+            }
+            
         }
     }
     

@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
 
 class aanvraagSteps {
+    
+    var db: Firestore!
     
     private(set) static var sharedInstance = aanvraagSteps()
     
@@ -56,6 +60,31 @@ class aanvraagSteps {
     
     func pushToFirebase() {
         print("class with properties \(name!) \(firstName!) \(email!) \(phoneNumber!) \(adress!) \(city!) \(province!) \(zip!) \(wish!) \(description!) \(targetGroup!)")
+        
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        ref = db.collection("Projects").addDocument(data: [
+            "name": "\(name!)",
+            "firstName": "\(firstName!)",
+            "email": "\(email!)",
+            "phoneNumber": phoneNumber!,
+            "adress": "\(adress!)",
+            "city": "\(city!)",
+            "province": "\(province!)",
+            "zip": zip!,
+            "wish": "\(wish!)",
+            "description": "\(description!)",
+            "targetGroup": "\(targetGroup!)",
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
         
         clearInstance()
     }

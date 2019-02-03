@@ -8,6 +8,8 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
+import FirebaseFirestore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,9 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        changeAppereanceBackButton()
         
+        //setup IQKeyBoardManager - Will push view up to show textfield above keyboard in app
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldShowTextFieldPlaceholder = false
+        
+        //setup Firebase
+        FirebaseApp.configure()
+        
+        let db = Firestore.firestore()
+        
+        print(db)
+        
+        
         
         return true
     }

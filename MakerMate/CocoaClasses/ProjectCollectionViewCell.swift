@@ -22,26 +22,29 @@ class ProjectCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var statANewLabel: UILabel!
     
 
-    func layoutViews(project: Bool, projectName: String, projectStep: String) {
-        
-        if project {
-            self.projectName.text = projectName
-            self.projectStep.text = projectStep
-            self.cellImage.image = UIImage(named: "ActiveProjectCard")
-        } else {
-            self.projectName.isHidden = true
-            self.projectStep.isHidden = true
-            self.nextStepLabel.isHidden = true
-            self.hackVoorLabel.isHidden = true
-            statANewLabel.isHidden = false
-            newProjectLabel.isHidden = false
-            addButtonImage.isHidden = false
-            self.projectName.text = "newProject"
-            self.projectStep.isHidden = true
-            self.cellImage.image = UIImage(named: "newProjectCard")
-        }
-
+    func layoutProject(project: Project) {
+        self.projectName.isHidden = false
+        self.projectStep.isHidden = false
+        self.nextStepLabel.isHidden = false
+        self.hackVoorLabel.isHidden = false
+        statANewLabel.isHidden = true
+        newProjectLabel.isHidden = true
+        addButtonImage.isHidden = true
+        self.projectName.text = project.firstName
+        self.projectStep.text = "start met prototyping"
+        self.cellImage.image = UIImage(named: "ActiveProjectCard")
+    }
     
+    func layoutStart() {
+        self.projectName.isHidden = true
+        self.projectStep.isHidden = true
+        self.nextStepLabel.isHidden = true
+        self.hackVoorLabel.isHidden = true
+        statANewLabel.isHidden = false
+        newProjectLabel.isHidden = false
+        addButtonImage.isHidden = false
+        self.projectName.text = "newProject"
+        self.cellImage.image = UIImage(named: "newProjectCard")
     }
     
    
