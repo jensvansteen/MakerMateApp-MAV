@@ -66,8 +66,8 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath) as! stepsCollectionViewCell
         
-        cell.stepName.text = steps[indexPath.row]["step"] as! String
-        cell.stepDescription.text = steps[indexPath.row]["description"] as! String
+        cell.stepName.text = steps[indexPath.row]["step"] as? String
+        cell.stepDescription.text = steps[indexPath.row]["description"] as? String
         
         if steps[indexPath.row]["access"] as! String == "locked" {
             cell.actionStep.isHidden = true

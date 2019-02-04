@@ -168,7 +168,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "ShowRequest" {
             
             if let cell = sender as? RequestCell,
-                let indexPath = self.requestsCollectionView.indexPath(for: cell) {
+                let _ = self.requestsCollectionView.indexPath(for: cell) {
                 
             }
             
