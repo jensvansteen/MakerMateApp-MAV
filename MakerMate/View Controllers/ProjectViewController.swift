@@ -37,6 +37,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collapsIconKennismaking: UIImageView!
     @IBOutlet weak var indecatorHacksImage: UIImageView!
     @IBOutlet weak var collapsIconHacksImage: UIImageView!
+    @IBOutlet weak var kennisMakingViewCompleted: KennisMakingDetailsView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,9 +107,13 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         if kennisMakingCompleted {
+            kennisMakingViewNotCompleted.isHidden = true
+            kennisMakingViewCompleted.isHidden = false
             indecatorKennismakingImage.image = UIImage(named: "projectStepDone")
             indecatorHacksImage.isHidden = false
         } else {
+            kennisMakingViewNotCompleted.isHidden = false
+            kennisMakingViewCompleted.isHidden = true
             indecatorKennismakingImage.image = UIImage(named: "projectStepToDo")
             indecatorHacksImage.isHidden = true
         }

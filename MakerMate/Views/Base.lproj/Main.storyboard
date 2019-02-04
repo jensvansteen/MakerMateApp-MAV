@@ -1193,6 +1193,7 @@
                         <outlet property="indecatorHacksImage" destination="lzh-bx-78t" id="co1-Aq-FdJ"/>
                         <outlet property="indecatorKennismakingImage" destination="Zys-vg-HiC" id="M2y-Ih-gbo"/>
                         <outlet property="kennisMakingHeight" destination="EaC-6h-jpT" id="FNg-Kz-gJu"/>
+                        <outlet property="kennisMakingViewCompleted" destination="zUL-FZ-pYO" id="myV-E6-mKb"/>
                         <outlet property="kennisMakingViewNotCompleted" destination="h0i-xi-VVt" id="hrt-xZ-PxD"/>
                     </connections>
                 </viewController>
