@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RequestViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class RequestViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
 
     let intrest = ["Dieren", "Winkelen", "Humor", "Iets gaan drinken"]
     @IBOutlet weak var intrestsCollectionView: UICollectionView!
@@ -41,36 +41,39 @@ class RequestViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
   
-    func setTextShort() {
+    private func setTextShort() {
         let currentText = requestShort.text
         let newText = "\"\(currentText!)\""
         requestShort.text = newText
     }
     
     
-    func setupNavigationBar() {
+    private func setupNavigationBar() {
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2, green: 0.2, blue: 0.1960784314, alpha: 1),
              NSAttributedString.Key.font: UIFont(name: "AvenirNext-Medium", size: 14)!]
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
-     
+
+
         self.navigationItem.setHidesBackButton(true, animated:false)
-        
+
         //your custom view for back image with custom size
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 29))
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 32, height: 29))
-        
+
         if let imgBackArrow = UIImage(named: "backButton") {
             imageView.image = imgBackArrow
         }
         view.addSubview(imageView)
-        
+
         let backTap = UITapGestureRecognizer(target: self, action: #selector(backToMain))
         view.addGestureRecognizer(backTap)
-        
+
         let leftBarButtonItem = UIBarButtonItem(customView: view)
         self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         
     }

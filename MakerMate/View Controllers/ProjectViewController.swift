@@ -12,7 +12,7 @@ import ScalingCarousel
 class ProjectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     var hacks = ["Zip-Aid", "DIY Lighter aid"]
-
+    
     var currentStep = "Kennismaking"
     private var showingAanvraag = true
     private var showingKennismaking = true
@@ -41,7 +41,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         HacksInProjectCollectionView.delegate = self
         HacksInProjectCollectionView.dataSource = self
         
@@ -53,8 +53,17 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(true, animated: true)
         // Hide the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func setupTaps() {
@@ -171,21 +180,25 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "GoToHack", sender: nil)
+    }
+    
     private func scrollViewDidScroll(_ scrollView: ScalingCarouselView) {
         HacksInProjectCollectionView.didScroll()
         
         guard (HacksInProjectCollectionView.currentCenterCellIndex?.row) != nil else { return }
         
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

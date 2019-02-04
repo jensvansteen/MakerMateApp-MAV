@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
   
-    func showFireBaseData() {
+    private func showFireBaseData() {
         db.collection("Projects").addSnapshotListener { documentSnapshot, error in
                 guard let document = documentSnapshot else {
                     print("Error fetching document: \(error!)")
