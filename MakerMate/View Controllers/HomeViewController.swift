@@ -118,8 +118,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return cell
         } else if collectionView.tag == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCell", for: indexPath) as! ProjectCollectionViewCell
-//            cell.setNeedsLayout()
-//            cell.layoutIfNeeded()
             if indexPath.row == 0 {
                     print("hello")
                 }
@@ -127,7 +125,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             if indexPath.row < projects.count {
                 cell.layoutProject(project: projects[indexPath.row])
-//                print("\(indexPath.row): \(projects[indexPath.row].firstName!)")
                 cell.setNeedsLayout()
                 cell.layoutIfNeeded()
             } else {

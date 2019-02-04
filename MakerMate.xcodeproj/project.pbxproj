@@ -36,6 +36,10 @@
 		33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E02201AEC10095DAE6 /* RequestCell.swift */; };
 		33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */; };
 		33D4B60322022D420095DAE6 /* IntrestHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */; };
+		33EBB2A722073270008CF5E0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2A622073270008CF5E0 /* ProjectViewController.swift */; };
+		33EBB2A9220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */; };
+		33EBB2AB22085CCC008CF5E0 /* KennisMakingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */; };
+		33EBB2AD22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2AC22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift */; };
 		33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5532200FEB400B242AE /* AppDelegate.swift */; };
 		33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5552200FEB400B242AE /* ProfileViewController.swift */; };
 		33EBF5592200FEB400B242AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF5572200FEB400B242AE /* Main.storyboard */; };
@@ -74,6 +78,10 @@
 		33D4B5E02201AEC10095DAE6 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrestHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		33EBB2A622073270008CF5E0 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennisMakingDetailsView.swift; sourceTree = "<group>"; };
+		33EBB2AC22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKennismakingCollectionViewCell.swift; sourceTree = "<group>"; };
 		33EBF5502200FEB400B242AE /* MakerMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakerMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EBF5532200FEB400B242AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EBF5552200FEB400B242AE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 				33D4B5D822019D350095DAE6 /* HomeViewController.swift */,
 				3381CB552202E9F3003FF236 /* RequestViewController.swift */,
 				3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */,
+				33EBB2A622073270008CF5E0 /* ProjectViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 		33D4B5DF2201AE900095DAE6 /* CocoaClasses */ = {
 			isa = PBXGroup;
 			children = (
+				33EBB2AE22085DF2008CF5E0 /* Project */,
 				33D4B5E02201AEC10095DAE6 /* RequestCell.swift */,
 				33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */,
 				33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */,
@@ -207,8 +217,26 @@
 				3381CB652203A4CA003FF236 /* stapUIView.swift */,
 				3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */,
 				338679D42205DA1300ADD9B5 /* customNavigation.swift */,
+				33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */,
 			);
 			path = CocoaClasses;
+			sourceTree = "<group>";
+		};
+		33EBB2AE22085DF2008CF5E0 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				33EBB2AF22085DFB008CF5E0 /* Kennismaking */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		33EBB2AF22085DFB008CF5E0 /* Kennismaking */ = {
+			isa = PBXGroup;
+			children = (
+				33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */,
+				33EBB2AC22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift */,
+			);
+			path = Kennismaking;
 			sourceTree = "<group>";
 		};
 		33EBF5472200FEB400B242AE = {
@@ -398,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33EBB2A722073270008CF5E0 /* ProjectViewController.swift in Sources */,
 				33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */,
 				338679D72205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift in Sources */,
 				33D4B60322022D420095DAE6 /* IntrestHomeCollectionViewCell.swift in Sources */,
@@ -417,10 +446,13 @@
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
 				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
 				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,
+				33EBB2AB22085CCC008CF5E0 /* KennisMakingDetailsView.swift in Sources */,
+				33EBB2A9220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift in Sources */,
 				3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */,
 				33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */,
 				3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */,
 				338679D52205DA1300ADD9B5 /* customNavigation.swift in Sources */,
+				33EBB2AD22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift in Sources */,
 				33A583B12207080D00AB4CDA /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
