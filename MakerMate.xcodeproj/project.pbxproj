@@ -46,6 +46,12 @@
 		33EBF5592200FEB400B242AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF5572200FEB400B242AE /* Main.storyboard */; };
 		33EBF55B2200FEB600B242AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF55A2200FEB600B242AE /* Assets.xcassets */; };
 		33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF55C2200FEB600B242AE /* LaunchScreen.storyboard */; };
+		33F2E8D22208DD050005BF35 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D12208DD050005BF35 /* ScrollViewController.swift */; };
+		33F2E8D42208DEB20005BF35 /* GuideHoldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D32208DEB20005BF35 /* GuideHoldingViewController.swift */; };
+		33F2E8D62208F71E0005BF35 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D52208F71E0005BF35 /* TestViewController.swift */; };
+		33F2E8D82208F72B0005BF35 /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D72208F72B0005BF35 /* Test2ViewController.swift */; };
+		33F2E8DA2208F73C0005BF35 /* Test3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D92208F73C0005BF35 /* Test3ViewController.swift */; };
+		33F2E8DC2208FBF50005BF35 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8DB2208FBF50005BF35 /* CameraViewController.swift */; };
 		406780833F7FCCF4AD3B7554 /* Pods_MakerMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +97,12 @@
 		33EBF55A2200FEB600B242AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33EBF55D2200FEB600B242AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33EBF55F2200FEB600B242AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33F2E8D12208DD050005BF35 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrollViewController.swift; path = "MakerMate/View Controllers/ScrollViewController.swift"; sourceTree = SOURCE_ROOT; };
+		33F2E8D32208DEB20005BF35 /* GuideHoldingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideHoldingViewController.swift; sourceTree = "<group>"; };
+		33F2E8D52208F71E0005BF35 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		33F2E8D72208F72B0005BF35 /* Test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
+		33F2E8D92208F73C0005BF35 /* Test3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test3ViewController.swift; sourceTree = "<group>"; };
+		33F2E8DB2208FBF50005BF35 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		6F18F3B9B0528F5EF81CBDCC /* Pods-MakerMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakerMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate.release.xcconfig"; sourceTree = "<group>"; };
 		7571866B176500056F929F40 /* Pods-MakerMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakerMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate.debug.xcconfig"; sourceTree = "<group>"; };
 		9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakerMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +148,7 @@
 				338679D82205F01E00ADD9B5 /* Stap4AanvraagViewController.swift */,
 				338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */,
 				338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */,
+				33F2E8D12208DD050005BF35 /* ScrollViewController.swift */,
 			);
 			path = Aanvraag;
 			sourceTree = "<group>";
@@ -168,6 +181,11 @@
 				3381CB552202E9F3003FF236 /* RequestViewController.swift */,
 				3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */,
 				33EBB2A622073270008CF5E0 /* ProjectViewController.swift */,
+				33F2E8D32208DEB20005BF35 /* GuideHoldingViewController.swift */,
+				33F2E8D52208F71E0005BF35 /* TestViewController.swift */,
+				33F2E8D72208F72B0005BF35 /* Test2ViewController.swift */,
+				33F2E8D92208F73C0005BF35 /* Test3ViewController.swift */,
+				33F2E8DB2208FBF50005BF35 /* CameraViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -444,7 +462,11 @@
 				33EBB2B22208958A008CF5E0 /* HackStartViewController.swift in Sources */,
 				338679D32205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift in Sources */,
 				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
+				33F2E8D82208F72B0005BF35 /* Test2ViewController.swift in Sources */,
+				33F2E8D42208DEB20005BF35 /* GuideHoldingViewController.swift in Sources */,
+				33F2E8D22208DD050005BF35 /* ScrollViewController.swift in Sources */,
 				338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */,
+				33F2E8DC2208FBF50005BF35 /* CameraViewController.swift in Sources */,
 				3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */,
 				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
 				3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */,
@@ -453,10 +475,12 @@
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
 				338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
+				33F2E8D62208F71E0005BF35 /* TestViewController.swift in Sources */,
 				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
 				338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */,
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
 				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
+				33F2E8DA2208F73C0005BF35 /* Test3ViewController.swift in Sources */,
 				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,
 				33EBB2AB22085CCC008CF5E0 /* KennisMakingDetailsView.swift in Sources */,
 				33EBB2A9220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift in Sources */,
