@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol GuideHolderDelegate {
-    var currentIndex: Int { get }
-}
-
 class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var initialViewController: Int = 0
@@ -24,16 +20,14 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
     var scrollViewController: ScrollViewController!
     
-    var delegate: GuideHolderDelegate?
-    
     @IBOutlet weak var stepIndecatorTopCollectionView: UICollectionView!
     
     @IBOutlet weak var indexPageLabel: UILabel!
     
-    public var pageIndexGuide: Int = 0 {
+    public var currentPage: Int = 0 {
         didSet {
-            indexPageLabel.text = String(pageIndexGuide)
-            print("the index is \(delegate!.currentIndex)")
+            indexPageLabel.text = String(currentPage)
+            stepIndecatorTopCollectionView.reloadData()
         }
     }
     
@@ -45,6 +39,8 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         stepIndecatorTopCollectionView.dataSource = self
         
         makeSteps()
+        
+        indexPageLabel.text = String(initialViewController)
         
         // Do any additional setup after loading the view.
     }
@@ -80,6 +76,12 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath)
+        
+        if indexPath.row == currentPage {
+            cell.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.5843137255, alpha: 1)
+        } else {
+            cell.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
+        }
         return cell
     }
     
@@ -90,6 +92,8 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         print("width of the viewController \(widthViewController)")
         
         widthOneCell = (widthViewController/CGFloat(viewControllers.count)) - 1
+        
+        
         
         return CGSize(width: widthOneCell, height: 8)
     }

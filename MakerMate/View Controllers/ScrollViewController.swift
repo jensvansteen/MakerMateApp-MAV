@@ -16,10 +16,12 @@ protocol ScrollViewControllerDelegate {
     var initialViewController: Int { get }
 }
 
-class ScrollViewController: UIViewController, GuideHolderDelegate {
-    var currentIndex: Int = 0
-    
-    var indexOfPage: CGFloat = 0
+class ScrollViewController: UIViewController {
+    var currentIndex: Int = 0 {
+        didSet {
+            guidanceController.currentPage = Int(currentIndex)
+        }
+    }
     
     // MARK: - Properties
     var scrollView: UIScrollView {
@@ -81,14 +83,13 @@ class ScrollViewController: UIViewController, GuideHolderDelegate {
 //        guidanceController = parent as! GuideHoldingViewController
         
         guidanceController = parent as! GuideHoldingViewController
-        guidanceController.delegate = self
         
         scrollView.contentSize = CGSize(width: pageSize.width * CGFloat(viewControllers.count), height: pageSize.height)
 
         // set initial position of scroll view
         if let controller = delegate?.initialViewController {
             setController(to: viewControllers[controller]!, animated: false)
-            indexOfPage = CGFloat(controller)
+            currentIndex = controller
         }
     }
 }
@@ -113,8 +114,7 @@ fileprivate extension ScrollViewController {
 extension ScrollViewController: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        indexOfPage = scrollView.contentOffset.x / scrollView.frame.size.width;
-        guidanceController.pageIndexGuide = Int(indexOfPage)
+        currentIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width);
     }
     
     

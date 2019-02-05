@@ -4598,6 +4598,7 @@
                         <viewLayoutGuide key="safeArea" id="h4K-Wo-ZWb"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="indexPageLabel" destination="Lwq-ag-U4n" id="JNY-2W-wLw"/>
                         <outlet property="stepIndecatorTopCollectionView" destination="Lpo-4g-EPE" id="Yqu-Ev-3U9"/>
