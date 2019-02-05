@@ -73,8 +73,8 @@ class ScrollViewController: UIViewController {
                 addChild(controller)
                 controller.view.frame = frame(for: index)
 //                controller.textVIew.text = "The same viewController maar andere data \(index)"
-                controller.testText.text = "Met een hoogte van \(index * 300)"
-                controller.setupHeight(theindex: index)
+//                controller.testText.text = "Met een hoogte van \(index * 300)"
+                controller.setupHeight(theindex: index, numViewControllers: viewControllers.count)
                 scrollView.addSubview(controller.view)
                 controller.didMove(toParent: self)
             }

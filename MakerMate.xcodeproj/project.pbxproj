@@ -52,6 +52,7 @@
 		33F2E8D82208F72B0005BF35 /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D72208F72B0005BF35 /* Test2ViewController.swift */; };
 		33F2E8DA2208F73C0005BF35 /* Test3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D92208F73C0005BF35 /* Test3ViewController.swift */; };
 		33F2E8DC2208FBF50005BF35 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8DB2208FBF50005BF35 /* CameraViewController.swift */; };
+		33F2E8E12209C04E0005BF35 /* itemNeededCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8E02209C04E0005BF35 /* itemNeededCollectionViewCell.swift */; };
 		406780833F7FCCF4AD3B7554 /* Pods_MakerMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		33F2E8D72208F72B0005BF35 /* Test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
 		33F2E8D92208F73C0005BF35 /* Test3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test3ViewController.swift; sourceTree = "<group>"; };
 		33F2E8DB2208FBF50005BF35 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		33F2E8E02209C04E0005BF35 /* itemNeededCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemNeededCollectionViewCell.swift; sourceTree = "<group>"; };
 		6F18F3B9B0528F5EF81CBDCC /* Pods-MakerMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakerMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate.release.xcconfig"; sourceTree = "<group>"; };
 		7571866B176500056F929F40 /* Pods-MakerMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakerMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate.debug.xcconfig"; sourceTree = "<group>"; };
 		9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakerMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +232,7 @@
 		33D4B5DF2201AE900095DAE6 /* CocoaClasses */ = {
 			isa = PBXGroup;
 			children = (
+				33F2E8DF2209C02B0005BF35 /* Handleiding */,
 				33EBB2AE22085DF2008CF5E0 /* Project */,
 				33D4B5E02201AEC10095DAE6 /* RequestCell.swift */,
 				33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */,
@@ -301,6 +304,14 @@
 				33D4B5D42201978D0095DAE6 /* Supporting Files */,
 			);
 			path = MakerMate;
+			sourceTree = "<group>";
+		};
+		33F2E8DF2209C02B0005BF35 /* Handleiding */ = {
+			isa = PBXGroup;
+			children = (
+				33F2E8E02209C04E0005BF35 /* itemNeededCollectionViewCell.swift */,
+			);
+			path = Handleiding;
 			sourceTree = "<group>";
 		};
 		9931080A6C0349016E7E3743 /* Pods */ = {
@@ -467,6 +478,7 @@
 				33F2E8D22208DD050005BF35 /* ScrollViewController.swift in Sources */,
 				338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */,
 				33F2E8DC2208FBF50005BF35 /* CameraViewController.swift in Sources */,
+				33F2E8E12209C04E0005BF35 /* itemNeededCollectionViewCell.swift in Sources */,
 				3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */,
 				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
 				3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */,

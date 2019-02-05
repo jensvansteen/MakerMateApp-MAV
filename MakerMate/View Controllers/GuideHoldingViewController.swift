@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate {
 
     var initialViewController: Int = 0
     
@@ -20,23 +20,18 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
     var scrollViewController: ScrollViewController!
     
-    @IBOutlet weak var stepIndecatorTopCollectionView: UICollectionView!
     
     @IBOutlet weak var indexPageLabel: UILabel!
     
     public var currentPage: Int = 0 {
         didSet {
             indexPageLabel.text = String(currentPage)
-            stepIndecatorTopCollectionView.reloadData()
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        stepIndecatorTopCollectionView.delegate = self
-        stepIndecatorTopCollectionView.dataSource = self
         
         makeSteps()
         
@@ -64,9 +59,6 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         
         initialViewController = 1
         
-        self.stepIndecatorTopCollectionView.reloadData()
-        
-        print("cell size is \(widthOneCell)")
     }
     
     
@@ -83,19 +75,6 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
             cell.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
         }
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let widthViewController = view.frame.width
-        
-        print("width of the viewController \(widthViewController)")
-        
-        widthOneCell = (widthViewController/CGFloat(viewControllers.count)) - 1
-        
-        
-        
-        return CGSize(width: widthOneCell, height: 8)
     }
     
     func printCellAndViewSize() {
