@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate {
+class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var initialViewController: Int = 0
     
@@ -18,14 +18,41 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
     var widthOneCell: CGFloat = 0.0
     
+    var updateCell = BottomStepIndecatorCollectionViewCell()
+    
     var scrollViewController: ScrollViewController!
     
+    var firstTimeLoading = false
     
-    @IBOutlet weak var indexPageLabel: UILabel!
+    @IBOutlet weak var stepIndecatorCollectionView: UICollectionView!
     
+    @IBOutlet weak var spacingLeftStepIndecator: NSLayoutConstraint!
+    
+    @IBOutlet weak var viewHolderCollectionView: UIView!
     public var currentPage: Int = 0 {
         didSet {
-            indexPageLabel.text = String(currentPage)
+//            indexPageLabel.text = String(currentPage)
+            let indexPath = IndexPath(row: currentPage, section: 0)
+            if firstTimeLoading {
+                updateCell.stepImage.image = UIImage(named: "NonActiveStep")
+                updateCell.stepText.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.1960784314, alpha: 1)
+            }
+            stepIndecatorCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            updateCell = stepIndecatorCollectionView.cellForItem(at: indexPath) as! BottomStepIndecatorCollectionViewCell
+            updateCell.stepImage.image = UIImage(named: "ActiveStepHandleiding")
+            updateCell.stepText.textColor = .white
+            firstTimeLoading = true
+        }
+    }
+    
+    public var currentCoordinationPointHolder: CGFloat = 0 {
+        didSet {
+            print("Helllloooooooooo")
+            spacingLeftStepIndecator.constant = currentCoordinationPointHolder/CGFloat(-viewControllers.count) + view.frame.width/2 + 30
+//            let visibleRect = CGRect(x: viewHolderCollectionView.frame.midX, y: viewHolderCollectionView.frame.midY, width: 60, height: 40)
+//            let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+//            let visibleIndexPath = stepIndecatorCollectionView.indexPathForItem(at: CGPoint(x: view.frame.width/2, y: view.frame.height - 30))
+//            print("the visible path is \(visibleIndexPath)")
         }
     }
     
@@ -35,7 +62,10 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         
         makeSteps()
         
-        indexPageLabel.text = String(initialViewController)
+        stepIndecatorCollectionView.delegate = self
+        stepIndecatorCollectionView.dataSource = self
+        
+//        indexPageLabel.text = String(initialViewController)
         
         // Do any additional setup after loading the view.
     }
@@ -67,13 +97,19 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IndificationCell", for: indexPath) as! BottomStepIndecatorCollectionViewCell
         
-        if indexPath.row == currentPage {
-            cell.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.5843137255, alpha: 1)
-        } else {
-            cell.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
+        cell.stepImage.image = UIImage(named: "NonActiveStep")
+        cell.stepText.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.1960784314, alpha: 1)
+        
+        
+        if indexPath.row == initialViewController {
+            cell.stepImage.image = UIImage(named: "ActiveStepHandleiding")
+            cell.stepText.textColor = .white
         }
+        
+      
+       cell.stepText.text = String(indexPath.row + 1)
         return cell
     }
     

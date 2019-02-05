@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KCz-g3-B8f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N3D-J8-XaE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2576,6 +2576,7 @@
                         <outlet property="testDeHackButton" destination="LeH-jy-qFF" id="1jw-ax-d81"/>
                         <outlet property="testHackText" destination="i0P-1g-YJa" id="vda-nQ-HrI"/>
                         <outlet property="testenHeight" destination="Pno-o4-FRS" id="NKN-2W-UfK"/>
+                        <segue destination="KCz-g3-B8f" kind="showDetail" identifier="showSteps" id="sQX-wI-C6U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93m-rB-bCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2602,7 +2603,7 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ligherAidImage" translatesAutoresizingMaskIntoConstraints="NO" id="1Eu-oS-MEr">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="448"/>
                                                     </imageView>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-bc-ef6" userLabel="StepIndecator">
+                                                    <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-bc-ef6" userLabel="StepIndecator">
                                                         <rect key="frame" x="0.0" y="40" width="375" height="8"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -4649,7 +4650,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykm-2j-EXD" userLabel="Scroller Container">
+                            <containerView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykm-2j-EXD" userLabel="Scroller Container">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="ntm-Xz-Sb5" kind="embed" id="QSc-H4-Loq"/>
@@ -4681,18 +4682,67 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDn-I7-ndn">
                                 <rect key="frame" x="0.0" y="611" width="375" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="navigatieBodem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwq-ag-U4n">
-                                        <rect key="frame" x="126" y="17.5" width="123" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-5V-7SQ">
+                                        <rect key="frame" x="174" y="24.5" width="208" height="1"/>
+                                        <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="2a6-OC-Fg1"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-GX-crW">
+                                        <rect key="frame" x="167" y="2" width="208" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="EX6-Y8-JAb">
+                                            <size key="itemSize" width="44" height="44"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IndificationCell" id="nj4-Ik-QWs" customClass="BottomStepIndecatorCollectionViewCell" customModule="MakerMate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="1" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ActiveStepHandleiding" translatesAutoresizingMaskIntoConstraints="NO" id="yh2-eJ-ojd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7m-T5-BMf">
+                                                            <rect key="frame" x="-11" y="4" width="66" height="36"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="26"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="yh2-eJ-ojd" firstAttribute="top" secondItem="nj4-Ik-QWs" secondAttribute="top" id="1Yh-xf-Oum"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yh2-eJ-ojd" secondAttribute="bottom" id="Ged-wP-zGy"/>
+                                                    <constraint firstItem="t7m-T5-BMf" firstAttribute="centerY" secondItem="nj4-Ik-QWs" secondAttribute="centerY" id="Vdm-HU-Jmr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yh2-eJ-ojd" secondAttribute="trailing" id="Wo1-EW-51p"/>
+                                                    <constraint firstItem="t7m-T5-BMf" firstAttribute="centerX" secondItem="nj4-Ik-QWs" secondAttribute="centerX" id="h1N-Vz-Rgo"/>
+                                                    <constraint firstItem="yh2-eJ-ojd" firstAttribute="leading" secondItem="nj4-Ik-QWs" secondAttribute="leading" id="wET-gr-CiQ"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="stepImage" destination="yh2-eJ-ojd" id="fCW-fs-zRO"/>
+                                                    <outlet property="stepText" destination="t7m-T5-BMf" id="MjS-ln-4Os"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Lwq-ag-U4n" firstAttribute="centerY" secondItem="zDn-I7-ndn" secondAttribute="centerY" id="Cny-Zh-C9b"/>
+                                    <constraint firstAttribute="trailing" secondItem="g6L-GX-crW" secondAttribute="trailing" id="3oq-MS-5AJ"/>
+                                    <constraint firstItem="g6L-GX-crW" firstAttribute="leading" secondItem="zDn-I7-ndn" secondAttribute="leading" constant="167" id="Asq-mn-09l"/>
+                                    <constraint firstItem="g6L-GX-crW" firstAttribute="top" secondItem="zDn-I7-ndn" secondAttribute="top" constant="2" id="JEG-A4-bPC"/>
+                                    <constraint firstItem="8VZ-5V-7SQ" firstAttribute="width" secondItem="g6L-GX-crW" secondAttribute="width" id="T5G-EY-14r"/>
                                     <constraint firstAttribute="height" constant="56" id="Urv-7D-gZN"/>
-                                    <constraint firstItem="Lwq-ag-U4n" firstAttribute="centerX" secondItem="zDn-I7-ndn" secondAttribute="centerX" id="m5H-EU-LpT"/>
+                                    <constraint firstItem="8VZ-5V-7SQ" firstAttribute="leading" secondItem="g6L-GX-crW" secondAttribute="leading" constant="7" id="gqL-nW-hl3"/>
+                                    <constraint firstAttribute="bottom" secondItem="g6L-GX-crW" secondAttribute="bottom" constant="8" id="ihD-Rq-KVx"/>
+                                    <constraint firstItem="8VZ-5V-7SQ" firstAttribute="centerY" secondItem="g6L-GX-crW" secondAttribute="centerY" id="nf4-ZV-bEA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -4714,7 +4764,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="indexPageLabel" destination="Lwq-ag-U4n" id="JNY-2W-wLw"/>
+                        <outlet property="spacingLeftStepIndecator" destination="Asq-mn-09l" id="vcz-3W-oMA"/>
+                        <outlet property="stepIndecatorCollectionView" destination="g6L-GX-crW" id="etE-vZ-yyh"/>
+                        <outlet property="viewHolderCollectionView" destination="zDn-I7-ndn" id="moA-Su-aTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdr-FP-ak3" sceneMemberID="firstResponder"/>
@@ -4743,6 +4795,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ActiveStepHandleiding" width="53" height="52.5"/>
         <image name="AfsprekenIcon" width="55" height="55"/>
         <image name="ChatIcon" width="55" height="55"/>
         <image name="Comments" width="35" height="35"/>
@@ -4781,6 +4834,6 @@
         <image name="seeActionButton" width="54" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SCJ-H6-E2j"/>
+        <segue reference="vV4-Lm-5jK"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -144,6 +144,7 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func startGuide(_ sender: UIButton) {
+        performSegue(withIdentifier: "showSteps", sender: sender)
     }
     
     @objc func showHandleidingView() {

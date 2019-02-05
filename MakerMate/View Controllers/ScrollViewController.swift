@@ -23,6 +23,12 @@ class ScrollViewController: UIViewController {
         }
     }
     
+    private var currentCoordinationPoint: CGFloat = 0 {
+        didSet {
+            guidanceController.currentCoordinationPointHolder = currentCoordinationPoint
+        }
+    }
+    
     // MARK: - Properties
     var scrollView: UIScrollView {
         return view as! UIScrollView
@@ -117,6 +123,11 @@ extension ScrollViewController: UIScrollViewDelegate {
         currentIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width);
     }
     
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x)
+        currentCoordinationPoint = scrollView.contentOffset.x
+    }
     
 }
 
