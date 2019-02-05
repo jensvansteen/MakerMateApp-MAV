@@ -12,7 +12,7 @@ import UIKit
 import UIKit
 
 protocol ScrollViewControllerDelegate {
-    var viewControllers: [TestViewController?] { get }
+    var viewControllers: [GuideStepViewController?] { get }
     var initialViewController: Int { get }
 }
 
@@ -29,6 +29,7 @@ class ScrollViewController: UIViewController {
         }
     }
     
+    
     // MARK: - Properties
     var scrollView: UIScrollView {
         return view as! UIScrollView
@@ -40,7 +41,7 @@ class ScrollViewController: UIViewController {
     
     var guidanceController: GuideHoldingViewController!
     
-    var viewControllers: [TestViewController?]!
+    var viewControllers: [GuideStepViewController?]!
     
     var delegate: ScrollViewControllerDelegate?
     
@@ -63,7 +64,7 @@ class ScrollViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewControllers = delegate?.viewControllers as! [TestViewController?]
+        viewControllers = delegate?.viewControllers as! [GuideStepViewController?]
         
         
 //        if let soemValue = viewControllers {
@@ -85,6 +86,8 @@ class ScrollViewController: UIViewController {
                 controller.didMove(toParent: self)
             }
         }
+        
+      
         
 //        guidanceController = parent as! GuideHoldingViewController
         
@@ -133,6 +136,12 @@ extension ScrollViewController: UIScrollViewDelegate {
 
 // MARK: - Public methods
 extension ScrollViewController {
+    
+    public func goToView(index controller: Int) {
+        setController(to: viewControllers![controller]!, animated: true)
+        currentIndex = controller
+        
+    }
     
     public func setController(to controller: UIViewController, animated: Bool) {
         guard let index = indexFor(controller: controller) else { return }

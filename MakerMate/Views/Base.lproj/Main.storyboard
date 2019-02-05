@@ -2583,10 +2583,10 @@
             </objects>
             <point key="canvasLocation" x="2172" y="1412"/>
         </scene>
-        <!--Test View Controller-->
+        <!--GuideStepView Controller-->
         <scene sceneID="5DP-0d-9RG">
             <objects>
-                <viewController storyboardIdentifier="testViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LxT-A6-W1D" customClass="TestViewController" customModule="MakerMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="testViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LxT-A6-W1D" userLabel="GuideStepView Controller" customClass="GuideStepViewController" customModule="MakerMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FrG-34-ocE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2799,7 +2799,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttc-r6-49h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4652" y="1386.2068965517242"/>
+            <point key="canvasLocation" x="4652" y="1360"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bI6-5h-E0y">
+            <objects>
+                <viewController id="uSE-6R-zf3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ip1-23-kHO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="g0W-Xr-404"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="civ-Zb-SAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5334" y="1209"/>
         </scene>
         <!--Stap1 Aanvraag View Controller-->
         <scene sceneID="NTM-6U-owN">
@@ -4689,7 +4704,7 @@
                                             <constraint firstAttribute="height" constant="1" id="2a6-OC-Fg1"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-GX-crW">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-GX-crW">
                                         <rect key="frame" x="167" y="2" width="208" height="46"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="EX6-Y8-JAb">
@@ -4771,7 +4786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdr-FP-ak3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3343" y="528"/>
+            <point key="canvasLocation" x="3855" y="528"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="vxJ-Hd-aR5">
@@ -4833,7 +4848,4 @@
         <image name="projectStepToDo" width="21" height="21"/>
         <image name="seeActionButton" width="54" height="54"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vV4-Lm-5jK"/>
-    </inferredMetricsTieBreakers>
 </document>

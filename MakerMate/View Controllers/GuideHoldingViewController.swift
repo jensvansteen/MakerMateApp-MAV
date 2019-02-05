@@ -12,9 +12,9 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
 
     var initialViewController: Int = 0
     
-    var viewControllers: [TestViewController?] = []
+    var viewControllers: [GuideStepViewController?] = []
 
-    let viewControllerData = [0,1,2, 3, 5, 6]
+    let viewControllerData = [0,1,2, 3, 5]
     
     var widthOneCell: CGFloat = 0.0
     
@@ -34,25 +34,24 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
 //            indexPageLabel.text = String(currentPage)
             let indexPath = IndexPath(row: currentPage, section: 0)
             if firstTimeLoading {
-                updateCell.stepImage.image = UIImage(named: "NonActiveStep")
-                updateCell.stepText.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.1960784314, alpha: 1)
+//                updateCell.stepImage.image = UIImage(named: "NonActiveStep")
+//                updateCell.stepText.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.1960784314, alpha: 1)
             }
             stepIndecatorCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            updateCell = stepIndecatorCollectionView.cellForItem(at: indexPath) as! BottomStepIndecatorCollectionViewCell
-            updateCell.stepImage.image = UIImage(named: "ActiveStepHandleiding")
-            updateCell.stepText.textColor = .white
+//            updateCell = stepIndecatorCollectionView.cellForItem(at: indexPath) as! BottomStepIndecatorCollectionViewCell
+//            updateCell.stepImage.image = UIImage(named: "ActiveStepHandleiding")
+//            updateCell.stepText.textColor = .white
+//            let size = CGSize(width: 44, height: 44)
+//            updateCell.size = size
             firstTimeLoading = true
+            stepIndecatorCollectionView.reloadData()
         }
     }
     
     public var currentCoordinationPointHolder: CGFloat = 0 {
         didSet {
-            print("Helllloooooooooo")
-            spacingLeftStepIndecator.constant = currentCoordinationPointHolder/CGFloat(-viewControllers.count) + view.frame.width/2 + 30
-//            let visibleRect = CGRect(x: viewHolderCollectionView.frame.midX, y: viewHolderCollectionView.frame.midY, width: 60, height: 40)
-//            let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-//            let visibleIndexPath = stepIndecatorCollectionView.indexPathForItem(at: CGPoint(x: view.frame.width/2, y: view.frame.height - 30))
-//            print("the visible path is \(visibleIndexPath)")
+            var extraSpace = CGFloat(25 - currentPage*8)
+            spacingLeftStepIndecator.constant = currentCoordinationPointHolder/CGFloat(-viewControllers.count) + view.frame.width/2 - extraSpace
         }
     }
     
@@ -64,8 +63,6 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         
         stepIndecatorCollectionView.delegate = self
         stepIndecatorCollectionView.dataSource = self
-        
-//        indexPageLabel.text = String(initialViewController)
         
         // Do any additional setup after loading the view.
     }
@@ -79,9 +76,9 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
   
     func makeSteps() {
-        var viewControllersColl: [TestViewController] = []
+        var viewControllersColl: [GuideStepViewController] = []
         for step in viewControllerData {
-            let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "testViewController") as! TestViewController
+            let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "testViewController") as! GuideStepViewController
             viewControllersColl.append(viewCon)
         }
         
@@ -101,11 +98,12 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         
         cell.stepImage.image = UIImage(named: "NonActiveStep")
         cell.stepText.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.1960784314, alpha: 1)
+        cell.stepText.font = UIFont(name: "AvenirNext-Medium", size: 18)
         
-        
-        if indexPath.row == initialViewController {
+        if indexPath.row == currentPage {
             cell.stepImage.image = UIImage(named: "ActiveStepHandleiding")
             cell.stepText.textColor = .white
+            cell.stepText.font = UIFont(name: "AvenirNext-Medium", size: 26)
         }
         
       
@@ -113,11 +111,28 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == currentPage {
+            return CGSize(width: 44, height: 44)
+        } else {
+            return CGSize(width: 30, height: 30)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        gotToStep(step: indexPath.row)
+    }
+    
     func printCellAndViewSize() {
         print("width of the viewController \(view.frame.width) and cellsize \((view.frame.width/CGFloat(viewControllers.count)) - 1)")
     }
     
     @IBAction func closeGuide(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func gotToStep(step: Int) {
+        scrollViewController.goToView(index: step)
     }
 
 //
