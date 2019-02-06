@@ -9,10 +9,10 @@
 import UIKit
 
 class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+ 
     var initialViewController: Int = 0
     
-    var viewControllers: [GuideStepViewController?] = []
+    var viewControllers: [UIViewController?] = []
 
     let viewControllerData = [0,1,2, 3, 5]
     
@@ -76,11 +76,15 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
   
     func makeSteps() {
-        var viewControllersColl: [GuideStepViewController] = []
+        var viewControllersColl: [UIViewController] = []
         for step in viewControllerData {
             let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "testViewController") as! GuideStepViewController
             viewControllersColl.append(viewCon)
         }
+        
+        let reviewViewController = self.storyboard?.instantiateViewController(withIdentifier: "hackReview") as! ReviewHackViewController
+        
+        viewControllersColl.append(reviewViewController)
         
         viewControllers = viewControllersColl
         
@@ -96,18 +100,29 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IndificationCell", for: indexPath) as! BottomStepIndecatorCollectionViewCell
         
+   
         cell.stepImage.image = UIImage(named: "NonActiveStep")
         cell.stepText.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.1960784314, alpha: 1)
         cell.stepText.font = UIFont(name: "AvenirNext-Medium", size: 18)
+        
+        if indexPath.row == viewControllers.count-1 {
+            cell.stepImage.image = UIImage(named: "notActiveReview")
+        }
         
         if indexPath.row == currentPage {
             cell.stepImage.image = UIImage(named: "ActiveStepHandleiding")
             cell.stepText.textColor = .white
             cell.stepText.font = UIFont(name: "AvenirNext-Medium", size: 26)
+            if indexPath.row == viewControllers.count - 1 {
+                cell.stepImage.image = UIImage(named: "activeReview")
+            }
         }
         
-      
-       cell.stepText.text = String(indexPath.row + 1)
+        if indexPath.row != viewControllers.count-1 {
+             cell.stepText.text = String(indexPath.row + 1)
+        } else {
+            cell.stepText.text = ""
+        }
         return cell
     }
     

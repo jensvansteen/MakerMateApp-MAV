@@ -8,7 +8,15 @@
 
 import UIKit
 
+
+
+
+
 class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func childViewControllerResponse(someText: String) {
+        print(someText)
+    }
+    
     
     
     private var numberOfNeededItems = 5
@@ -20,7 +28,6 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var gebruikteItemsLabel: UILabel!
     @IBOutlet weak var stepIndecatorLabel: UILabel!
     @IBOutlet weak var stepExplanation: UILabel!
-    
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
     
     private var indexPage: Int = 0
@@ -30,16 +37,29 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         stepIndecator.delegate = self
         stepIndecator.dataSource = self
         itemsNeeded.delegate = self
         itemsNeeded.dataSource = self
+        
         // Do any additional setup after loading the view.
         
         
-        
         setupUI()
+    }
+    
+    
+    
+    func changeValuesStep(_ notificatie:Notification){
+        let newText = notificatie.userInfo!["text"] as! String
+        stepExplanation.text = newText
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -51,6 +71,10 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
             return numberOfNeededItems
         }
         
+    }
+    
+    func logChange(text: String ) {
+        stepExplanation.text = text
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,13 +116,13 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func setupUI() {
         if numberOfNeededItems >= 1 {
-             itemsNeededHeight.constant = CGFloat(numberOfNeededItems * 35)
+            itemsNeededHeight.constant = CGFloat(numberOfNeededItems * 35)
         } else {
             itemsNeeded.isHidden = true
             lineView.isHidden = true
             gebruikteItemsLabel.isHidden = true
         }
-       
+        
         
     }
     
@@ -127,17 +151,38 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
             heightScrollView.constant = view.frame.height
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    func textChanged(text: String?) {
+        print(text)
+//        stepExplanation.text = text
     }
-    */
-
+    
+    
+    @IBAction func showEditOptions(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "showEdit", sender: sender)
+        
+        //        guard let editView = storyboard?.instantiateViewController(withIdentifier: "navigationHolderEditStep") as? AlwaysPoppableNavigationController else {
+        //            assertionFailure("No view controller ID MaxiSongCardViewController in storyboard")
+        //            return
+        //        }
+        //
+        //        present(editView, animated: true)
+    }
+    
+ 
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 //extension TestViewController: ColoredView {}

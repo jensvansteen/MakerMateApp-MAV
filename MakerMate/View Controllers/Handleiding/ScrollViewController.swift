@@ -9,10 +9,8 @@
 import UIKit
 
 
-import UIKit
-
 protocol ScrollViewControllerDelegate {
-    var viewControllers: [GuideStepViewController?] { get }
+    var viewControllers: [UIViewController?] { get }
     var initialViewController: Int { get }
 }
 
@@ -41,7 +39,7 @@ class ScrollViewController: UIViewController {
     
     var guidanceController: GuideHoldingViewController!
     
-    var viewControllers: [GuideStepViewController?]!
+    var viewControllers: [UIViewController?]!
     
     var delegate: ScrollViewControllerDelegate?
     
@@ -64,32 +62,27 @@ class ScrollViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewControllers = delegate?.viewControllers as! [GuideStepViewController?]
+        viewControllers = delegate?.viewControllers as! [UIViewController?]
         
-        
-//        if let soemValue = viewControllers {
-//            print("VALUEEEEEEEEE")
-//            print(soemValue[1])
-//        } else {
-//            print("empty")
-//        }
-        
+
         // add view controllers as children
         for (index, controller) in viewControllers.enumerated() {
-            if let controller = controller {
+            if var controller = controller {
                 addChild(controller)
                 controller.view.frame = frame(for: index)
-//                controller.textVIew.text = "The same viewController maar andere data \(index)"
-//                controller.testText.text = "Met een hoogte van \(index * 300)"
-                controller.setupHeight(theindex: index, numViewControllers: viewControllers.count)
-                scrollView.addSubview(controller.view)
-                controller.didMove(toParent: self)
+                if let controllerCheck = controller as? GuideStepViewController  {
+                   controllerCheck.setupHeight(theindex: index, numViewControllers: viewControllers.count)
+                    scrollView.addSubview(controllerCheck.view)
+                    controllerCheck.didMove(toParent: self)
+                } else {
+                    scrollView.addSubview(controller.view)
+                    controller.didMove(toParent: self)
+                }
+                
+                
             }
         }
         
-      
-        
-//        guidanceController = parent as! GuideHoldingViewController
         
         guidanceController = parent as! GuideHoldingViewController
         

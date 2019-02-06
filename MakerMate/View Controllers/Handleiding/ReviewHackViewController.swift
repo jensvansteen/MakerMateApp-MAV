@@ -1,19 +1,25 @@
 //
-//  Test2ViewController.swift
+//  ReviewHackViewController.swift
 //  MakerMate
 //
-//  Created by Jens Van Steen on 04/02/2019.
+//  Created by Jens Van Steen on 05/02/2019.
 //  Copyright © 2019 Jens Van Steen. All rights reserved.
 //
 
 import UIKit
 
-class Test2ViewController: UIViewController {
+class ReviewHackViewController: UIViewController {
 
+    @IBOutlet weak var reviewSlider: UISlider!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        reviewSlider.callback
     }
     
 
@@ -26,5 +32,16 @@ class Test2ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
+    @IBAction func sliderDidChange(_ sender: UISlider) {
+        let fixed = roundf(sender.value)
+        sender.setValue(fixed, animated: true)
+        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
 }

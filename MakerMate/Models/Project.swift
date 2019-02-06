@@ -22,6 +22,7 @@ struct Project {
     var wish: String?
     var description: String?
     var targetGroup: String?
+    var hacks: [Hack]
     
     init(name: String, firstName: String, email: String, phoneNumber: Int, adress: String, city: String, province: String, zip: Int, wish: String, description: String, targetGroup: String) {
         self.name = name
@@ -35,5 +36,6 @@ struct Project {
         self.wish = wish
         self.description = description
         self.targetGroup = targetGroup
+        self.hacks = [nil] as! [Hack]
     }
 }
