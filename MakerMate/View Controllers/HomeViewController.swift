@@ -18,7 +18,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let names = ["Marie-thérése", "Den bompa", "Anick"]
     
     private var projects = [Project]()
+    private var requests = [Request]()
     private var projectsCollectionRef: CollectionReference!
+    private var requestCollectionRef: CollectionReference!
+    private var projectListener: ListenerRegistration!
+    private var requestListener: ListenerRegistration!
+    private var currentUser: User!
     
     var db: Firestore!
  
@@ -43,51 +48,70 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // [END setup]
         db = Firestore.firestore()
         
-        projectsCollectionRef = Firestore.firestore().collection("Projects")
+        projectsCollectionRef = db.collection("Projects")
+        requestCollectionRef = db.collection("Requests")
         
+//        var projectYannick = Firestore.firestore().collection("Projects").document("1Hoa2D5bUxbFsbVxdVXZ")
+//        projectYannick.getDocument { (document,error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data()
+//                print(dataDescription)
+//            } else {
+//                print("data does not exsist")
+//            }
+//        }
         
-        showFireBaseData()
+       
     }
     
   
-    private func showFireBaseData() {
-        db.collection("Projects").addSnapshotListener { documentSnapshot, error in
-                guard let document = documentSnapshot else {
-                    print("Error fetching document: \(error!)")
-                    return
-                }
-                let source = document.metadata.hasPendingWrites ? "Local" : "Server"
-                print("\(source)")
-        }
-    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        projectsCollectionRef.getDocuments { (snapshot, error) in
-            if let err = error {
-                debugPrint("Error fetching docs: \(error)")
-            } else {
-                guard let snap = snapshot else {return}
-                for document in snap.documents {
-                    print(document.data())
-                    let data = document.data()
-                    let project = Project(name: data["name"] as! String, firstName: data["firstName"] as! String, email: data["email"] as! String, phoneNumber: data["phoneNumber"] as! Int, adress: data["adress"] as! String, city: data["city"] as! String, province: data["province"] as! String, zip: data["zip"] as! Int, wish: data["wish"] as! String, description: data["description"] as! String, targetGroup: data["targetGroup"] as! String)
-                    self.projects.append(project)
-                }
-                self.projectsCollectionView.reloadData()
-            }
-        }
-        
+
+
+        setListener()
         
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     
+    func setListener() {
+        projectListener = projectsCollectionRef.addSnapshotListener { documentSnapshot, error in
+            if let err = error {
+                debugPrint("Error fetching docs: \(error)")
+            }  else {
+                self.projects.removeAll()
+                guard let snap = documentSnapshot else {return }
+                for document in snap.documents {
+                    let data = document.data()
+                    let idProject = document.documentID
+                    print(idProject)
+                   let project = Project(adress: data["adress"] as? String ?? "Main street", city: data["city"] as? String ?? "Kortrijk", description: data["description"] as? String ?? "Ik kan door mijn spierziekte geen beker vasthouden", descriptionShort: data["descriptionShort"] as? String ?? "Ik wil mijn paard kunnen borstelen", email: data["email"] as? String ?? "annickvercauteren@gmail.com", firstNameClient: data["firstNameClient"] as? String ?? "Réne", firstNameContact: data["firstNameContact"] as? String ?? "Réne", nameClient: data["nameClient"] as? String ?? "Vercauteren", nameContact: data["nameContact"] as? String ?? "Vercauteren", phonenumber: data["phonenumber"] as? Int ?? 04568456, targetGroup: data["targetGroup"] as? Int ?? 2, zip: data["zip"] as? String ?? "8500", projectId: idProject)
+                        self.projects.append(project)
+                }
+                self.projectsCollectionView.reloadData()
+            }
+        }
+        
+        requestListener = requestCollectionRef.addSnapshotListener { documentSnapshot, error in
+            if let err = error {
+                debugPrint("Error fetching docs: \(error)")
+            }  else {
+                self.requests.removeAll()
+                self.requests = Request.parseData(snapshot: documentSnapshot)
+                self.requestsCollectionView.reloadData()
+            }
+        }
+    }
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        projectListener.remove()
+        requestListener.remove()
         
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -101,7 +125,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return names.count
+            return requests.count
         } else if collectionView.tag == 2 {
             return projects.count + 1
         } else {
@@ -112,16 +136,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "requestCell", for: indexPath) as! RequestCell
-            cell.nameRequest.text = names[indexPath.row]
-            cell.collectionViewData = ["Dieren", "Winkelen", "Iets gaan drinken"]
-            print(names[indexPath.row])
+            if requests.count >= 1 {
+                      cell.setUp(request: requests[indexPath.row])
+            }
             return cell
         } else if collectionView.tag == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCell", for: indexPath) as! ProjectCollectionViewCell
             if indexPath.row == 0 {
                     print("hello")
                 }
-                
             
             if indexPath.row < projects.count {
                 cell.layoutProject(project: projects[indexPath.row])
@@ -166,10 +189,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "ShowRequest" {
-            
+            let toVC = segue.destination as! RequestViewController
             if let cell = sender as? RequestCell,
-                let _ = self.requestsCollectionView.indexPath(for: cell) {
-                
+                let selectedRequest = self.requestsCollectionView.indexPath(for: cell) {
+                   toVC.request = requests[selectedRequest.row]
             }
             
         }

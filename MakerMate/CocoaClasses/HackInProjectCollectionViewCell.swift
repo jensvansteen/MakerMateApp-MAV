@@ -11,4 +11,14 @@ import ScalingCarousel
 
 class HackInProjectCollectionViewCell: ScalingCarouselCell {
     
+    
+    @IBOutlet weak private var hackImage: UIImageView!
+    @IBOutlet weak private var titleHack: UILabel!
+    @IBOutlet weak var currentStepLabel: UILabel!
+    
+    
+    func setUpCell(titleHack: String, currentStepHack: Int) {
+        self.titleHack.text = titleHack
+        self.currentStepLabel.text = "Hervat stap \(currentStepHack)"
+    }
 }

@@ -8,16 +8,30 @@
 
 import UIKit
 import ScalingCarousel
+import Firebase
+import FirebaseFirestore
 
 class ProjectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
-    var hacks = ["Zip-Aid", "DIY Lighter aid"]
+//    var hacks = ["Zip-Aid", "DIY Lighter aid"]
+    
+    private var project: Project?
+    private var kennismakingProject: Kennismaking?
+    private var hacks = [Hack]()
+    private var hacksCollectionRef: CollectionReference!
+    private var kennismakingCollectionRef: CollectionReference!
+    private var projectRef: DocumentReference!
+    private var hackListener: ListenerRegistration!
+    private var kennismakingListener: ListenerRegistration!
     
     var currentStep = "Kennismaking"
     private var showingAanvraag = true
     private var showingKennismaking = true
     private var showingHacks = false
     private var kennisMakingCompleted = true
+    
+    var db: Firestore!
+    
     
     @IBOutlet weak var contentViewHolder: UIView!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
@@ -45,8 +59,35 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         HacksInProjectCollectionView.delegate = self
         HacksInProjectCollectionView.dataSource = self
         
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        
+       
+        
         setupTaps()
         configureViews()
+        
+        
+        projectRef = db.collection("Projects").document("3KMChQPw430Bkv6TtDPT")
+        
+        if let latestProject = LastProject.shared.idLastProject {
+            if latestProject != "" {
+                 projectRef = db.collection("Projects").document(latestProject)
+            }
+           
+        }
+        
+
+        hacksCollectionRef = projectRef.collection("Hacks")
+        kennismakingCollectionRef = projectRef.collection("Kennismaking")
+        
+        
+        
+//        var projectYannick = Firestore.firestore().collection("Projects").document("1Hoa2D5bUxbFsbVxdVXZ").
+        
         // Do any additional setup after loading the view.
     }
     
@@ -58,10 +99,47 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
 //        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setListener()
+        
+    
+    }
+    
+    
+    func setListener() {
+        hackListener = hacksCollectionRef.addSnapshotListener { documentSnapshot, error in
+            if let err = error {
+                debugPrint("Error fetching docs: \(error)")
+            }  else {
+                self.hacks.removeAll()
+                self.hacks = Hack.parseData(snapshot: documentSnapshot)
+                self.HacksInProjectCollectionView.reloadData()
+            }
+        }
+        
+        
+        kennismakingListener = kennismakingCollectionRef.addSnapshotListener { documentSnapshot, error in
+            if documentSnapshot!.isEmpty == false {
+                if let err = error {
+                    debugPrint("Error fetching docs: \(error)")
+                }  else {
+                    self.kennismakingProject = Kennismaking.parseData(snapshot: documentSnapshot)
+                    self.kennisMakingCompleted = true
+                    self.configureViews()
+                }
+            } else {
+                self.kennisMakingCompleted = false
+                self.configureViews()
+            }
+        }
+        
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        hackListener.remove()
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -170,17 +248,21 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hacks.count + 1
+        return hacks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hackCell", for: indexPath) as! HackInProjectCollectionViewCell
+        
+        print(hacks)
+//        cell.setUpCell(titleHack: hacks[indexPath.row].name, currentStepHack: hacks[indexPath.row].currentStep)
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(hacks[indexPath.row].productId)
 //        performSegue(withIdentifier: "GoToHack", sender: nil)
     }
     
@@ -191,14 +273,21 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func startKennismaking(_ sender: UIButton) {
+        performSegue(withIdentifier: "showProjectDetail", sender: nil)
+    }
+    
+
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "showProjectDetail" {
+//            let nv = segue.destination as! UINavigationController
+//            let vc = nv.viewControllers.first as! StepsProjectViewController
+//            vc.currentProjectID =
+            //true and false fase project
+        }
+        
+        
      }
-     */
+ 
     
 }

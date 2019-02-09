@@ -30,7 +30,7 @@ class ProjectCollectionViewCell: ScalingCarouselCell {
         statANewLabel.isHidden = true
         newProjectLabel.isHidden = true
         addButtonImage.isHidden = true
-        self.projectName.text = project.firstName
+        self.projectName.text = project.firstNameClient
         self.projectStep.text = "start met prototyping"
         self.cellImage.image = UIImage(named: "ActiveProjectCard")
     }

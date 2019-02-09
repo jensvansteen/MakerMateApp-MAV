@@ -10,7 +10,7 @@ import UIKit
 
 class RequestCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var collectionViewData = [""]
+    private var interests = [String]()
     
     
     @IBOutlet weak var nameRequest: UILabel!
@@ -27,30 +27,40 @@ class RequestCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionViewData.count
+        return interests.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! IntrestHomeCollectionViewCell
         
-        cell.intrestLabel.text = collectionViewData[indexPath.row]
+        cell.intrestLabel.text = interests[indexPath.row]
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func setUp(request: Request) {
+        nameLocation.text = request.city
+        nameRequest.text = request.firstNameRequest
+        infoRequest.text = request.requestShort
         
+        interests = request.interests!
         
-        let size = CGSize(width: 200, height: 40)
-        var estimedSizeText: CGRect?
-        if let font = UIFont(name: "Avenir Next", size: 10) {
-            let attributes = [NSAttributedString.Key.font: font]
-            estimedSizeText = NSString(string: collectionViewData[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-            
-            return CGSize(width: estimedSizeText!.width + 20, height: 23)
-        }
-        return CGSize(width: 40, height: 23)
+        intrestsCollectionView.reloadData()
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//
+//        let size = CGSize(width: 200, height: 40)
+//        var estimedSizeText: CGRect?
+//        if let font = UIFont(name: "Avenir Next", size: 10) {
+//            let attributes = [NSAttributedString.Key.font: font]
+//            estimedSizeText = NSString(string: interests[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+//
+//            return CGSize(width: estimedSizeText!.width + 20, height: 23)
+//        }
+//        return CGSize(width: 40, height: 23)
+//    }
     
     
 }

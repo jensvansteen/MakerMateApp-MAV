@@ -14,27 +14,30 @@ import UIKit
 //}
 
 
-class EditStepViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextViewDelegate {
-
-//    var delegate: ChildViewControllerDelegate
+class EditStepViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //    var delegate: ChildViewControllerDelegate
     
     @IBOutlet weak var dimmerView: UIView!
     @IBOutlet weak var materialsCollectionView: UICollectionView!
     @IBOutlet weak var descriptionTextField: UITextView!
     @IBOutlet weak var imageSmall: UIImageView!
+    @IBOutlet weak var heigthCollectionView: NSLayoutConstraint!
     
+    
+    var picker = UIImagePickerController()
     
     var parentviewcontroller: GuideStepViewController!
     
-    let items = ["Leer", "Schaar"]
+    var items = ["Leer", "Schaar"]
     
-//    var holdingNavigationController: AlwaysPoppableNavigationController!
-//    var activeStepView: GuideStepViewController!
+    //    var holdingNavigationController: AlwaysPoppableNavigationController!
+    //    var activeStepView: GuideStepViewController!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         materialsCollectionView.delegate = self
@@ -42,14 +45,8 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         self.descriptionTextField.delegate = self
         
-//
-//        var activeStepView: GuideStepViewController!
+        picker.delegate = self
         
-        
-//        holdingNavigationController = self.navigationController as? AlwaysPoppableNavigationController
-//
-//        activeStepView = holdingNavigationController.parent as? GuideStepViewController
-//
         self.view.backgroundColor = .clear
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.isNavigationBarHidden = true
@@ -57,12 +54,37 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         let guideHoldingController = presentingViewController as? GuideHoldingViewController
         let indexOfHack = guideHoldingController?.scrollViewController.currentIndex
         parentviewcontroller = guideHoldingController?.scrollViewController.viewControllers[(guideHoldingController?.scrollViewController.currentIndex)!] as! GuideStepViewController
-
+        
+        updateCollectionViewHeight()
     }
+    
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        let selectedPhoto = info[.originalImage] as! UIImage
+        imageSmall.image = selectedPhoto
+        parentviewcontroller.imageStep.image = selectedPhoto
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func voegFotoToeHandler(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
+            picker.mediaTypes = mediaTypes!
+            picker.sourceType = .photoLibrary
+            present(picker, animated: true, completion: nil)
+        }
+    }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-     
+        
         modalPresentationStyle = .overFullScreen //dont dismiss the presenting view controller when presented
     }
     
@@ -95,12 +117,20 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-////       let cell = collectionView.cellForItem(at: indexPath) as! ItemInMaterialListEditCollectionViewCell
-////        let widthText = cell.itemName.bounds.width
-////        return CGSize(width: CGFloat(widthText+30), height: 35)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        self.materialsCollectionView.reloadData()
+        updateCollectionViewHeight()
+    }
+    
+    func updateCollectionViewHeight() {
+        var collectionViewHeight: Int = 0
+        for item in items {
+            collectionViewHeight += 50
+        }
+        
+        heigthCollectionView.constant = CGFloat(collectionViewHeight)
+    }
     
     @IBAction private func changePhoto(_ sender: UIButton) {
     }
@@ -112,7 +142,7 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         dismiss(animated: true, completion: nil)
         
         
-//        activeStepView.logChange(text: "Test")
+        //        activeStepView.logChange(text: "Test")
     }
     
     @IBAction private func editSteps(_ sender: UIButton) {
@@ -124,25 +154,38 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     @IBAction private func addItem(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Voeg een item toe", message: "", preferredStyle: .alert)
+   
+        
+        let ok = UIAlertAction(title: "Add",
+                               style: UIAlertAction.Style.default) { (action: UIAlertAction) in
+                                
+                                if let alertTextField = alert.textFields?.first, alertTextField.text != nil {
+                                    
+                                    self.items.append(alertTextField.text!)
+                                    
+                                    self.materialsCollectionView.reloadData()
+                                    
+                                    self.updateCollectionViewHeight()
+                                }
+                                
+                                
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel",
+                                   style: UIAlertAction.Style.cancel,
+                                   handler: nil)
+        
+        alert.addTextField { (textField: UITextField) in
+            
+            textField.placeholder = "Voer hier je stap in"
+            
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let controller = segue.destination as? GuideStepViewController {
-//            controller.textChanged(text: "TESTTTTTTTTTTTT")
-//            controller.delegate = self
-//        }
-//    }
- 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

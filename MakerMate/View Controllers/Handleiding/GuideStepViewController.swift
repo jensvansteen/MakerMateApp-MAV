@@ -29,6 +29,7 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var stepIndecatorLabel: UILabel!
     @IBOutlet weak var stepExplanation: UILabel!
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
+    @IBOutlet weak var imageStep: UIImageView!
     
     private var indexPage: Int = 0
     

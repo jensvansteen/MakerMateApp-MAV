@@ -9,14 +9,21 @@
 import UIKit
 
 class RequestViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
+    
+    
+    let ageClass = [1: "kinderen (-12 jaar)", 2: "jongeren (-26 jaar)", 3: "volwassenen (26+ jaar)", 4: "senioren (65+ jaar)"]
 
-    let intrest = ["Dieren", "Winkelen", "Humor", "Iets gaan drinken"]
-    @IBOutlet weak var intrestsCollectionView: UICollectionView!
-    @IBOutlet weak var widthCollectionView: NSLayoutConstraint!
-    @IBOutlet weak var targetGroupName: UILabel!
-    @IBOutlet weak var targetGroupNameView: UIView!
-    @IBOutlet weak var widthLabelTagTargetGroup: NSLayoutConstraint!
-    @IBOutlet weak var requestShort: UILabel!
+    private var interests = [String]()
+    var request: Request?
+    @IBOutlet weak private var intrestsCollectionView: UICollectionView!
+    @IBOutlet weak private var widthCollectionView: NSLayoutConstraint!
+    @IBOutlet weak private var targetGroupName: UILabel!
+    @IBOutlet weak private var targetGroupNameView: UIView!
+    @IBOutlet weak private var widthLabelTagTargetGroup: NSLayoutConstraint!
+    @IBOutlet weak private var requestShort: UILabel!
+    @IBOutlet weak var requestLong: UILabel!
+    @IBOutlet weak var locationlabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var width: CGFloat = 0 {
         didSet {
@@ -35,18 +42,22 @@ class RequestViewController: UIViewController, UICollectionViewDelegate, UIColle
         let widthContent = intrestsCollectionView.contentSize.width
         print("this widht of the content is \(widthContent)")
         
-        setTextShort()
+        setData()
         
         setupNavigationBar()
     }
     
   
-    private func setTextShort() {
-        let currentText = requestShort.text
-        let newText = "\"\(currentText!)\""
-        requestShort.text = newText
+    private func setData() {
+        guard let requestToDisplay = request else {return}
+        requestShort.text = "\"\(requestToDisplay.requestShort!)\""
+        targetGroupName.text = ageClass[requestToDisplay.age!]!
+        locationlabel.text = requestToDisplay.city!
+        nameLabel.text = requestToDisplay.firstNameRequest!
+        interests = requestToDisplay.interests!
+        
+        intrestsCollectionView.reloadData()
     }
-    
     
     private func setupNavigationBar() {
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -85,6 +96,9 @@ class RequestViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     @IBAction func backToHome(_ sender: UIButton) {
+        
+        request!.addToProjectsFromRequest()
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -110,12 +124,12 @@ class RequestViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return intrest.count
+        return interests.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! IntrestHomeCollectionViewCell
-        cell.intrestLabel.text = intrest[indexPath.row]
+        cell.intrestLabel.text = interests[indexPath.row]
         return cell
     }
     
@@ -125,7 +139,7 @@ class RequestViewController: UIViewController, UICollectionViewDelegate, UIColle
         var estimedSizeText: CGRect?
         if let font = UIFont(name: "Avenir Next", size: 10) {
             let attributes = [NSAttributedString.Key.font: font]
-            estimedSizeText = NSString(string: intrest[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            estimedSizeText = NSString(string: interests[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
             
             width += (estimedSizeText!.width + 20 + 10)
             return CGSize(width: estimedSizeText!.width + 20, height: 23)

@@ -11,34 +11,33 @@ import UIKit
 class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
-    
+    var kennisMakingDone = false
+    var hackGetest = false
 
     @IBOutlet weak var stepsCollectionView: UICollectionView!
+    @IBOutlet weak var closeButton: UIImageView!
     
     let steps = [
-    [
-        "step": "De aanvraag",
-        "access": "unlocked",
-        "completed": true,
-        "description": "Naam, contactgegevens, de omschrijving dat noteer je allemaal hier."
-        ],
     [
         "step": "Kennismaking",
         "access": "unlocked",
         "completed": false,
-        "description": "Ben je ter plaatse? Dan kunnen we beginnen! Enkele vragen over de persoon, omgeving en  handeling gidsen je naar de juiste hack(s)."
+        "description": "Ben je ter plaatse? Dan kunnen we beginnen! Enkele vragen over de persoon, omgeving en  handeling gidsen je naar de juiste hack(s).",
+        "buttonTekst": "Ready, set, go!"
         ],
     [
         "step": "Hacks testen",
         "access": "locked",
         "completed": false,
-         "description": "Naam, contactgegevens, de omschrijving dat noteer je allemaal hier."
+         "description": "Naam, contactgegevens, de omschrijving dat noteer je allemaal hier.",
+         "buttonTekst": "Test de hack"
         ],
         [
             "step": "Publiceren",
             "access": "locked",
             "completed": false,
-             "description": "Naam, contactgegevens, de omschrijving dat noteer je allemaal hier."
+             "description": "Naam, contactgegevens, de omschrijving dat noteer je allemaal hier.",
+             "buttonTekst": "Start evaluatie!"
         ]
     ]
  
@@ -52,6 +51,11 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
         self.stepsCollectionView.delegate = self
         self.stepsCollectionView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        
+        let tapAanvraag = UITapGestureRecognizer(target: self, action: #selector(closeThis))
+        closeButton.addGestureRecognizer(tapAanvraag)
+        closeButton.isUserInteractionEnabled = true
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -68,6 +72,7 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
         
         cell.stepName.text = steps[indexPath.row]["step"] as? String
         cell.stepDescription.text = steps[indexPath.row]["description"] as? String
+        cell.actionStep.text = steps[indexPath.row]["buttonTekst"] as? String
         
         if steps[indexPath.row]["access"] as! String == "locked" {
             cell.actionStep.isHidden = true
@@ -97,6 +102,16 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
         
         return CGSize(width: 290, height: 78)
       
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 && !kennisMakingDone {
+            performSegue(withIdentifier: "startKennismaking", sender: nil)
+        }
+    }
+    
+    @objc private func closeThis() {
+        self.dismiss(animated: true, completion: nil)
     }
  
 

@@ -40,6 +40,10 @@
 		<string>NotoSerif-Bold.ttf</string>
 		<string>NotoSerif-Italic.ttf</string>
 	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Aanvaard zodat je een afbeelding kan toevoegen</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Aanvaarden</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

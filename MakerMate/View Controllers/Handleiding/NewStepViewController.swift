@@ -32,6 +32,7 @@ class NewStepViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     @IBAction func addAItem(_ sender: UIButton) {
+        
     }
     
     @IBAction private func goBack(_ sender: UIButton) {
@@ -39,6 +40,7 @@ class NewStepViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     @IBAction private func editDone(_ sender: UIButton) {
+        
        self.dismiss(animated: true, completion: nil)
     }
     
