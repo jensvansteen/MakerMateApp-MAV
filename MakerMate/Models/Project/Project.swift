@@ -30,7 +30,7 @@ struct Project {
     private(set) var zip: String?
     private(set) var projectId: String?
     private(set) var test: String?
-    private(set) var hacks: [Hack]?
+//    private(set) var hacks: [Hack]?
     
     init(adress: String, city: String, description: String, descriptionShort: String, email: String, firstNameClient: String, firstNameContact: String, nameClient: String, nameContact: String, phonenumber: Int, targetGroup: Int, zip: String, projectId: String) {
         self.adress = adress
@@ -49,22 +49,22 @@ struct Project {
     }
     
     
-    func getHacks() {
-        var ref = Firestore.firestore().collection("Projects").document(projectId!).collection("Hacks")
-        ref.getDocuments { (querySnapshot,err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                if querySnapshot!.documents.count >= 1 {
-                    for document in querySnapshot!.documents {
-                        print("data from hack \(document.data())")
-                    }
-                }
-            }
-            
-        }
-        
-    }
+//    func getHacks() {
+//        var ref = Firestore.firestore().collection("Projects").document(projectId!).collection("Hacks")
+//        ref.getDocuments { (querySnapshot,err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                if querySnapshot!.documents.count >= 1 {
+//                    for document in querySnapshot!.documents {
+//                        print("data from hack \(document.data())")
+//                    }
+//                }
+//            }
+//
+//        }
+//
+//    }
     
     
 }

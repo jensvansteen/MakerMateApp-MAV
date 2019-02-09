@@ -9,6 +9,7 @@ target 'MakerMate' do
   pod 'IQKeyboardManagerSwift', '6.0.4'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
   # Pods for MakerMate
 

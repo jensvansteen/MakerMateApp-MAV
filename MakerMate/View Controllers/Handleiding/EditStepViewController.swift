@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 
 //protocol ChildViewControllerDelegate {
@@ -24,12 +26,16 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var imageSmall: UIImageView!
     @IBOutlet weak var heigthCollectionView: NSLayoutConstraint!
     
+    var storageRef: StorageReference!
     
     var picker = UIImagePickerController()
+    
+    var indexOfStep: Int?
     
     var parentviewcontroller: GuideStepViewController!
     
     var items = ["Leer", "Schaar"]
+    
     
     //    var holdingNavigationController: AlwaysPoppableNavigationController!
     //    var activeStepView: GuideStepViewController!
@@ -38,6 +44,8 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        storageRef = Storage.storage().reference()
+        
         // Do any additional setup after loading the view.
         
         materialsCollectionView.delegate = self
@@ -45,14 +53,14 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         self.descriptionTextField.delegate = self
         
-        picker.delegate = self
+        
         
         self.view.backgroundColor = .clear
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.isNavigationBarHidden = true
         
         let guideHoldingController = presentingViewController as? GuideHoldingViewController
-        let indexOfHack = guideHoldingController?.scrollViewController.currentIndex
+        indexOfStep = guideHoldingController?.scrollViewController.currentIndex
         parentviewcontroller = guideHoldingController?.scrollViewController.viewControllers[(guideHoldingController?.scrollViewController.currentIndex)!] as! GuideStepViewController
         
         updateCollectionViewHeight()
@@ -61,9 +69,24 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        let selectedPhoto = info[.originalImage] as! UIImage
-        imageSmall.image = selectedPhoto
-        parentviewcontroller.imageStep.image = selectedPhoto
+        guard let mediaType: String = info[UIImagePickerController.InfoKey.mediaType] as? String else {
+            return
+        }
+        if mediaType == "public.image" {
+            if let originalImage = info[.originalImage] as? UIImage {
+                let imageData = originalImage.jpegData(compressionQuality: 0.8)
+//                LastProject.shared.uploadImageToFirebaseStorage(data: imageData)
+                uploadImageToFirebaseStorage(data: imageData!)
+                let selectedPhoto = info[.originalImage] as! UIImage
+                imageSmall.image = selectedPhoto
+                parentviewcontroller.imageStep.image = selectedPhoto
+            }
+        } else if mediaType == "public.movie" {
+            if let movieURL = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL {
+                uploadMovieToFirebaseStorage(data: movieURL)
+            }
+        }
+        
         
     }
     
@@ -73,14 +96,40 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBAction func voegFotoToeHandler(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let picker = UIImagePickerController()
             let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
+            //            let mediaTypes = [kuTTypeImage as String]
             picker.mediaTypes = mediaTypes!
             picker.sourceType = .photoLibrary
+            picker.delegate = self
             present(picker, animated: true, completion: nil)
         }
     }
     
     
+    func uploadImageToFirebaseStorage(data: Data) {
+        let storageRef = Storage.storage().reference()
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/jpeg"
+        let imageRef = storageRef.child("hackSteps")
+        let imageRefofRef = imageRef.child("m9jD7xXwE1Yza3xcKBCM")
+        let fileName = "stap\(indexOfStep!+1)"
+        let spaceRef = imageRefofRef.child(fileName)
+        let path = spaceRef.fullPath
+        let uploadTask = spaceRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
+            if let error = error {
+                print("error uploading \(error)")
+                return
+            }
+
+        }
+
+        }
+    
+    
+    func uploadMovieToFirebaseStorage(data: NSURL) {
+        // make this work
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -155,21 +204,15 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBAction private func addItem(_ sender: UIButton) {
         let alert = UIAlertController(title: "Voeg een item toe", message: "", preferredStyle: .alert)
-   
+        
         
         let ok = UIAlertAction(title: "Add",
                                style: UIAlertAction.Style.default) { (action: UIAlertAction) in
-                                
                                 if let alertTextField = alert.textFields?.first, alertTextField.text != nil {
-                                    
                                     self.items.append(alertTextField.text!)
-                                    
                                     self.materialsCollectionView.reloadData()
-                                    
                                     self.updateCollectionViewHeight()
                                 }
-                                
-                                
         }
         
         let cancel = UIAlertAction(title: "Cancel",

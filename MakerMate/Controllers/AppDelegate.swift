@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let db = Firestore.firestore()
         
+        let storage = Storage.storage()
+        
         print(db)
         
         

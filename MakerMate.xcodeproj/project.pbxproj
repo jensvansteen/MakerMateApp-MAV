@@ -44,7 +44,7 @@
 		338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */; };
 		338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */; };
 		338B70F1220BB323005D6D95 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B70F0220BB323005D6D95 /* User.swift */; };
-		33A583AF2206FD1D00AB4CDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A583AE2206FD1D00AB4CDA /* GoogleService-Info.plist */; };
+		33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */; };
 		33A583B12207080D00AB4CDA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A583B02207080D00AB4CDA /* Project.swift */; };
 		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
@@ -109,7 +109,7 @@
 		338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap5AanvraagViewController.swift; sourceTree = "<group>"; };
 		338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverzichtAanvraagViewController.swift; sourceTree = "<group>"; };
 		338B70F0220BB323005D6D95 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		33A583AE2206FD1D00AB4CDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33A583B02207080D00AB4CDA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				33640013220DCEAD0081AB91 /* SingeltonClasses */,
-				33A583AE2206FD1D00AB4CDA /* GoogleService-Info.plist */,
+				33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */,
 				3381CB60220385D1003FF236 /* Nibs */,
 				3381CB572202EE6C003FF236 /* CustomElements */,
 				33D4B5DF2201AE900095DAE6 /* CocoaClasses */,
@@ -461,9 +461,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33A583AF2206FD1D00AB4CDA /* GoogleService-Info.plist in Resources */,
 				33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */,
 				3381CB6222038605003FF236 /* AanvragenView.xib in Resources */,
+				33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */,
 				33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */,
 				3381CB5D22035654003FF236 /* NotoSerif-Italic.ttf in Resources */,
 				33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */,
@@ -502,6 +502,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -514,6 +515,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
