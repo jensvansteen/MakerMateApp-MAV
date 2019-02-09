@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 
@@ -17,7 +18,17 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
         print(someText)
     }
     
+    var textdes = String()
     
+    var hackId = String()
+    
+    var itemList = [String]() {
+        didSet {
+            itemsNeeded.reloadData()
+        }
+    }
+    
+    var step: StapHack?
     
     private var numberOfNeededItems = 5
     
@@ -47,8 +58,23 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
         // Do any additional setup after loading the view.
         
         
-        setupUI()
+//        setupUI()
     }
+    
+    
+//    override func viewDidAppear() {
+//        super.viewDidAppear()
+//
+////        stepIndecator.delegate = self
+////        stepIndecator.dataSource = self
+////        itemsNeeded.delegate = self
+////        itemsNeeded.dataSource = self
+//
+//        // Do any additional setup after loading the view.
+//
+//
+//        setupUI()
+//    }
     
     
     
@@ -61,6 +87,7 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        setupUI()
     }
     
     
@@ -69,7 +96,7 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView.tag == 0 {
             return numViewControllers
         } else {
-            return numberOfNeededItems
+            return itemList.count
         }
         
     }
@@ -91,7 +118,7 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
         } else if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! itemNeededCollectionViewCell
             
-            cell.nameItemLabel.text = "Plasticine/klei"
+            cell.nameItemLabel.text = itemList[indexPath.row]
             return cell
         } else {
             let cell = UICollectionViewCell()
@@ -116,6 +143,21 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     func setupUI() {
+        
+        
+        if step != nil {
+             stepExplanation.text = step!.description
+             itemList = step!.items!
+            
+            
+             getStepImage()
+             itemsNeeded.reloadData()
+        }
+       
+        
+        
+        
+        
         if numberOfNeededItems >= 1 {
             itemsNeededHeight.constant = CGFloat(numberOfNeededItems * 35)
         } else {
@@ -124,6 +166,24 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
             gebruikteItemsLabel.isHidden = true
         }
         
+        
+    }
+    
+    private func getStepImage() {
+        
+        let referenceToStorage = Storage.storage()
+        
+        let gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hackSteps/\(step!.hackId!)/stap\(step!.order).jpg")
+        
+        gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("the error is \(error)")
+            } else {
+                let image = UIImage(data: data!)
+                self.imageStep.image = image
+                
+            }
+        }
         
     }
     

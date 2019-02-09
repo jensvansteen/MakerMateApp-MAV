@@ -7,14 +7,29 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    var hack: HackInProject?
+    var hackSteps = [StapHack]()
+    
+    var referenceProject: DocumentReference!
+    var referenceHack: DocumentReference!
+    
+    var db: Firestore!
+    
     
     let materialsCollected = false
     private var showingHandleiding = true
     private var showingTesten = true
     private var readyForTesting = true
     private var activeStep = 0
+    
+    
+    private var stepsCollectionRef: CollectionReference!
+    private var stepsListener: ListenerRegistration!
     
     
     @IBOutlet weak var testDeHackButton: UIButton!
@@ -46,8 +61,21 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        
+        referenceHack = referenceProject.collection("HacksInProject").document("\(hack!.hackId)")
+        
+        stepsCollectionRef = referenceHack.collection("Steps")
 
         setupTaps()
+        
+        fillData()
+      
         configureViews()
     }
     
@@ -55,10 +83,62 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setListener()
+        
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+//        setListener()
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        stepsListener.remove()
+    }
+    
+    func setListener() {
+        stepsListener = stepsCollectionRef.addSnapshotListener { documentSnapshot, error in
+            if let err = error {
+                debugPrint("Error fethcing docs: \(error)")
+            } else {
+                self.hackSteps.removeAll()
+                self.hackSteps = StapHack.parseData(snapshot: documentSnapshot)
+                print(self.hackSteps)
+                self.fillData()
+            }
+    }
+        
+    }
+    
+    func fillData() {
+        
+        
+        
+        if let image = hack?.hackImage {
+            self.hackImage.image = image
+        }
+            
+        
+        }
+        
+        
+//        let referenceToStorage = Storage.storage()
+//
+//        let gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hacks/\(hack!.productId)/imageHack.jpg")
+//
+//        gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//            if let error = error {
+//                print("the error is \(error)")
+//            } else {
+//                let image = UIImage(data: data!)
+//                self.hackImage.image = image
+//
+//            }
+//        }
+        
+
     
     private func setupTaps() {
         let tapHandleiding = UITapGestureRecognizer(target: self, action: #selector(showHandleidingView))
@@ -163,5 +243,17 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBAction func goBack(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showSteps" {
+            if let step = segue.destination as? GuideHoldingViewController {
+                step.hackId = hack!.hackId
+                step.projectReference = referenceProject
+                step.steps = hackSteps
+            }
+            
+        }
     }
 }

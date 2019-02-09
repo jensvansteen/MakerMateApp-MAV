@@ -45,6 +45,7 @@
 		338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */; };
 		338B70F1220BB323005D6D95 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B70F0220BB323005D6D95 /* User.swift */; };
 		33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */; };
+		33A002D8220F30CD0070DE28 /* StapHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A002D7220F30CD0070DE28 /* StapHack.swift */; };
 		33A583B12207080D00AB4CDA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A583B02207080D00AB4CDA /* Project.swift */; };
 		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
@@ -110,6 +111,7 @@
 		338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverzichtAanvraagViewController.swift; sourceTree = "<group>"; };
 		338B70F0220BB323005D6D95 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33A002D7220F30CD0070DE28 /* StapHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StapHack.swift; sourceTree = "<group>"; };
 		33A583B02207080D00AB4CDA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				33A583B02207080D00AB4CDA /* Project.swift */,
 				332290B0220ED9380069D044 /* TestHack.swift */,
 				332290B2220ED9450069D044 /* EvalutieHack.swift */,
+				33A002D7220F30CD0070DE28 /* StapHack.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */,
 				338679D52205DA1300ADD9B5 /* customNavigation.swift in Sources */,
 				33EBB2AD22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift in Sources */,
+				33A002D8220F30CD0070DE28 /* StapHack.swift in Sources */,
 				332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */,
 				33A583B12207080D00AB4CDA /* Project.swift in Sources */,
 				330E6C2D220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift in Sources */,

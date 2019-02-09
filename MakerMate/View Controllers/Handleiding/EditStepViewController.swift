@@ -33,6 +33,7 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     var indexOfStep: Int?
     
     var parentviewcontroller: GuideStepViewController!
+    var guideHoldingController: GuideHoldingViewController!
     
     var items = ["Leer", "Schaar"]
     
@@ -59,11 +60,20 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.isNavigationBarHidden = true
         
-        let guideHoldingController = presentingViewController as? GuideHoldingViewController
+        guideHoldingController = presentingViewController as? GuideHoldingViewController
+        let parentCon = presentingViewController as? GuideHoldingViewController
         indexOfStep = guideHoldingController?.scrollViewController.currentIndex
-        parentviewcontroller = guideHoldingController?.scrollViewController.viewControllers[(guideHoldingController?.scrollViewController.currentIndex)!] as! GuideStepViewController
+        parentviewcontroller = parentCon?.scrollViewController.viewControllers[(parentCon?.scrollViewController.currentIndex)!] as! GuideStepViewController
         
         updateCollectionViewHeight()
+        
+        setUpUI()
+    }
+    
+    func setUpUI() {
+        descriptionTextField.text = parentviewcontroller.stepExplanation.text
+        items = parentviewcontroller.itemList
+        imageSmall.image = parentviewcontroller.imageStep.image
     }
     
     
@@ -90,6 +100,9 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
+    
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
@@ -112,8 +125,8 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         let uploadMetadata = StorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
         let imageRef = storageRef.child("hackSteps")
-        let imageRefofRef = imageRef.child("m9jD7xXwE1Yza3xcKBCM")
-        let fileName = "stap\(indexOfStep!+1)"
+        let imageRefofRef = imageRef.child(parentviewcontroller.step!.hackId!)
+        let fileName = "stap\(indexOfStep!+1).jpg"
         let spaceRef = imageRefofRef.child(fileName)
         let path = spaceRef.fullPath
         let uploadTask = spaceRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
@@ -121,7 +134,6 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
                 print("error uploading \(error)")
                 return
             }
-
         }
 
         }
@@ -168,6 +180,8 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         items.remove(at: indexPath.row)
+        parentviewcontroller.itemList = items
+        parentviewcontroller.step?.updateItems(items: items, projectReference: guideHoldingController.projectReference!)
         self.materialsCollectionView.reloadData()
         updateCollectionViewHeight()
     }
@@ -185,6 +199,8 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     @IBAction private func editDone(_ sender: UIButton) {
+        
+        parentviewcontroller.step!.updateDescription(text: descriptionTextField.text!, projectReference: guideHoldingController.projectReference!)
         
         parentviewcontroller.logChange(text: descriptionTextField.text)
         
@@ -210,6 +226,8 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
                                style: UIAlertAction.Style.default) { (action: UIAlertAction) in
                                 if let alertTextField = alert.textFields?.first, alertTextField.text != nil {
                                     self.items.append(alertTextField.text!)
+                                    self.parentviewcontroller.step?.updateItems(items: self.items, projectReference: self.guideHoldingController.projectReference!)
+                                    self.parentviewcontroller.itemList = self.items
                                     self.materialsCollectionView.reloadData()
                                     self.updateCollectionViewHeight()
                                 }

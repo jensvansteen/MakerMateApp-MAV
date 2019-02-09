@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    var steps = [StapHack]()
+    
+    var hackId: String?
  
     var initialViewController: Int = 0
     
@@ -23,6 +28,8 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     var scrollViewController: ScrollViewController!
     
     var firstTimeLoading = false
+    
+    var projectReference: DocumentReference!
     
     @IBOutlet weak var stepIndecatorCollectionView: UICollectionView!
     
@@ -77,8 +84,14 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
   
     func makeSteps() {
         var viewControllersColl: [UIViewController] = []
-        for step in viewControllerData {
+        var oderderdSteps = steps.sorted(by: { $0.order < $1.order})
+        for step in oderderdSteps {
+            step.hackId = hackId!
             let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "testViewController") as! GuideStepViewController
+
+             viewCon.step = step
+
+            
             viewControllersColl.append(viewCon)
         }
         

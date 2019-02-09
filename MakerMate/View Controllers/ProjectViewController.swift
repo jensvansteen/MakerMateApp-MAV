@@ -13,8 +13,6 @@ import FirebaseFirestore
 
 class ProjectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
-//    var hacks = ["Zip-Aid", "DIY Lighter aid"]
-    
     private var project: Project?
     private var kennismakingProject: Kennismaking?
     private var hacks = [HackInProject]()
@@ -73,12 +71,12 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         projectRef = db.collection("Projects").document("m9jD7xXwE1Yza3xcKBCM")
         
-//        if let latestProject = LastProject.shared.idLastProject {
-//            if latestProject != "" {
-//                 projectRef = db.collection("Projects").document(latestProject)
-//            }
-//
-//        }
+        if let latestProject = LastProject.shared.idLastProject {
+            if latestProject != "" {
+                 projectRef = db.collection("Projects").document(latestProject)
+            }
+
+        }
         
 
         hacksCollectionRef = projectRef.collection("HacksInProject")
@@ -95,8 +93,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-        // Hide the Navigation Bar
-//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -140,6 +137,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewWillDisappear(animated)
         
         hackListener.remove()
+        kennismakingListener.remove()
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -254,6 +252,16 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hackCell", for: indexPath) as! HackInProjectCollectionViewCell
         
+       if hacks.indices.contains(indexPath.row) {
+        print("happend")
+            let currenthack = hacks[indexPath.row]
+        cell.setUpCell(titleHack: currenthack.name, currentStepHack: currenthack.currentStep, hackId: currenthack.hackId)
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+        } else {
+            cell.layoutbasic()
+        }
+        
         print(hacks)
 //        cell.setUpCell(titleHack: hacks[indexPath.row].name, currentStepHack: hacks[indexPath.row].currentStep)
         cell.setNeedsLayout()
@@ -262,9 +270,15 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(hacks[indexPath.row].productId)
-//        performSegue(withIdentifier: "GoToHack", sender: nil)
+            if hacks.indices.contains(indexPath.row) {
+               let destionViewController = storyboard?.instantiateViewController(withIdentifier: "hackDetailProject") as! HackStartViewController
+                destionViewController.hack = hacks[indexPath.row]
+                destionViewController.referenceProject = projectRef
+                self.navigationController?.show(destionViewController, sender: nil)
+            }
+            
     }
+    
     
     private func scrollViewDidScroll(_ scrollView: ScalingCarouselView) {
         HacksInProjectCollectionView.didScroll()
@@ -286,8 +300,10 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             //true and false fase project
         }
         
-        
-     }
+   
+            
+        }
+    
  
     
 }
