@@ -17,7 +17,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     private var project: Project?
     private var kennismakingProject: Kennismaking?
-    private var hacks = [Hack]()
+    private var hacks = [HackInProject]()
     private var hacksCollectionRef: CollectionReference!
     private var kennismakingCollectionRef: CollectionReference!
     private var projectRef: DocumentReference!
@@ -71,17 +71,17 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         configureViews()
         
         
-        projectRef = db.collection("Projects").document("3KMChQPw430Bkv6TtDPT")
+        projectRef = db.collection("Projects").document("m9jD7xXwE1Yza3xcKBCM")
         
-        if let latestProject = LastProject.shared.idLastProject {
-            if latestProject != "" {
-                 projectRef = db.collection("Projects").document(latestProject)
-            }
-           
-        }
+//        if let latestProject = LastProject.shared.idLastProject {
+//            if latestProject != "" {
+//                 projectRef = db.collection("Projects").document(latestProject)
+//            }
+//
+//        }
         
 
-        hacksCollectionRef = projectRef.collection("Hacks")
+        hacksCollectionRef = projectRef.collection("HacksInProject")
         kennismakingCollectionRef = projectRef.collection("Kennismaking")
         
         
@@ -112,7 +112,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
                 debugPrint("Error fetching docs: \(error)")
             }  else {
                 self.hacks.removeAll()
-                self.hacks = Hack.parseData(snapshot: documentSnapshot)
+                self.hacks = HackInProject.parseData(snapshot: documentSnapshot)
                 self.HacksInProjectCollectionView.reloadData()
             }
         }
@@ -248,7 +248,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hacks.count
+        return hacks.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -13,11 +13,13 @@
 		330E6C29220AF87400FF9384 /* stepCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C28220AF87400FF9384 /* stepCellTableViewCell.swift */; };
 		330E6C2B220B08E900FF9384 /* StepInTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2A220B08E900FF9384 /* StepInTableView.swift */; };
 		330E6C2D220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2C220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift */; };
-		330E6C2F220B299100FF9384 /* Hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2E220B299100FF9384 /* Hack.swift */; };
+		330E6C2F220B299100FF9384 /* HackInProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2E220B299100FF9384 /* HackInProject.swift */; };
 		330E6C31220B2D3200FF9384 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C30220B2D3200FF9384 /* Step.swift */; };
 		330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C32220B2E3800FF9384 /* NewStepViewController.swift */; };
 		332290AC220E5DE80069D044 /* Stap1KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */; };
 		332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AD220E5FC00069D044 /* kennisMakingSteps.swift */; };
+		332290B1220ED9380069D044 /* TestHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B0220ED9380069D044 /* TestHack.swift */; };
+		332290B3220ED9450069D044 /* EvalutieHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B2220ED9450069D044 /* EvalutieHack.swift */; };
 		33640012220DC9D60081AB91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640011220DC9D60081AB91 /* Request.swift */; };
 		33640017220E43030081AB91 /* lastProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640016220E43030081AB91 /* lastProject.swift */; };
 		33640019220E4A450081AB91 /* Kennismaking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640018220E4A450081AB91 /* Kennismaking.swift */; };
@@ -76,11 +78,13 @@
 		330E6C28220AF87400FF9384 /* stepCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stepCellTableViewCell.swift; sourceTree = "<group>"; };
 		330E6C2A220B08E900FF9384 /* StepInTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepInTableView.swift; sourceTree = "<group>"; };
 		330E6C2C220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInMaterialListEditCollectionViewCell.swift; sourceTree = "<group>"; };
-		330E6C2E220B299100FF9384 /* Hack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hack.swift; sourceTree = "<group>"; };
+		330E6C2E220B299100FF9384 /* HackInProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProject.swift; sourceTree = "<group>"; };
 		330E6C30220B2D3200FF9384 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		330E6C32220B2E3800FF9384 /* NewStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStepViewController.swift; sourceTree = "<group>"; };
 		332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1KennismakingViewController.swift; sourceTree = "<group>"; };
 		332290AD220E5FC00069D044 /* kennisMakingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kennisMakingSteps.swift; sourceTree = "<group>"; };
+		332290B0220ED9380069D044 /* TestHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHack.swift; sourceTree = "<group>"; };
+		332290B2220ED9450069D044 /* EvalutieHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalutieHack.swift; sourceTree = "<group>"; };
 		33640011220DC9D60081AB91 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		33640016220E43030081AB91 /* lastProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastProject.swift; sourceTree = "<group>"; };
 		33640018220E4A450081AB91 /* Kennismaking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kennismaking.swift; sourceTree = "<group>"; };
@@ -157,6 +161,18 @@
 			path = Kennismaking;
 			sourceTree = "<group>";
 		};
+		332290AF220ED9070069D044 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				330E6C2E220B299100FF9384 /* HackInProject.swift */,
+				33640018220E4A450081AB91 /* Kennismaking.swift */,
+				33A583B02207080D00AB4CDA /* Project.swift */,
+				332290B0220ED9380069D044 /* TestHack.swift */,
+				332290B2220ED9450069D044 /* EvalutieHack.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 		33640013220DCEAD0081AB91 /* SingeltonClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,13 +225,11 @@
 		33D4B5D12201974B0095DAE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				33A583B02207080D00AB4CDA /* Project.swift */,
+				332290AF220ED9070069D044 /* Project */,
 				330E6C2A220B08E900FF9384 /* StepInTableView.swift */,
-				330E6C2E220B299100FF9384 /* Hack.swift */,
 				330E6C30220B2D3200FF9384 /* Step.swift */,
 				338B70F0220BB323005D6D95 /* User.swift */,
 				33640011220DC9D60081AB91 /* Request.swift */,
-				33640018220E4A450081AB91 /* Kennismaking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -544,17 +558,19 @@
 				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
 				3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */,
 				330E6C31220B2D3200FF9384 /* Step.swift in Sources */,
-				330E6C2F220B299100FF9384 /* Hack.swift in Sources */,
+				330E6C2F220B299100FF9384 /* HackInProject.swift in Sources */,
 				33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */,
 				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
 				338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */,
+				332290B3220ED9450069D044 /* EvalutieHack.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
 				33F2E8D62208F71E0005BF35 /* GuideStepViewController.swift in Sources */,
 				330E6C21220A4A6F00FF9384 /* ReviewHackViewController.swift in Sources */,
 				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
 				338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */,
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
+				332290B1220ED9380069D044 /* TestHack.swift in Sources */,
 				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
 				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,
 				338B70F1220BB323005D6D95 /* User.swift in Sources */,

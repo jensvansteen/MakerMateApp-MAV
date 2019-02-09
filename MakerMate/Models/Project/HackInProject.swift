@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class Hack {
+class HackInProject {
     
     
     private(set) var likes: Int
@@ -23,21 +23,20 @@ class Hack {
     init(likes: Int, niveau: Int, currentStep: Int, name: String, productId: String) {
         self.likes = likes
         self.niveau = niveau
-//        self.readyForTesting = readyForTesting
         self.currentStep = currentStep
         self.name = name
         self.productId = productId
     }
     
-    class func parseData(snapshot: QuerySnapshot?) -> [Hack] {
-        var hacks = [Hack]()
+    class func parseData(snapshot: QuerySnapshot?) -> [HackInProject] {
+        var hacks = [HackInProject]()
         
         guard let snap = snapshot else {return hacks}
         for document in snap.documents {
             let data = document.data()
             let id = document.documentID
             print(data)
-            let hack = Hack(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", productId: id as! String)
+            let hack = HackInProject(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", productId: id)
             hacks.append(hack)
         }
         
