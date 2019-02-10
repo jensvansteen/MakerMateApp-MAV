@@ -20,6 +20,7 @@
 		332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AD220E5FC00069D044 /* kennisMakingSteps.swift */; };
 		332290B1220ED9380069D044 /* TestHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B0220ED9380069D044 /* TestHack.swift */; };
 		332290B3220ED9450069D044 /* EvalutieHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B2220ED9450069D044 /* EvalutieHack.swift */; };
+		33393F3F2210385E009845E5 /* Hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F3E2210385E009845E5 /* Hack.swift */; };
 		33640012220DC9D60081AB91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640011220DC9D60081AB91 /* Request.swift */; };
 		33640017220E43030081AB91 /* lastProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640016220E43030081AB91 /* lastProject.swift */; };
 		33640019220E4A450081AB91 /* Kennismaking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640018220E4A450081AB91 /* Kennismaking.swift */; };
@@ -86,6 +87,7 @@
 		332290AD220E5FC00069D044 /* kennisMakingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kennisMakingSteps.swift; sourceTree = "<group>"; };
 		332290B0220ED9380069D044 /* TestHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHack.swift; sourceTree = "<group>"; };
 		332290B2220ED9450069D044 /* EvalutieHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalutieHack.swift; sourceTree = "<group>"; };
+		33393F3E2210385E009845E5 /* Hack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hack.swift; sourceTree = "<group>"; };
 		33640011220DC9D60081AB91 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		33640016220E43030081AB91 /* lastProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastProject.swift; sourceTree = "<group>"; };
 		33640018220E4A450081AB91 /* Kennismaking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kennismaking.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				330E6C30220B2D3200FF9384 /* Step.swift */,
 				338B70F0220BB323005D6D95 /* User.swift */,
 				33640011220DC9D60081AB91 /* Request.swift */,
+				33393F3E2210385E009845E5 /* Hack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */,
 				33F2E8D42208DEB20005BF35 /* GuideHoldingViewController.swift in Sources */,
 				330E6C25220AE23A00FF9384 /* EditStepViewController.swift in Sources */,
+				33393F3F2210385E009845E5 /* Hack.swift in Sources */,
 				33F2E8D22208DD050005BF35 /* ScrollViewController.swift in Sources */,
 				338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */,
 				33F2E8E12209C04E0005BF35 /* itemNeededCollectionViewCell.swift in Sources */,

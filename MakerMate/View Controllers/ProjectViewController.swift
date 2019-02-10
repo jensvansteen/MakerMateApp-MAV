@@ -69,18 +69,9 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         configureViews()
         
         
-        projectRef = db.collection("Projects").document("m9jD7xXwE1Yza3xcKBCM")
-        
-        if let latestProject = LastProject.shared.idLastProject {
-            if latestProject != "" {
-                 projectRef = db.collection("Projects").document(latestProject)
-            }
-
-        }
+    
         
 
-        hacksCollectionRef = projectRef.collection("HacksInProject")
-        kennismakingCollectionRef = projectRef.collection("Kennismaking")
         
         
         
@@ -91,6 +82,19 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        projectRef = db.collection("Projects").document("jOueOwfJvR2M6bdKYvxB")
+        
+        if let latestProject = LastProject.shared.idLastProject {
+            if latestProject != "" {
+                projectRef = db.collection("Projects").document(latestProject)
+            }
+            
+        }
+        
+        
+        hacksCollectionRef = projectRef.collection("HacksInProject")
+        kennismakingCollectionRef = projectRef.collection("Kennismaking")
         
         navigationController?.setNavigationBarHidden(true, animated: true)
 

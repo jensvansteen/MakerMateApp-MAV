@@ -7,14 +7,50 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class Stap1KennismakingViewController: UIViewController {
+    
+    
+     var db: Firestore!
+    
+     private var hacksCollectionRef: CollectionReference!
+     private var hackListener: ListenerRegistration!
+     private var hacks = [Hack]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        
+        hacksCollectionRef = db.collection("Hacks")
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setListener()
+        
+        
+    }
+    
+    
+    func setListener() {
+        hackListener = hacksCollectionRef.addSnapshotListener { documentSnapshot, error in
+            if let err = error {
+                debugPrint("Error fetching docs: \(error)")
+            }  else {
+                self.hacks.removeAll()
+                self.hacks = Hack.parseData(snapshot: documentSnapshot)
+                print(self.hacks)
+            }
+        }
         
         
     }
@@ -33,6 +69,7 @@ class Stap1KennismakingViewController: UIViewController {
         
         kennismakingSteps.sharedInstance.stap1(mobiliteitsKlasse: 2)
         
+        hacks[0].addToProject(projectId: LastProject.shared.idLastProject!)
         
         kennismakingSteps.sharedInstance.pushToFirebase()
         

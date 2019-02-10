@@ -9,18 +9,12 @@
 import UIKit
 import Firebase
 
-
-
-
-
 class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func childViewControllerResponse(someText: String) {
         print(someText)
     }
     
     var textdes = String()
-    
-    var hackId = String()
     
     var itemList = [String]() {
         didSet {
@@ -45,7 +39,6 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     private var indexPage: Int = 0
     
     private var numViewControllers: Int = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +82,6 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         setupUI()
     }
-    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -144,13 +136,16 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func setupUI() {
         
-        
         if step != nil {
              stepExplanation.text = step!.description
              itemList = step!.items!
             
+            if step!.stepImage != nil {
+                self.imageStep.image = step!.stepImage
+            } else {
+               getStepImage()
+            }
             
-             getStepImage()
              itemsNeeded.reloadData()
         }
        
@@ -173,7 +168,13 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
         
         let referenceToStorage = Storage.storage()
         
-        let gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hackSteps/\(step!.hackId!)/stap\(step!.order).jpg")
+        var gsReference: StorageReference!
+        
+        if step!.photoAdjusted == true {
+            gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hackSteps/\(step!.hackId)/stap\(step!.order).jpg")
+        } else {
+            gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hackSteps/\(step!.orginalHackId!)/stap\(step!.order).jpg")
+        }
         
         gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
@@ -246,4 +247,3 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
     
 }
 
-//extension TestViewController: ColoredView {}

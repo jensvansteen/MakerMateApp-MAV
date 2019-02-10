@@ -19,14 +19,16 @@ class HackInProject {
     private(set) var currentStep: Int
     private(set) var name: String
     private(set) var hackId: String
+    private(set) var projectId: String
     private(set) var hackImage: UIImage?
     
-    init(likes: Int, niveau: Int, currentStep: Int, name: String, hackId: String) {
+    init(likes: Int, niveau: Int, currentStep: Int, name: String, hackId: String, projectId: String) {
         self.likes = likes
         self.niveau = niveau
         self.currentStep = currentStep
         self.name = name
         self.hackId = hackId
+        self.projectId = projectId
 
         self.getHackImage(hackId: hackId)
     }
@@ -49,6 +51,11 @@ class HackInProject {
         
     }
     
+    
+    
+    
+    
+    
     class func parseData(snapshot: QuerySnapshot?) -> [HackInProject] {
         var hacks = [HackInProject]()
         
@@ -56,8 +63,10 @@ class HackInProject {
         for document in snap.documents {
             let data = document.data()
             let id = document.documentID
+            let projecto = data["projectId"] as! String
+            print(projecto)
             print(data)
-            var hack = HackInProject(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", hackId: id)
+            let hack = HackInProject(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", hackId: id, projectId: (data["projectId"] as? String)!)
             hacks.append(hack)
         }
         

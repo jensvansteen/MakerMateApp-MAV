@@ -11,15 +11,9 @@ import Firebase
 import FirebaseStorage
 
 
-//protocol ChildViewControllerDelegate {
-//    func childViewControllerResponse(someText: String)
-//}
-
-
 class EditStepViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    //    var delegate: ChildViewControllerDelegate
-    
+
     @IBOutlet weak var dimmerView: UIView!
     @IBOutlet weak var materialsCollectionView: UICollectionView!
     @IBOutlet weak var descriptionTextField: UITextView!
@@ -28,7 +22,7 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var storageRef: StorageReference!
     
-    var picker = UIImagePickerController()
+    private var picker = UIImagePickerController()
     
     var indexOfStep: Int?
     
@@ -37,24 +31,15 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var items = ["Leer", "Schaar"]
     
-    
-    //    var holdingNavigationController: AlwaysPoppableNavigationController!
-    //    var activeStepView: GuideStepViewController!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         storageRef = Storage.storage().reference()
         
-        // Do any additional setup after loading the view.
-        
         materialsCollectionView.delegate = self
         materialsCollectionView.dataSource = self
         
         self.descriptionTextField.delegate = self
-        
-        
         
         self.view.backgroundColor = .clear
         self.navigationController?.view.backgroundColor = .clear
@@ -101,13 +86,11 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     
-    
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    private func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func voegFotoToeHandler(_ sender: UIButton) {
+    @IBAction private func voegFotoToeHandler(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             let picker = UIImagePickerController()
             let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
@@ -120,7 +103,7 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     
-    func uploadImageToFirebaseStorage(data: Data) {
+    private func uploadImageToFirebaseStorage(data: Data) {
         let storageRef = Storage.storage().reference()
         let uploadMetadata = StorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
@@ -128,11 +111,12 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         let imageRefofRef = imageRef.child(parentviewcontroller.step!.hackId!)
         let fileName = "stap\(indexOfStep!+1).jpg"
         let spaceRef = imageRefofRef.child(fileName)
-        let path = spaceRef.fullPath
         let uploadTask = spaceRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
             if let error = error {
                 print("error uploading \(error)")
                 return
+            } else {
+                self.parentviewcontroller.step?.photoAdjustedForHack()
             }
         }
 
@@ -181,14 +165,14 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         items.remove(at: indexPath.row)
         parentviewcontroller.itemList = items
-        parentviewcontroller.step?.updateItems(items: items, projectReference: guideHoldingController.projectReference!)
+        parentviewcontroller.step?.updateItems(items: items)
         self.materialsCollectionView.reloadData()
         updateCollectionViewHeight()
     }
     
     func updateCollectionViewHeight() {
         var collectionViewHeight: Int = 0
-        for item in items {
+        for _ in items {
             collectionViewHeight += 50
         }
         
@@ -200,14 +184,11 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBAction private func editDone(_ sender: UIButton) {
         
-        parentviewcontroller.step!.updateDescription(text: descriptionTextField.text!, projectReference: guideHoldingController.projectReference!)
+        parentviewcontroller.step!.updateDescription(text: descriptionTextField.text!)
         
         parentviewcontroller.logChange(text: descriptionTextField.text)
         
         dismiss(animated: true, completion: nil)
-        
-        
-        //        activeStepView.logChange(text: "Test")
     }
     
     @IBAction private func editSteps(_ sender: UIButton) {
@@ -226,7 +207,7 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
                                style: UIAlertAction.Style.default) { (action: UIAlertAction) in
                                 if let alertTextField = alert.textFields?.first, alertTextField.text != nil {
                                     self.items.append(alertTextField.text!)
-                                    self.parentviewcontroller.step?.updateItems(items: self.items, projectReference: self.guideHoldingController.projectReference!)
+                                    self.parentviewcontroller.step?.updateItems(items: self.items)
                                     self.parentviewcontroller.itemList = self.items
                                     self.materialsCollectionView.reloadData()
                                     self.updateCollectionViewHeight()

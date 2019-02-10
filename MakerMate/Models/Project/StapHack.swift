@@ -19,27 +19,40 @@ class StapHack {
     private(set) var items: [String]?
     private(set) var stepImage: UIImage?
     private(set) var stepId: String
-    var hackId: String?
-    var projectId: String?
+    private(set) var hackId: String?
+    private(set) var projectId: String?
+    private(set) var orginalHackId: String?
+    private(set) var photoAdjusted: Bool?
     private(set) var order: Int
     
     
-    init(description: String, items: [String], stepId: String, order: Int) {
+    init(description: String, items: [String], stepId: String, order: Int, hackId: String, projectId: String, orginalHackId: String, photoAdjusted: Bool) {
         self.description = description
         self.items = items
-        self.stepId = stepId
         self.order = order
+        self.stepId = stepId
+        self.hackId = hackId
+        self.projectId = projectId
+        self.orginalHackId = orginalHackId
+        self.photoAdjusted = photoAdjusted
         
+        getStepImage(hackId: hackId)
     }
     
     
-    func getStepImage(hackId: String) {
-        
-        self.hackId = hackId
+    private func getStepImage(hackId: String) {
         
         let referenceToStorage = Storage.storage()
         
-        let gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hacksSteps/\(hackId)/stap\(order).jpg")
+        var gsReference: StorageReference!
+        
+        if photoAdjusted == true {
+            gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hackSteps/\(hackId)/stap\(order).jpg")
+        } else {
+                gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hackSteps/\(orginalHackId!)/stap\(order).jpg")
+        }
+        
+    
         
         gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
@@ -52,15 +65,39 @@ class StapHack {
         
     }
     
-    func updateDescription(text: String, projectReference: DocumentReference) {
+    func photoAdjustedForHack() {
+        
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         var ref: DocumentReference? = nil
         
+        ref = db.collection("Projects").document(projectId!)
+        let documenref = ref!.collection("HacksInProject").document("\(self.hackId!)")
+        let documentUpdate = documenref.collection("Steps").document(self.stepId)
         
+        documentUpdate.updateData([
+            "photoAdjusted": true
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+                self.getStepImage(hackId: self.hackId!)
+            }
+        }
         
-        let documenref = projectReference.collection("HacksInProject").document("\(self.hackId!)")
+    }
+    
+    func updateDescription(text: String) {
+        
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        
+        ref = db.collection("Projects").document(projectId!)
+        let documenref = ref!.collection("HacksInProject").document("\(self.hackId!)")
         let documentUpdate = documenref.collection("Steps").document(self.stepId)
         
         documentUpdate.updateData([
@@ -75,14 +112,15 @@ class StapHack {
         
     }
     
-    func updateItems(items: [String], projectReference: DocumentReference) {
+    func updateItems(items: [String]) {
+        
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         var ref: DocumentReference? = nil
         
-        
-        let documenref = projectReference.collection("HacksInProject").document("\(self.hackId!)")
+        ref = db.collection("Projects").document(projectId!)
+        let documenref = ref!.collection("HacksInProject").document("\(self.hackId!)")
         let documentUpdate = documenref.collection("Steps").document(self.stepId)
         
         documentUpdate.updateData([
@@ -108,7 +146,11 @@ class StapHack {
             let descriptionText = data["description"] as! String
             let itemsStep = data["items"] as! [String]
             let orderStep = data["order"] as? Int ?? 1
-            var stapInHandleiding = StapHack(description: descriptionText, items: itemsStep, stepId: id, order: orderStep)
+            let hackId = data["hackId"] as! String
+            let projectId = data["projectId"] as! String
+            let orginalHackId = data["orginalHackId"] as! String
+            let photoAdjusted = data["photoAdjusted"] as! Bool
+            let stapInHandleiding = StapHack(description: descriptionText, items: itemsStep, stepId: id, order: orderStep, hackId: hackId, projectId: projectId, orginalHackId: orginalHackId, photoAdjusted: photoAdjusted)
             staps.append(stapInHandleiding)
         }
         

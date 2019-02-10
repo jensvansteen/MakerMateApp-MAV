@@ -13,8 +13,6 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
     var steps = [StapHack]()
     
-    var hackId: String?
- 
     var initialViewController: Int = 0
     
     var viewControllers: [UIViewController?] = []
@@ -78,7 +76,6 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     override func viewDidAppear(_ animated: Bool) {
         printCellAndViewSize()
         
-//        currentIndex = delegate?.currentIndex
     }
     
   
@@ -86,12 +83,10 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         var viewControllersColl: [UIViewController] = []
         var oderderdSteps = steps.sorted(by: { $0.order < $1.order})
         for step in oderderdSteps {
-            step.hackId = hackId!
             let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "testViewController") as! GuideStepViewController
 
              viewCon.step = step
 
-            
             viewControllersColl.append(viewCon)
         }
         

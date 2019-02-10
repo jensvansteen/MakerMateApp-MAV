@@ -249,7 +249,7 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
         
         if segue.identifier == "showSteps" {
             if let step = segue.destination as? GuideHoldingViewController {
-                step.hackId = hack!.hackId
+//                step.hackId = hack!.hackId
                 step.projectReference = referenceProject
                 step.steps = hackSteps
             }
