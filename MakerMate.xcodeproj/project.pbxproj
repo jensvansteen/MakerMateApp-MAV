@@ -21,6 +21,7 @@
 		332290B1220ED9380069D044 /* TestHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B0220ED9380069D044 /* TestHack.swift */; };
 		332290B3220ED9450069D044 /* EvalutieHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B2220ED9450069D044 /* EvalutieHack.swift */; };
 		33393F3F2210385E009845E5 /* Hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F3E2210385E009845E5 /* Hack.swift */; };
+		33393F4122109EBF009845E5 /* Stap3KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */; };
 		33640012220DC9D60081AB91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640011220DC9D60081AB91 /* Request.swift */; };
 		33640017220E43030081AB91 /* lastProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640016220E43030081AB91 /* lastProject.swift */; };
 		33640019220E4A450081AB91 /* Kennismaking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640018220E4A450081AB91 /* Kennismaking.swift */; };
@@ -88,6 +89,7 @@
 		332290B0220ED9380069D044 /* TestHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHack.swift; sourceTree = "<group>"; };
 		332290B2220ED9450069D044 /* EvalutieHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalutieHack.swift; sourceTree = "<group>"; };
 		33393F3E2210385E009845E5 /* Hack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hack.swift; sourceTree = "<group>"; };
+		33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3KennismakingViewController.swift; sourceTree = "<group>"; };
 		33640011220DC9D60081AB91 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		33640016220E43030081AB91 /* lastProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastProject.swift; sourceTree = "<group>"; };
 		33640018220E4A450081AB91 /* Kennismaking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kennismaking.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */,
+				33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */,
 			);
 			path = Kennismaking;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				33EBB2B22208958A008CF5E0 /* HackStartViewController.swift in Sources */,
 				33640019220E4A450081AB91 /* Kennismaking.swift in Sources */,
 				338679D32205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift in Sources */,
+				33393F4122109EBF009845E5 /* Stap3KennismakingViewController.swift in Sources */,
 				332290AC220E5DE80069D044 /* Stap1KennismakingViewController.swift in Sources */,
 				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
 				33640017220E43030081AB91 /* lastProject.swift in Sources */,
