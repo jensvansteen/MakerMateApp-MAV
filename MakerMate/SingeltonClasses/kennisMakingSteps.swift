@@ -38,7 +38,7 @@ class kennismakingSteps {
             db = Firestore.firestore()
             var ref: DocumentReference? = nil
             ref = db.collection("Projects").document("\(lastID)").collection("Kennismaking").addDocument(data: [
-                "mobiliteitsKlasse": mobiliteitsKlasse
+                "mobiliteitsKlasse": 1
             ]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")

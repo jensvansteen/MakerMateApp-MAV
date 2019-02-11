@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestore
+import UIKit
 
 
 class Hack {
@@ -19,6 +20,7 @@ class Hack {
     private(set) var likes: Int
     private(set) var niveau: Int
     private(set) var hackId: String
+    private(set) var hackImage: UIImage?
     
     
     init(likes: Int, niveau: Int, name: String, hackId: String) {
@@ -26,9 +28,27 @@ class Hack {
         self.niveau = niveau
         self.name = name
         self.hackId = hackId
+        
+        self.getHackImage(hackId: hackId)
     }
     
-    
+    private func getHackImage(hackId: String) {
+        
+        let referenceToStorage = Storage.storage()
+        
+        let gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hacks/\(hackId)/imageHack.jpg")
+        
+        gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("the error is \(error)")
+            } else {
+                let image = UIImage(data: data!)
+                self.hackImage = image
+                
+            }
+        }
+        
+    }
     
     func addToProject(projectId: String) {
         
