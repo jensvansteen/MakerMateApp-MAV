@@ -10,7 +10,9 @@ import UIKit
 
 class Stap3KennismakingViewController: UIViewController {
     
-    
+    @IBOutlet weak var closeView: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var aanrakingSlider: UISlider!
     @IBOutlet weak var pijnOngemakSlider: UISlider!
     @IBOutlet weak var fysiekeInspanningSlider: UISlider!
@@ -18,6 +20,8 @@ class Stap3KennismakingViewController: UIViewController {
     @IBOutlet weak var evenwichtSlider: UISlider!
     @IBOutlet weak var waarnemenSlider: UISlider!
     @IBOutlet weak var begrijpVertel: UISlider!
+    private var fieldsFilledIn = false
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,19 @@ class Stap3KennismakingViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setupSlider()
+        
+        let tapBack = UITapGestureRecognizer(target: self, action: #selector(handlePop))
+        backView.addGestureRecognizer(tapBack)
+        backView.isUserInteractionEnabled = true
+        
+        
+        //Setup closeButton
+        let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(handleDismiss))
+        closeView.addGestureRecognizer(tapDismiss)
+        closeView.isUserInteractionEnabled = true
+        
+        
+        checkFields()
     }
     
     
@@ -113,8 +130,44 @@ class Stap3KennismakingViewController: UIViewController {
                 begrijpVertel.setThumbImage(UIImage(named: "begrijpNotSelected"), for: .normal)
             }
         }
+        checkFields()
+        
     }
     
+    
+    
+        override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    func checkFields() {
+        if (aanrakingSlider.value == 1.0 || aanrakingSlider.value == 3.0) && (pijnOngemakSlider.value == 1.0 || pijnOngemakSlider.value == 3.0) && (fysiekeInspanningSlider.value == 1.0 || fysiekeInspanningSlider.value == 3.0) && (motoriekSlider.value == 1.0 || motoriekSlider.value == 3.0) && (evenwichtSlider.value == 1.0 || evenwichtSlider.value == 3.0) && (waarnemenSlider.value == 1.0 || waarnemenSlider.value == 3.0) && (begrijpVertel.value == 1.0 || begrijpVertel.value == 3.0) {
+            fieldsFilledIn = true
+            nextButton.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.5843137255, alpha: 1)
+            nextButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+            nextButton.borderWidth = 0
+        } else {
+            fieldsFilledIn = false
+            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            nextButton.setTitleColor(#colorLiteral(red: 0.7254901961, green: 0.5882352941, blue: 0.2980392157, alpha: 1), for: .normal)
+            nextButton.borderWidth = 1
+        }
+    }
+    
+    @objc private func handlePop() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func handleDismiss() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction private func goToNextStep(_ sender: UIButton) {
+        if fieldsFilledIn{
+            performSegue(withIdentifier: "AanvraagStap4", sender: sender)
+        }
+    }
     /*
      // MARK: - Navigation
      

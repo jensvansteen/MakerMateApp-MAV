@@ -11,7 +11,7 @@ import Firebase
 import FirebaseFirestore
 
 
-struct Project {
+class Project {
     
     private(set) var db: Firestore!
     
@@ -46,6 +46,31 @@ struct Project {
         self.targetGroup = targetGroup
         self.zip = zip
         self.projectId = projectId
+    }
+    
+    
+    class func parseOneData(snapshot: DocumentSnapshot?) -> Project? {
+        var project: Project?
+        
+        guard let document = snapshot else {return project}
+            let data = document.data()!
+            let id = document.documentID
+            let adress = data["adress"] as! String
+            let city = data["city"] as! String
+            let desscription = data["description"] as! String
+            let descriptionShort = data["descriptionShort"] as! String
+            let email = data["email"] as! String
+            let firstNameClient = data["firstNameClient"] as! String
+            let firstNameContact = data["firstNameContact"] as! String
+            let nameClient = data["nameClient"] as! String
+            let nameContact = data["nameContact"] as! String
+            let phonenumber = data["phonenumber"] as! Int
+            let targetGroup = data["targetGroup"] as! Int
+            let zip = data["zip"] as! String
+            let newProject = Project(adress: adress, city: city, description: desscription, descriptionShort: descriptionShort, email: email, firstNameClient: firstNameClient, firstNameContact: firstNameContact, nameClient: nameClient, nameContact: nameContact, phonenumber: phonenumber, targetGroup: targetGroup, zip: zip, projectId: id)
+            project = newProject
+        
+        return project
     }
     
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i6D-7a-OUC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N3D-J8-XaE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -5460,7 +5460,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="Iew-El-LCz"/>
                                 </constraints>
-                                <color key="textColor" red="0.65490196079999996" green="0.53725490200000003" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -5498,6 +5498,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="goToNextView:" destination="KZz-Dv-PWa" eventType="touchUpInside" id="Dm0-4j-nfj"/>
+                                    <action selector="kennisMakingStap1:" destination="POz-li-XtV" eventType="touchUpInside" id="ORO-pV-uxn"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpl-GF-Wt2" userLabel="BackButton">
@@ -5558,15 +5559,24 @@
                         <viewLayoutGuide key="safeArea" id="GMa-hm-Y7w"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backView" destination="Bpl-GF-Wt2" id="kVd-8I-X45"/>
+                        <outlet property="closeView" destination="Bx5-Mu-WD4" id="uUR-17-ELK"/>
+                        <outlet property="doelgroepTextField" destination="aMf-0a-2PE" id="1Df-tM-xIp"/>
+                        <outlet property="nameTextField" destination="lfw-Eu-lIW" id="jrC-Jc-0lg"/>
+                        <outlet property="nextButton" destination="4sK-Je-ain" id="6iq-dl-Kqj"/>
+                        <outlet property="wishTextfield" destination="wMB-kb-AVu" id="ykT-Tc-5gT"/>
+                        <segue destination="rkx-ay-01e" kind="show" identifier="AanvraagStap2" id="irq-o1-O51"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqe-kY-RBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4431" y="457"/>
         </scene>
-        <!--View Controller-->
+        <!--Stap2 Kennismaking View Controller-->
         <scene sceneID="Fa1-YH-O01">
             <objects>
-                <viewController id="rkx-ay-01e" sceneMemberID="viewController">
+                <viewController id="rkx-ay-01e" customClass="Stap2KennismakingViewController" customModule="MakerMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dq5-xx-0sC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5659,21 +5669,21 @@
                                 <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="spb-QT-qK6">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="spb-QT-qK6">
                                 <rect key="frame" x="0.0" y="222.5" width="375" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="izw-HS-n3w"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="20" id="FXB-Wg-UyX">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="35" id="FXB-Wg-UyX">
                                     <size key="itemSize" width="213" height="240"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mobiliteitscell" id="0sG-ZG-VkR">
-                                        <rect key="frame" x="30" y="0.0" width="213" height="240"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mobiliteitscell" id="0sG-ZG-VkR" customClass="mobiCollectionViewCell" customModule="MakerMate" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="0.0" width="213" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="213" height="240"/>
@@ -5687,10 +5697,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iU1-eL-a2I">
-                                                    <rect key="frame" x="80.5" y="96" width="52" height="66"/>
+                                                    <rect key="frame" x="66.5" y="82" width="80" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="5LB-RL-pE5"/>
-                                                        <constraint firstAttribute="height" constant="66" id="eha-vt-dT7"/>
+                                                        <constraint firstAttribute="width" constant="80" id="5LB-RL-pE5"/>
+                                                        <constraint firstAttribute="height" constant="80" id="eha-vt-dT7"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actief met een hulpmiddel (b)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3m-1g-5cm">
@@ -5707,7 +5717,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="f3m-1g-5cm" firstAttribute="centerX" secondItem="0sG-ZG-VkR" secondAttribute="centerX" id="3gX-lr-crG"/>
-                                            <constraint firstItem="iU1-eL-a2I" firstAttribute="top" secondItem="0sG-ZG-VkR" secondAttribute="topMargin" constant="68" id="4W6-p6-EuF"/>
+                                            <constraint firstItem="iU1-eL-a2I" firstAttribute="top" secondItem="0sG-ZG-VkR" secondAttribute="topMargin" constant="54" id="4W6-p6-EuF"/>
                                             <constraint firstItem="kP4-nl-JZa" firstAttribute="leading" secondItem="0sG-ZG-VkR" secondAttribute="leading" constant="15" id="L2i-Mz-Q91"/>
                                             <constraint firstItem="kP4-nl-JZa" firstAttribute="top" secondItem="0sG-ZG-VkR" secondAttribute="top" constant="17" id="jhT-EE-WcA"/>
                                             <constraint firstAttribute="top" secondItem="kP4-nl-JZa" secondAttribute="bottom" constant="-38" id="m3j-Yk-TRu"/>
@@ -5719,6 +5729,11 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="mobiClassImage" destination="iU1-eL-a2I" id="SSk-h1-4aj"/>
+                                            <outlet property="mobiClassText" destination="f3m-1g-5cm" id="Rsz-HU-X2U"/>
+                                            <outlet property="selectionImage" destination="kP4-nl-JZa" id="Sww-PC-PVA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -5744,6 +5759,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goToNextStep:" destination="rkx-ay-01e" eventType="touchUpInside" id="wQQ-yY-j0o"/>
                                     <action selector="goToNextView:" destination="KZz-Dv-PWa" eventType="touchUpInside" id="5Mm-ti-6gj"/>
                                 </connections>
                             </button>
@@ -5798,6 +5814,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUN-Yd-3Zj"/>
                     </view>
+                    <connections>
+                        <outlet property="backView" destination="LAu-bt-9eO" id="wN5-bd-URW"/>
+                        <outlet property="closeView" destination="wCY-u0-Z1s" id="End-ee-qt6"/>
+                        <outlet property="mobiCollectionView" destination="spb-QT-qK6" id="6Ov-Vi-sq1"/>
+                        <outlet property="nextButton" destination="jhC-Jh-1qq" id="Hqc-qu-28E"/>
+                        <segue destination="i6D-7a-OUC" kind="show" identifier="AanvraagStap3" id="R1f-vS-Ign"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xK8-yV-Lqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6094,6 +6117,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goToNextStep:" destination="i6D-7a-OUC" eventType="touchUpInside" id="FO2-fg-QwV"/>
                                     <action selector="goToNextView:" destination="KZz-Dv-PWa" eventType="touchUpInside" id="Jly-Nu-yLo"/>
                                 </connections>
                             </button>
@@ -6201,22 +6225,26 @@
                     </view>
                     <connections>
                         <outlet property="aanrakingSlider" destination="cQP-6G-8k6" id="Rii-E4-KSv"/>
+                        <outlet property="backView" destination="PPP-LY-sCw" id="bS9-gJ-acn"/>
                         <outlet property="begrijpVertel" destination="4gW-5p-HW9" id="MrE-Iu-wZi"/>
+                        <outlet property="closeView" destination="gQU-wf-h08" id="aG0-05-QQd"/>
                         <outlet property="evenwichtSlider" destination="1Fx-KI-Us6" id="OCK-Df-Kfl"/>
                         <outlet property="fysiekeInspanningSlider" destination="xGo-Vd-kZi" id="fa1-ir-t3c"/>
                         <outlet property="motoriekSlider" destination="KGu-tf-rc1" id="PqL-7J-DjQ"/>
+                        <outlet property="nextButton" destination="dQs-WR-GJ9" id="fTN-h8-3aJ"/>
                         <outlet property="pijnOngemakSlider" destination="Fuf-jd-y4o" id="jwX-NP-bpS"/>
                         <outlet property="waarnemenSlider" destination="RkM-Ly-wDb" id="g3Y-Bf-zMO"/>
+                        <segue destination="Rh6-QP-eMM" kind="show" identifier="AanvraagStap4" id="qHS-Q9-iFD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72T-a5-eRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5966" y="457"/>
         </scene>
-        <!--View Controller-->
+        <!--Stap4 Kennismaking View Controller-->
         <scene sceneID="uxm-Xi-XMt">
             <objects>
-                <viewController id="Rh6-QP-eMM" sceneMemberID="viewController">
+                <viewController id="Rh6-QP-eMM" customClass="Stap4KennismakingViewController" customModule="MakerMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P3R-6E-Itv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6321,20 +6349,10 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ge-MP-eAb">
                                         <rect key="frame" x="79" y="3" width="69" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spraak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsM-Fg-N6o">
-                                                <rect key="frame" x="16" y="5.5" width="37" height="17"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                                <color key="textColor" red="0.25098039215686274" green="0.32941176470588235" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="69" id="RDE-If-46T"/>
-                                            <constraint firstItem="XsM-Fg-N6o" firstAttribute="centerY" secondItem="9Ge-MP-eAb" secondAttribute="centerY" id="SPR-Ee-e1o"/>
                                             <constraint firstAttribute="height" constant="28" id="cgY-bg-fVy"/>
-                                            <constraint firstItem="XsM-Fg-N6o" firstAttribute="centerX" secondItem="9Ge-MP-eAb" secondAttribute="centerX" id="hda-yn-4cv"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -6348,18 +6366,45 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INV-rb-e7E">
+                                        <rect key="frame" x="79" y="3" width="69" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="69" id="IVs-eP-79B"/>
+                                            <constraint firstAttribute="height" constant="28" id="cBT-Qg-eWg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                        <state key="normal" title="spraak">
+                                            <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="problemSelected:" destination="Rh6-QP-eMM" eventType="touchUpInside" id="GQc-q7-a1I"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="3gJ-PI-rAh"/>
+                                    <constraint firstItem="INV-rb-e7E" firstAttribute="centerY" secondItem="NC3-mY-7wy" secondAttribute="centerY" id="577-y2-m38"/>
                                     <constraint firstItem="kNb-ua-Cq8" firstAttribute="leading" secondItem="NC3-mY-7wy" secondAttribute="leading" id="8Bh-4Q-7QM"/>
                                     <constraint firstItem="9Ge-MP-eAb" firstAttribute="centerY" secondItem="NC3-mY-7wy" secondAttribute="centerY" id="IL4-zM-GDG"/>
                                     <constraint firstAttribute="trailing" secondItem="9Ge-MP-eAb" secondAttribute="trailing" id="WDR-Zm-opf"/>
                                     <constraint firstItem="kNb-ua-Cq8" firstAttribute="centerY" secondItem="NC3-mY-7wy" secondAttribute="centerY" id="eHR-cA-nJA"/>
+                                    <constraint firstAttribute="trailing" secondItem="INV-rb-e7E" secondAttribute="trailing" id="q5I-ZE-uWZ"/>
                                     <constraint firstAttribute="width" constant="148" id="yNK-M0-jL7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwJ-go-IXm" userLabel="speakView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwJ-go-IXm" userLabel="hearView">
                                 <rect key="frame" x="113.5" y="271.5" width="148" height="61"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-ear" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-oS-sb7">
@@ -6369,44 +6414,40 @@
                                             <constraint firstAttribute="width" constant="44" id="cKa-zf-bma"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uJ-1F-3hK">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUI-lG-lSg">
                                         <rect key="frame" x="79" y="16.5" width="69" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gehoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol2-0p-qtT">
-                                                <rect key="frame" x="14.5" y="5.5" width="40.5" height="17"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                                <color key="textColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Ol2-0p-qtT" firstAttribute="centerX" secondItem="3uJ-1F-3hK" secondAttribute="centerX" id="AAW-KM-agS"/>
-                                            <constraint firstAttribute="height" constant="28" id="IDV-Fm-PqO"/>
-                                            <constraint firstAttribute="width" constant="69" id="cd4-uM-5gI"/>
-                                            <constraint firstItem="Ol2-0p-qtT" firstAttribute="centerY" secondItem="3uJ-1F-3hK" secondAttribute="centerY" id="jJz-Yf-Umz"/>
+                                            <constraint firstAttribute="width" constant="69" id="5Ur-2k-nNf"/>
+                                            <constraint firstAttribute="height" constant="28" id="UeH-0v-ETN"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                        <state key="normal" title="gehoor">
+                                            <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="14"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="14"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
+                                        <connections>
+                                            <action selector="problemSelected:" destination="Rh6-QP-eMM" eventType="touchUpInside" id="22z-CS-88M"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="f4M-oS-sb7" firstAttribute="leading" secondItem="nwJ-go-IXm" secondAttribute="leading" id="4EF-uM-acT"/>
                                     <constraint firstAttribute="width" constant="148" id="91s-J0-zeZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="3uJ-1F-3hK" secondAttribute="trailing" id="IcT-Md-prj"/>
                                     <constraint firstAttribute="height" constant="61" id="RMf-P4-4eF"/>
                                     <constraint firstItem="f4M-oS-sb7" firstAttribute="centerY" secondItem="nwJ-go-IXm" secondAttribute="centerY" id="dEj-rM-N3E"/>
-                                    <constraint firstItem="3uJ-1F-3hK" firstAttribute="centerY" secondItem="nwJ-go-IXm" secondAttribute="centerY" id="k25-y5-pHt"/>
+                                    <constraint firstAttribute="trailing" secondItem="oUI-lG-lSg" secondAttribute="trailing" id="pTW-Un-fNY"/>
+                                    <constraint firstItem="oUI-lG-lSg" firstAttribute="centerY" secondItem="nwJ-go-IXm" secondAttribute="centerY" id="wcQ-07-3zH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-8Y-S6n" userLabel="speakView">
@@ -6419,52 +6460,51 @@
                                             <constraint firstAttribute="height" constant="34" id="ufB-rz-qxc"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbW-Bl-VfB">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6W-JH-j9v">
                                         <rect key="frame" x="79" y="3" width="69" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zicht" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ji-rl-pRt">
-                                                <rect key="frame" x="21.5" y="5.5" width="26" height="17"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                                <color key="textColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="69" id="2Sc-Cl-PKF"/>
-                                            <constraint firstItem="8Ji-rl-pRt" firstAttribute="centerY" secondItem="gbW-Bl-VfB" secondAttribute="centerY" id="GBe-dQ-B9g"/>
-                                            <constraint firstAttribute="height" constant="28" id="I7s-mS-QQa"/>
-                                            <constraint firstItem="8Ji-rl-pRt" firstAttribute="centerX" secondItem="gbW-Bl-VfB" secondAttribute="centerX" id="b3T-us-jYQ"/>
+                                            <constraint firstAttribute="height" constant="28" id="6a0-BH-ijl"/>
+                                            <constraint firstAttribute="width" constant="69" id="JRc-aV-jge"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                        <state key="normal" title="zicht">
+                                            <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="14"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
+                                        <connections>
+                                            <action selector="problemSelected:" destination="Rh6-QP-eMM" eventType="touchUpInside" id="0JX-uE-tyn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="gbW-Bl-VfB" firstAttribute="centerY" secondItem="gPy-8Y-S6n" secondAttribute="centerY" id="6To-R7-sE7"/>
+                                    <constraint firstItem="W6W-JH-j9v" firstAttribute="centerY" secondItem="gPy-8Y-S6n" secondAttribute="centerY" id="1wR-HM-dHd"/>
                                     <constraint firstItem="TqR-iB-F5C" firstAttribute="leading" secondItem="gPy-8Y-S6n" secondAttribute="leading" id="75l-6C-zsX"/>
-                                    <constraint firstAttribute="trailing" secondItem="gbW-Bl-VfB" secondAttribute="trailing" id="8df-rr-r5S"/>
                                     <constraint firstAttribute="height" constant="34" id="RZc-Q8-lnk"/>
                                     <constraint firstItem="TqR-iB-F5C" firstAttribute="centerY" secondItem="gPy-8Y-S6n" secondAttribute="centerY" id="Xoi-yc-DXh"/>
                                     <constraint firstAttribute="width" constant="148" id="hAx-pw-AZw"/>
+                                    <constraint firstAttribute="trailing" secondItem="W6W-JH-j9v" secondAttribute="trailing" id="wId-N3-udK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czd-Zv-m5n">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czd-Zv-m5n">
                                 <rect key="frame" x="132.5" y="467.5" width="110" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <state key="normal" title="Niet van toepassing">
                                     <color key="titleColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToNextStep:" destination="Rh6-QP-eMM" eventType="touchUpInside" id="V9p-Jk-77O"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRy-jA-vOR">
                                 <rect key="frame" x="132.5" y="491.5" width="110" height="1"/>
@@ -6495,6 +6535,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goToNextStep:" destination="Rh6-QP-eMM" eventType="touchUpInside" id="KPV-2K-Yet"/>
                                     <action selector="goToNextView:" destination="KZz-Dv-PWa" eventType="touchUpInside" id="zoV-QR-Ojt"/>
                                 </connections>
                             </button>
@@ -6557,15 +6598,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7vc-aA-Rfp"/>
                     </view>
+                    <connections>
+                        <outlet property="backView" destination="SsL-T0-30Z" id="HBI-HJ-tkG"/>
+                        <outlet property="closeView" destination="2TR-xA-h1r" id="eCm-yd-9Yn"/>
+                        <outlet property="gehoorButton" destination="oUI-lG-lSg" id="U6B-fr-z0d"/>
+                        <outlet property="hearView" destination="nwJ-go-IXm" id="AKv-uy-sPC"/>
+                        <outlet property="nextButton" destination="UPw-qW-DRo" id="Ttc-i5-oWu"/>
+                        <outlet property="seeView" destination="gPy-8Y-S6n" id="LrJ-A6-0j8"/>
+                        <outlet property="speakView" destination="NC3-mY-7wy" id="Zzr-vN-V20"/>
+                        <outlet property="spraakButton" destination="INV-rb-e7E" id="crg-gW-DPJ"/>
+                        <outlet property="zichtButton" destination="W6W-JH-j9v" id="VuR-uC-7jo"/>
+                        <segue destination="JqZ-He-bdw" kind="show" identifier="AanvraagStap5" id="SAJ-Cw-nsW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtu-tx-T9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6722" y="457"/>
         </scene>
-        <!--View Controller-->
+        <!--Stap5 Kennismaking View Controller-->
         <scene sceneID="oS9-04-1cX">
             <objects>
-                <viewController id="JqZ-He-bdw" sceneMemberID="viewController">
+                <viewController id="JqZ-He-bdw" customClass="Stap5KennismakingViewController" customModule="MakerMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzE-Zu-7QC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6681,14 +6734,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="JqZ-He-bdw" eventType="touchUpInside" id="3N4-rf-lcp"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGM-8c-xwd">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGM-8c-xwd">
                                         <rect key="frame" x="0.0" y="53" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="sLt-2F-4EM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Begeleiders in een centrum">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -6702,14 +6758,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="JqZ-He-bdw" eventType="touchUpInside" id="fAl-wn-bTE"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qs-E6-bIZ">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qs-E6-bIZ">
                                         <rect key="frame" x="0.0" y="106" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="MWo-in-oBh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Familie/Vrienden">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -6723,14 +6782,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="JqZ-He-bdw" eventType="touchUpInside" id="5JN-hW-uid"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-8F-MB1">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-8F-MB1">
                                         <rect key="frame" x="0.0" y="159" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="8v1-Yi-xEz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Is aangewezen op zichzelf">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -6744,14 +6806,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="JqZ-He-bdw" eventType="touchUpInside" id="TQT-y5-dlD"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw7-EU-cjg">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw7-EU-cjg">
                                         <rect key="frame" x="0.0" y="212" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="iUK-jY-dIo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Verpleging/thuiszorg">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -6765,14 +6830,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="JqZ-He-bdw" eventType="touchUpInside" id="QRi-m3-6tO"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9h-Nz-5VC">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9h-Nz-5VC">
                                         <rect key="frame" x="0.0" y="265" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="SYv-wB-EzJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Mantelzorger(s)">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -6786,6 +6854,9 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="JqZ-He-bdw" eventType="touchUpInside" id="8U8-KH-61a"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -6814,6 +6885,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goToNextStep:" destination="JqZ-He-bdw" eventType="touchUpInside" id="YNR-N3-0iN"/>
                                     <action selector="goToNextView:" destination="KZz-Dv-PWa" eventType="touchUpInside" id="jOI-Vz-9GD"/>
                                 </connections>
                             </button>
@@ -6867,15 +6939,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oqe-Ps-n75"/>
                     </view>
+                    <connections>
+                        <outlet property="backView" destination="5bN-f4-9ez" id="NxT-88-Gb9"/>
+                        <outlet property="closeView" destination="vYA-98-az3" id="ZXh-mo-tco"/>
+                        <outlet property="nextButton" destination="TCp-61-VW7" id="uv6-1p-KR9"/>
+                        <segue destination="IJr-Rf-Y9C" kind="show" identifier="AanvraagStap6" id="WDz-NN-HYc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaw-hz-eb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7473" y="457"/>
         </scene>
-        <!--View Controller-->
+        <!--Stap6 Kennismaking View Controller-->
         <scene sceneID="y1H-r5-o9z">
             <objects>
-                <viewController id="IJr-Rf-Y9C" sceneMemberID="viewController">
+                <viewController id="IJr-Rf-Y9C" customClass="Stap6KennismakingViewController" customModule="MakerMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lY8-7e-A6G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6977,7 +7055,7 @@
                                             <constraint firstAttribute="height" constant="28" id="PtW-MP-lsz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Communicatie">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -6991,14 +7069,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="wHT-Hl-xGr"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdR-ce-9xa">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdR-ce-9xa">
                                         <rect key="frame" x="0.0" y="40" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="QhQ-9C-tjm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Eten en drinken">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7012,14 +7093,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="pKE-AK-pED"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-LZ-PmR">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-LZ-PmR">
                                         <rect key="frame" x="0.0" y="80" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="yxg-dP-GaY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Huishouden">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7033,14 +7117,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="Clt-g0-g6a"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T48-n6-QrM">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T48-n6-QrM">
                                         <rect key="frame" x="0.0" y="120" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="yS7-cg-qBu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="In beweging">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7054,14 +7141,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="rK7-J7-Qpe"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eji-62-jD6">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eji-62-jD6">
                                         <rect key="frame" x="0.0" y="160" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="W06-TK-WDk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Ontspanning en vrije tijd">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7075,14 +7165,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="3xY-iT-nYQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-t0-4MU">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-t0-4MU">
                                         <rect key="frame" x="0.0" y="200" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="QzA-Gf-HYn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Persoonlijke verzorging">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7096,14 +7189,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="ZXG-na-Tzs"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8f-nr-jqx">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8f-nr-jqx">
                                         <rect key="frame" x="0.0" y="240" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Hi9-1u-O8d"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Werken en studeren">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7117,14 +7213,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="0Cw-c2-gcy"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQs-2t-ylw">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQs-2t-ylw">
                                         <rect key="frame" x="0.0" y="280" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="mlq-0K-xhE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Wonen">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7138,14 +7237,17 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="PX3-zy-Nsv"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRX-XB-Q8O">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRX-XB-Q8O">
                                         <rect key="frame" x="0.0" y="320" width="200" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Ttg-ZR-jOx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Geen ondersteuning nodig">
+                                        <state key="normal" title="Zorgen en verzorgen">
                                             <color key="titleColor" red="0.25098039220000001" green="0.3294117647" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -7159,6 +7261,9 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="2vc-wN-fds"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -7187,6 +7292,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goToNextStep:" destination="IJr-Rf-Y9C" eventType="touchUpInside" id="D5I-fR-TDJ"/>
                                     <action selector="goToNextView:" destination="KZz-Dv-PWa" eventType="touchUpInside" id="tfe-Z3-yL6"/>
                                 </connections>
                             </button>
@@ -7240,6 +7346,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XPY-GP-Qg8"/>
                     </view>
+                    <connections>
+                        <outlet property="backView" destination="05l-R4-Vki" id="nVN-RM-m0I"/>
+                        <outlet property="closeView" destination="sPu-20-4aq" id="ccW-ht-uhP"/>
+                        <outlet property="nextButton" destination="VB9-k2-F2W" id="9U8-GP-LtV"/>
+                        <segue destination="yit-4L-VZ1" kind="show" identifier="AanvraagStap7" id="jwR-tG-lAF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgy-Rf-5D9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -8535,7 +8647,4 @@
         <image name="yesSlider" width="24" height="24"/>
         <image name="zelfstandig-detailHack" width="16" height="16"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="T7Z-6I-RJ5"/>
-    </inferredMetricsTieBreakers>
 </document>
