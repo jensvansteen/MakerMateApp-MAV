@@ -13,31 +13,36 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
     
     var kennisMakingDone = false
     var hackGetest = false
+    
+    var hackInProject: HackInProject?
 
     @IBOutlet weak var stepsCollectionView: UICollectionView!
     @IBOutlet weak var closeButton: UIImageView!
     
-    let steps = [
+    var steps = [
     [
         "step": "Kennismaking",
         "access": "unlocked",
         "completed": false,
         "description": "Ben je ter plaatse? Dan kunnen we beginnen! Enkele vragen over de persoon, omgeving en  handeling gidsen je naar de juiste hack(s).",
-        "buttonTekst": "Ready, set, go!"
+        "buttonTekst": "Ready, set, go!",
+        "height": 170
         ],
     [
         "step": "Hacks testen",
         "access": "locked",
         "completed": false,
-         "description": "Naam, contactgegevens, de omschrijving dat noteer je allemaal hier.",
-         "buttonTekst": "Test de hack"
+         "description": "Is de hack klaar? Ben je ter plaatse? Prima, laten we ze testen!",
+         "buttonTekst": "Test de hack",
+         "height": 123
         ],
         [
-            "step": "Publiceren",
+            "step": "Evaluatie",
             "access": "locked",
             "completed": false,
-             "description": "Naam, contactgegevens, de omschrijving dat noteer je allemaal hier.",
-             "buttonTekst": "Start evaluatie!"
+             "description": "De juiste hack gevonden! We doen nog een laatste check om te kijken of de hack veilig, duurzaam en gebruiksvriendelijk is.",
+             "buttonTekst": "Start evaluatie!",
+             "height": 159
         ]
     ]
  
@@ -56,10 +61,22 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
         let tapAanvraag = UITapGestureRecognizer(target: self, action: #selector(closeThis))
         closeButton.addGestureRecognizer(tapAanvraag)
         closeButton.isUserInteractionEnabled = true
+        
+        setupUI()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    
+    func setupUI() {
+        if let hackInProject = hackInProject {
+            steps[0]["completed"] = true
+            steps[1]["access"] = "unlocked"
+        }
+        
+        stepsCollectionView.reloadData()
     }
     
     
@@ -76,7 +93,7 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
         
         if steps[indexPath.row]["access"] as! String == "locked" {
             cell.actionStep.isHidden = true
-            cell.stepDescription.isHidden = true
+            cell.stepDescription.isHidden = false
             cell.imageStep.isHidden = true
             cell.stepName.textColor = #colorLiteral(red: 0.7254901961, green: 0.5882352941, blue: 0.2980392157, alpha: 1)
         } else if steps[indexPath.row]["access"] as! String == "unlocked" && steps[indexPath.row]["completed"] as! Bool == true {
@@ -91,11 +108,12 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if steps[indexPath.row]["step"] as! String == "De aanvraag" && steps[indexPath.row]["access"] as! String == "unlocked" && steps[indexPath.row]["completed"] as! Bool == false {
-            print("true")
-            return CGSize(width: 290, height: 120)
-        } else if steps[indexPath.row]["step"] as! String == "Kennismaking" && steps[indexPath.row]["access"] as! String == "unlocked" && steps[indexPath.row]["completed"] as! Bool == false {
-            return CGSize(width: 290, height: 170)
+        if steps[indexPath.row]["completed"] as! Bool == false {
+            if steps[indexPath.row]["access"] as! String == "locked" {
+                return CGSize(width: 290, height: CGFloat(steps[indexPath.row]["height"] as! Int - 10))
+            } else {
+                return CGSize(width: 290, height: CGFloat(steps[indexPath.row]["height"] as! Int))
+            }
         } else if steps[indexPath.row]["completed"] as! Bool == true {
             return CGSize(width: 290, height: 46)
         }
@@ -107,6 +125,11 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 && !kennisMakingDone {
             performSegue(withIdentifier: "startKennismaking", sender: nil)
+        } else if indexPath.row == 1 {
+            if let hackInProject = hackInProject {
+                 let testHackViewController = self.storyboard?.instantiateViewController(withIdentifier: "testDeHackViewController") as! Stap1TestHackViewController
+                self.present(testHackViewController, animated: true, completion: nil)
+            }
         }
     }
     

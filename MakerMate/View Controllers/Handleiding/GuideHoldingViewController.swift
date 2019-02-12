@@ -29,6 +29,8 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
     
     var projectReference: DocumentReference!
     
+    var hack: HackInProject?
+    
     @IBOutlet weak var stepIndecatorCollectionView: UICollectionView!
     
     @IBOutlet weak var spacingLeftStepIndecator: NSLayoutConstraint!
@@ -91,6 +93,8 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         }
         
         let reviewViewController = self.storyboard?.instantiateViewController(withIdentifier: "hackReview") as! ReviewHackViewController
+        
+        reviewViewController.hack = hack
         
         viewControllersColl.append(reviewViewController)
         

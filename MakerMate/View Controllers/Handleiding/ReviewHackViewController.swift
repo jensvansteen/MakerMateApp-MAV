@@ -13,13 +13,14 @@ class ReviewHackViewController: UIViewController {
     @IBOutlet weak var reviewSlider: UISlider!
     
     
+    var hack: HackInProject?
     
+        var guideHoldingController: GuideHoldingViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-//        reviewSlider.callback
+
     }
     
 
@@ -33,7 +34,12 @@ class ReviewHackViewController: UIViewController {
     }
     */
     
-
+    @IBAction func testDeHack(_ sender: UIButton) {
+        let nextViewController = storyboard!.instantiateViewController(withIdentifier: "oversightProjectView") as! StepsProjectViewController
+        nextViewController.hackInProject = hack
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
     @IBAction func sliderDidChange(_ sender: UISlider) {
         let fixed = roundf(sender.value)
         sender.setValue(fixed, animated: true)

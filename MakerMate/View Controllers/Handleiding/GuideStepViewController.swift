@@ -150,9 +150,6 @@ class GuideStepViewController: UIViewController, UICollectionViewDelegate, UICol
         }
        
         
-        
-        
-        
         if numberOfNeededItems >= 1 {
             itemsNeededHeight.constant = CGFloat(numberOfNeededItems * 35)
         } else {

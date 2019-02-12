@@ -26,10 +26,11 @@
 		330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C32220B2E3800FF9384 /* NewStepViewController.swift */; };
 		332290AC220E5DE80069D044 /* Stap1KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */; };
 		332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AD220E5FC00069D044 /* kennisMakingSteps.swift */; };
-		332290B1220ED9380069D044 /* TestHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B0220ED9380069D044 /* TestHack.swift */; };
 		332290B3220ED9450069D044 /* EvalutieHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B2220ED9450069D044 /* EvalutieHack.swift */; };
 		33393F3F2210385E009845E5 /* Hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F3E2210385E009845E5 /* Hack.swift */; };
 		33393F4122109EBF009845E5 /* Stap3KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */; };
+		333C84A3221322410057BDC7 /* Stap1TestHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */; };
+		333C84A5221323BA0057BDC7 /* Stap2TestHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */; };
 		333CDEFD2212A91B00C09B2F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */; };
 		33640012220DC9D60081AB91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640011220DC9D60081AB91 /* Request.swift */; };
 		33640017220E43030081AB91 /* lastProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640016220E43030081AB91 /* lastProject.swift */; };
@@ -110,11 +111,12 @@
 		330E6C32220B2E3800FF9384 /* NewStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStepViewController.swift; sourceTree = "<group>"; };
 		332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1KennismakingViewController.swift; sourceTree = "<group>"; };
 		332290AD220E5FC00069D044 /* kennisMakingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kennisMakingSteps.swift; sourceTree = "<group>"; };
-		332290B0220ED9380069D044 /* TestHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHack.swift; sourceTree = "<group>"; };
 		332290B2220ED9450069D044 /* EvalutieHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalutieHack.swift; sourceTree = "<group>"; };
 		333024622212AB8600E6E04F /* MakerMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MakerMate.entitlements; sourceTree = "<group>"; };
 		33393F3E2210385E009845E5 /* Hack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hack.swift; sourceTree = "<group>"; };
 		33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3KennismakingViewController.swift; sourceTree = "<group>"; };
+		333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1TestHackViewController.swift; sourceTree = "<group>"; };
+		333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap2TestHackViewController.swift; sourceTree = "<group>"; };
 		333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		33640011220DC9D60081AB91 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		33640016220E43030081AB91 /* lastProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastProject.swift; sourceTree = "<group>"; };
@@ -225,11 +227,19 @@
 				330E6C2E220B299100FF9384 /* HackInProject.swift */,
 				33640018220E4A450081AB91 /* Kennismaking.swift */,
 				33A583B02207080D00AB4CDA /* Project.swift */,
-				332290B0220ED9380069D044 /* TestHack.swift */,
 				332290B2220ED9450069D044 /* EvalutieHack.swift */,
 				33A002D7220F30CD0070DE28 /* StapHack.swift */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		333C84A1221322190057BDC7 /* TestHack */ = {
+			isa = PBXGroup;
+			children = (
+				333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */,
+				333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */,
+			);
+			path = TestHack;
 			sourceTree = "<group>";
 		};
 		33640013220DCEAD0081AB91 /* SingeltonClasses */ = {
@@ -307,6 +317,7 @@
 		33D4B5D2220197600095DAE6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				333C84A1221322190057BDC7 /* TestHack */,
 				3369FDD6221223D7000879F7 /* Onboarding */,
 				332290AA220E5D940069D044 /* Kennismaking */,
 				33EBB2B022089558008CF5E0 /* Handleiding */,
@@ -664,10 +675,11 @@
 				33F2E8D62208F71E0005BF35 /* GuideStepViewController.swift in Sources */,
 				330E6C21220A4A6F00FF9384 /* ReviewHackViewController.swift in Sources */,
 				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
+				333C84A5221323BA0057BDC7 /* Stap2TestHackViewController.swift in Sources */,
 				338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */,
+				333C84A3221322410057BDC7 /* Stap1TestHackViewController.swift in Sources */,
 				33063021221174AE0038E978 /* mobiCollectionViewCell.swift in Sources */,
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
-				332290B1220ED9380069D044 /* TestHack.swift in Sources */,
 				330630252211A5FE0038E978 /* Stap5KennismakingViewController.swift in Sources */,
 				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
 				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,

@@ -51,8 +51,6 @@ class addedHacksViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBAction func addToProject(_ sender: UIButton) {
         kennismakingSteps.sharedInstance.pushToFirebase()
         hack!.addToProject(projectId: LastProject.shared.idLastProject!)
-        let tabBarController = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
-        tabBarController.selectedIndex = 1
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
