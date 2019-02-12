@@ -31,6 +31,8 @@
 		33393F4122109EBF009845E5 /* Stap3KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */; };
 		333C84A3221322410057BDC7 /* Stap1TestHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */; };
 		333C84A5221323BA0057BDC7 /* Stap2TestHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */; };
+		333C84A722133DF80057BDC7 /* HulpVragenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A622133DF80057BDC7 /* HulpVragenViewController.swift */; };
+		333C84AB221368D20057BDC7 /* memberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84AA221368D20057BDC7 /* memberTableViewCell.swift */; };
 		333CDEFD2212A91B00C09B2F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */; };
 		33640012220DC9D60081AB91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640011220DC9D60081AB91 /* Request.swift */; };
 		33640017220E43030081AB91 /* lastProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640016220E43030081AB91 /* lastProject.swift */; };
@@ -117,6 +119,8 @@
 		33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3KennismakingViewController.swift; sourceTree = "<group>"; };
 		333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1TestHackViewController.swift; sourceTree = "<group>"; };
 		333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap2TestHackViewController.swift; sourceTree = "<group>"; };
+		333C84A622133DF80057BDC7 /* HulpVragenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulpVragenViewController.swift; sourceTree = "<group>"; };
+		333C84AA221368D20057BDC7 /* memberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberTableViewCell.swift; sourceTree = "<group>"; };
 		333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		33640011220DC9D60081AB91 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		33640016220E43030081AB91 /* lastProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastProject.swift; sourceTree = "<group>"; };
@@ -242,6 +246,22 @@
 			path = TestHack;
 			sourceTree = "<group>";
 		};
+		333C84A8221352EC0057BDC7 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				333C84A622133DF80057BDC7 /* HulpVragenViewController.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		333C84A9221368A10057BDC7 /* hulpZoeken */ = {
+			isa = PBXGroup;
+			children = (
+				333C84AA221368D20057BDC7 /* memberTableViewCell.swift */,
+			);
+			path = hulpZoeken;
+			sourceTree = "<group>";
+		};
 		33640013220DCEAD0081AB91 /* SingeltonClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +342,7 @@
 				332290AA220E5D940069D044 /* Kennismaking */,
 				33EBB2B022089558008CF5E0 /* Handleiding */,
 				3381CB6D2204FFBF003FF236 /* Aanvraag */,
+				333C84A8221352EC0057BDC7 /* Project */,
 				33EBF5552200FEB400B242AE /* ProfileViewController.swift */,
 				33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */,
 				33D4B5D822019D350095DAE6 /* HomeViewController.swift */,
@@ -392,6 +413,7 @@
 		33EBB2AE22085DF2008CF5E0 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				333C84A9221368A10057BDC7 /* hulpZoeken */,
 				33EBB2AF22085DFB008CF5E0 /* Kennismaking */,
 			);
 			path = Project;
@@ -643,6 +665,7 @@
 				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
 				33640017220E43030081AB91 /* lastProject.swift in Sources */,
 				33640012220DC9D60081AB91 /* Request.swift in Sources */,
+				333C84A722133DF80057BDC7 /* HulpVragenViewController.swift in Sources */,
 				3306302B2211B3EC0038E978 /* Stap7KennismakingViewController.swift in Sources */,
 				3369FDD822122F6F000879F7 /* LoginViewController.swift in Sources */,
 				330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */,
@@ -667,6 +690,7 @@
 				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
 				33DD1EED2212BF8A00296A68 /* PersonallInfoViewController.swift in Sources */,
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
+				333C84AB221368D20057BDC7 /* memberTableViewCell.swift in Sources */,
 				338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */,
 				3306301E221172350038E978 /* Stap2KennismakingViewController.swift in Sources */,
 				33063023221190130038E978 /* Stap4KennismakingViewController.swift in Sources */,

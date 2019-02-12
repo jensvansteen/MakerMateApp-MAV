@@ -50,6 +50,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var indecatorHacksImage: UIImageView!
     @IBOutlet weak var collapsIconHacksImage: UIImageView!
     @IBOutlet weak var kennisMakingViewCompleted: KennisMakingDetailsView!
+    @IBOutlet weak var hulpVragenView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,14 +71,12 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         
     
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showHulpView))
+        hulpVragenView.addGestureRecognizer(tap)
+        hulpVragenView.isUserInteractionEnabled = true
 
-        
-        
-        
-//        var projectYannick = Firestore.firestore().collection("Projects").document("1Hoa2D5bUxbFsbVxdVXZ").
-        
-        // Do any additional setup after loading the view.
+        setNavigationBar()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +105,17 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     }
     
+    func setNavigationBar() {
+        self.navigationController?.navigationBar.topItem?.title = "Projecten"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1960784314, green: 0.1960784314, blue: 0.1960784314, alpha: 1),
+             NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 16.0)!]
+        
+        self.navigationController?.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1450980392, green: 0.2588235294, blue: 0.6156862745, alpha: 1),
+                                                                                             NSAttributedString.Key.font: UIFont(name: "AvenirNext", size: 14.0)!], for: .normal)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
     
     func setListener() {
         hackListener = hacksCollectionRef.addSnapshotListener { documentSnapshot, error in
@@ -293,6 +303,17 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBAction func startKennismaking(_ sender: UIButton) {
         performSegue(withIdentifier: "showProjectDetail", sender: nil)
+    }
+    
+    @objc private func showHulpView() {
+//        if let project = project {
+//            let hulpVraagView = storyboard?.instantiateViewController(withIdentifier: "hulpVraagView") as! HulpVragenViewController
+//            hulpVraagView.project = project
+//            self.navigationController?.pushViewController(hulpVraagView!, animated: true)
+//        }
+//        let hulpVraagView = storyboard?.instantiateViewController(withIdentifier: "hulpVraagView") as! HulpVragenViewController
+        let hulpVraagView = storyboard?.instantiateViewController(withIdentifier: "hulpVraagView") as! HulpVragenViewController
+        self.navigationController?.pushViewController(hulpVraagView, animated: true)
     }
     
 

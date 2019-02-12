@@ -46,7 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         launchStoryboard(storyboard: "Onboarding")
         
         
-        
+//        let user = Auth.auth().currentUser!
+//
+//        // 4
+//        do {
+//            try Auth.auth().signOut()
+//        } catch (let error) {
+//            print("Auth sign out failed: \(error)")
+//        }
         
         return true
     }
