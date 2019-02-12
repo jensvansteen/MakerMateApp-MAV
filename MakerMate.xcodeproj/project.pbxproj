@@ -30,6 +30,7 @@
 		332290B3220ED9450069D044 /* EvalutieHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B2220ED9450069D044 /* EvalutieHack.swift */; };
 		33393F3F2210385E009845E5 /* Hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F3E2210385E009845E5 /* Hack.swift */; };
 		33393F4122109EBF009845E5 /* Stap3KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */; };
+		333CDEFD2212A91B00C09B2F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */; };
 		33640012220DC9D60081AB91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640011220DC9D60081AB91 /* Request.swift */; };
 		33640017220E43030081AB91 /* lastProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640016220E43030081AB91 /* lastProject.swift */; };
 		33640019220E4A450081AB91 /* Kennismaking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640018220E4A450081AB91 /* Kennismaking.swift */; };
@@ -38,6 +39,8 @@
 		3369FDCB2211EE77000879F7 /* addedHacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDCA2211EE77000879F7 /* addedHacksViewController.swift */; };
 		3369FDCD2211F03A000879F7 /* hackOversightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDCC2211F03A000879F7 /* hackOversightCollectionViewCell.swift */; };
 		3369FDD322120638000879F7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDD222120638000879F7 /* CustomTabbar.swift */; };
+		3369FDD522121743000879F7 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3369FDD422121743000879F7 /* Onboarding.storyboard */; };
+		3369FDD822122F6F000879F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDD722122F6F000879F7 /* LoginViewController.swift */; };
 		3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB552202E9F3003FF236 /* RequestViewController.swift */; };
 		3381CB592202EE83003FF236 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB582202EE83003FF236 /* BackButton.swift */; };
 		3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */; };
@@ -68,6 +71,7 @@
 		33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E02201AEC10095DAE6 /* RequestCell.swift */; };
 		33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */; };
 		33D4B60322022D420095DAE6 /* IntrestHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */; };
+		33DD1EED2212BF8A00296A68 /* PersonallInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD1EEC2212BF8A00296A68 /* PersonallInfoViewController.swift */; };
 		33EBB2A722073270008CF5E0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2A622073270008CF5E0 /* ProjectViewController.swift */; };
 		33EBB2A9220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */; };
 		33EBB2AB22085CCC008CF5E0 /* KennisMakingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */; };
@@ -108,8 +112,10 @@
 		332290AD220E5FC00069D044 /* kennisMakingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kennisMakingSteps.swift; sourceTree = "<group>"; };
 		332290B0220ED9380069D044 /* TestHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHack.swift; sourceTree = "<group>"; };
 		332290B2220ED9450069D044 /* EvalutieHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalutieHack.swift; sourceTree = "<group>"; };
+		333024622212AB8600E6E04F /* MakerMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MakerMate.entitlements; sourceTree = "<group>"; };
 		33393F3E2210385E009845E5 /* Hack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hack.swift; sourceTree = "<group>"; };
 		33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3KennismakingViewController.swift; sourceTree = "<group>"; };
+		333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		33640011220DC9D60081AB91 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		33640016220E43030081AB91 /* lastProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastProject.swift; sourceTree = "<group>"; };
 		33640018220E4A450081AB91 /* Kennismaking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kennismaking.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 		3369FDCA2211EE77000879F7 /* addedHacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addedHacksViewController.swift; sourceTree = "<group>"; };
 		3369FDCC2211F03A000879F7 /* hackOversightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackOversightCollectionViewCell.swift; sourceTree = "<group>"; };
 		3369FDD222120638000879F7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		3369FDD422121743000879F7 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		3369FDD722122F6F000879F7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3381CB552202E9F3003FF236 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		3381CB582202EE83003FF236 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRequestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 		33D4B5E02201AEC10095DAE6 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrestHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		33DD1EEC2212BF8A00296A68 /* PersonallInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonallInfoViewController.swift; sourceTree = "<group>"; };
 		33EBB2A622073270008CF5E0 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennisMakingDetailsView.swift; sourceTree = "<group>"; };
@@ -233,6 +242,16 @@
 			path = SingeltonClasses;
 			sourceTree = "<group>";
 		};
+		3369FDD6221223D7000879F7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3369FDD722122F6F000879F7 /* LoginViewController.swift */,
+				333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */,
+				33DD1EEC2212BF8A00296A68 /* PersonallInfoViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		3381CB572202EE6C003FF236 /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +307,7 @@
 		33D4B5D2220197600095DAE6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3369FDD6221223D7000879F7 /* Onboarding */,
 				332290AA220E5D940069D044 /* Kennismaking */,
 				33EBB2B022089558008CF5E0 /* Handleiding */,
 				3381CB6D2204FFBF003FF236 /* Aanvraag */,
@@ -324,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				33EBF5572200FEB400B242AE /* Main.storyboard */,
+				3369FDD422121743000879F7 /* Onboarding.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -410,6 +431,7 @@
 		33EBF5522200FEB400B242AE /* MakerMate */ = {
 			isa = PBXGroup;
 			children = (
+				333024622212AB8600E6E04F /* MakerMate.entitlements */,
 				33640013220DCEAD0081AB91 /* SingeltonClasses */,
 				33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */,
 				3381CB60220385D1003FF236 /* Nibs */,
@@ -488,6 +510,11 @@
 				TargetAttributes = {
 					33EBF54F2200FEB400B242AE = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -515,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */,
+				3369FDD522121743000879F7 /* Onboarding.storyboard in Resources */,
 				3381CB6222038605003FF236 /* AanvragenView.xib in Resources */,
 				33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */,
 				33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */,
@@ -605,12 +633,14 @@
 				33640017220E43030081AB91 /* lastProject.swift in Sources */,
 				33640012220DC9D60081AB91 /* Request.swift in Sources */,
 				3306302B2211B3EC0038E978 /* Stap7KennismakingViewController.swift in Sources */,
+				3369FDD822122F6F000879F7 /* LoginViewController.swift in Sources */,
 				330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */,
 				3369FDD322120638000879F7 /* CustomTabbar.swift in Sources */,
 				33F2E8D42208DEB20005BF35 /* GuideHoldingViewController.swift in Sources */,
 				330E6C25220AE23A00FF9384 /* EditStepViewController.swift in Sources */,
 				33393F3F2210385E009845E5 /* Hack.swift in Sources */,
 				33F2E8D22208DD050005BF35 /* ScrollViewController.swift in Sources */,
+				333CDEFD2212A91B00C09B2F /* SignUpViewController.swift in Sources */,
 				338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */,
 				3369FDCB2211EE77000879F7 /* addedHacksViewController.swift in Sources */,
 				33F2E8E12209C04E0005BF35 /* itemNeededCollectionViewCell.swift in Sources */,
@@ -624,6 +654,7 @@
 				330E6C2F220B299100FF9384 /* HackInProject.swift in Sources */,
 				33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */,
 				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
+				33DD1EED2212BF8A00296A68 /* PersonallInfoViewController.swift in Sources */,
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
 				338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */,
 				3306301E221172350038E978 /* Stap2KennismakingViewController.swift in Sources */,

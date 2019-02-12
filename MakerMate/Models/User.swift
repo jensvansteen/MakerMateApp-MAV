@@ -8,9 +8,15 @@
 
 import Foundation
 import Firebase
+//
+//class User {
+//    var userID: String
+//    var photoURL: String
+//    var firstName: String
+//    var lastName: String
+//
+//    init() {
+//        <#statements#>
+//    }
+//}
 
-struct User {
-    let uid: String
-    let emaill: String
-    
-}

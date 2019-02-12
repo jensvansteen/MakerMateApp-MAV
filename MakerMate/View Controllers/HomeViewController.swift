@@ -51,6 +51,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         projectsCollectionRef = db.collection("Projects")
         requestCollectionRef = db.collection("Requests")
         
+          let user = Auth.auth().currentUser!
+        
+        
+        print("The current user as the id \(user.uid) and the displayname:(\(user.displayName))")
+        
 //        var projectYannick = Firestore.firestore().collection("Projects").document("1Hoa2D5bUxbFsbVxdVXZ")
 //        projectYannick.getDocument { (document,error) in
 //            if let document = document, document.exists {
