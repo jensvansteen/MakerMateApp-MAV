@@ -18,6 +18,9 @@ class HackDetailKennismakingViewController: UIViewController {
     @IBOutlet weak var levelHackLabel: UILabel!
     @IBOutlet weak var hackLikesLabel: UILabel!
     @IBOutlet weak var imageOfHack: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet var userImages: [UIImageView]!
+    @IBOutlet weak var catogerieCollectionView: UICollectionView!
     
     var hack: Hack?
     
@@ -34,10 +37,19 @@ class HackDetailKennismakingViewController: UIViewController {
         
         print(hack)
         
+        for image in userImages {
+            image.layer.masksToBounds = false
+            image.layer.borderColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.5843137255, alpha: 1)
+            image.borderWidth = 1.0
+            image.cornerRadius = image.frame.size.width/2
+            image.clipsToBounds = true
+        }
+        
         if let hack = hack {
             hackNameLabel.text = hack.name
             levelHackLabel.text = level[hack.niveau]
             hackLikesLabel.text = String(hack.likes)
+            descriptionLabel.text = "Dankzij de Lighter aid is het mogelijk voor Nicole om een aansteker te gebruiken met één hand en verminderde kracht. Ze kan de lengte van de aansteker blijven gebruiken zodat ze zelfs kaarsen in een diepe vaas kan bereiken."
             
             if let hackimg = hack.hackImage {
                 imageOfHack.image = hackimg
@@ -67,6 +79,9 @@ class HackDetailKennismakingViewController: UIViewController {
         return true
     }
     
+    @IBAction func viewBack(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOversight" {

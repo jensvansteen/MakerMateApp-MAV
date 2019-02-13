@@ -68,7 +68,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        requestsCollectionView.setContentOffset(CGPoint.zero, animated: true)
         setupUI()
     }
     
@@ -76,11 +76,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = false
+        
         setListener()
         
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+
     
     func setNavigationBar() {
         self.navigationController?.navigationBar.topItem?.title = "Home"
@@ -183,7 +187,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 aanvragenLabel.text = "Voorstellen"
                 actionButtonRecentProject.setTitle("Bekijk alle voorstellen", for: .normal)
                 meerAanvraagButton.setTitle("Toon alle voorstellen", for: .normal)
-                if project != nil && LastProject.shared.showProject {
+                if LastProject.shared.showProject {
                     actionButtonRecentProject.setTitle("Start de handleiding", for: .normal)
                     nameProject.text = "Annick"
                     nameProject.isHidden = true
