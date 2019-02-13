@@ -79,13 +79,14 @@ class PersonallInfoViewController: UIViewController, UIImagePickerControllerDele
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         var refUser: DocumentReference? = nil
-        if let imgData = imgData {
+        if imgData != nil {
             refUser = db.collection("Users").addDocument(data: [
                 "firstName": firstName,
                 "lastName": name,
-                "email": email,
+                "email": email!,
                 "userID": id,
-                "imagePath": "userPhotos/\(id)/user.jpg"
+                "imagePath": "userPhotos/\(id)/user.jpg",
+                "mate": false
             ]) {err in
                 if let err = err {
                     print("Error adding document: \(err)")
@@ -97,9 +98,10 @@ class PersonallInfoViewController: UIViewController, UIImagePickerControllerDele
             refUser = db.collection("Users").addDocument(data: [
                 "firstName": firstName,
                 "lastName": name,
-                "email": email,
+                "email": email!,
                 "userID": id,
-                "imagePath": "userPhotos/standard-avatar.png"
+                "imagePath": "userPhotos/standard-avatar.png",
+                "mate": false
             ]) {err in
                 if let err = err {
                     print("Error adding document: \(err)")
@@ -201,21 +203,5 @@ private func uploadImageToFirebaseStorage(data: Data, userID: String) {
     self.navigationController?.popViewController(animated: true)
 }
 
-//    if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
-//    Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { user, error in
-//    if error == nil {
-//    Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
-//    }
-//    }
-//    }
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
 
 }

@@ -15,6 +15,7 @@ class LastProject {
     static var shared = LastProject()
     
     var idLastProject: String? = ""
+    var showProject = false
     
     func uploadImageToFirebaseStorage(data: URL) {
         let storageRef = Storage.storage().reference()

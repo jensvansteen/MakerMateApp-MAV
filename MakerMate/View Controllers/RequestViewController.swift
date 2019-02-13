@@ -97,6 +97,8 @@ class RequestViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBAction func backToHome(_ sender: UIButton) {
         
+        LastProject.shared.showProject = true
+        
         request!.addToProjectsFromRequest()
         
         self.navigationController?.popViewController(animated: true)

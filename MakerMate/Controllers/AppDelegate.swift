@@ -29,12 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //setup Firebase
         FirebaseApp.configure()
         
-        let db = Firestore.firestore()
-        
-        let storage = Storage.storage()
-        
-        print(db)
-        
+//        let db = Firestore.firestore()
+//
+//        let storage = Storage.storage()
+//
+//        print(db)
+
         let onBoardingDone = UserDefaults.standard.bool(forKey: "boardingDone")
         
         if onBoardingDone {
@@ -42,8 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             launchStoryboard(storyboard: "Onboarding")
         }
-        
+
         launchStoryboard(storyboard: "Onboarding")
+        
+        
+        if let lastproject = UserDefaults.standard.string(forKey: "lastProject") {
+            LastProject.shared.idLastProject = lastproject
+        }
         
         
 //        let user = Auth.auth().currentUser!
@@ -85,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
-        let user = Auth.auth().currentUser!
+//        let user = Auth.auth().currentUser
         
         // 4
         do {

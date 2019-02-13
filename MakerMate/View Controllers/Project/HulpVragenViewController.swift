@@ -40,7 +40,11 @@ class HulpVragenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row ==  0 {
-            performSegue(withIdentifier: "detailViewMaker", sender: indexPath)
+            if let lastproject = LastProject.shared.idLastProject {
+                let invitation = Invite(projectId: lastproject, id: "wdfjwof25")
+                invitation.pushInvitation()
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
  

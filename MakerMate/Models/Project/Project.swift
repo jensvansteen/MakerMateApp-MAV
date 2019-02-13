@@ -74,7 +74,7 @@ class Project {
     }
     
     
-//    func getHacks() {
+    //    func getHacks() {
 //        var ref = Firestore.firestore().collection("Projects").document(projectId!).collection("Hacks")
 //        ref.getDocuments { (querySnapshot,err) in
 //            if let err = err {

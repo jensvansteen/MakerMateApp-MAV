@@ -24,6 +24,10 @@
 		330E6C2F220B299100FF9384 /* HackInProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2E220B299100FF9384 /* HackInProject.swift */; };
 		330E6C31220B2D3200FF9384 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C30220B2D3200FF9384 /* Step.swift */; };
 		330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C32220B2E3800FF9384 /* NewStepViewController.swift */; };
+		331E2E172213784500B50AF7 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E162213784500B50AF7 /* Invite.swift */; };
+		331E2E192213C0CF00B50AF7 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E182213C0CF00B50AF7 /* NotificationsViewController.swift */; };
+		331E2E1B2213C9FE00B50AF7 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E1A2213C9FE00B50AF7 /* NotificationDetailViewController.swift */; };
+		331E2E1E22143E3000B50AF7 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E1D22143E3000B50AF7 /* MoodCollectionViewCell.swift */; };
 		332290AC220E5DE80069D044 /* Stap1KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */; };
 		332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AD220E5FC00069D044 /* kennisMakingSteps.swift */; };
 		332290B3220ED9450069D044 /* EvalutieHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290B2220ED9450069D044 /* EvalutieHack.swift */; };
@@ -67,7 +71,6 @@
 		33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */; };
 		33A002D8220F30CD0070DE28 /* StapHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A002D7220F30CD0070DE28 /* StapHack.swift */; };
 		33A583B12207080D00AB4CDA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A583B02207080D00AB4CDA /* Project.swift */; };
-		33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
 		33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */; };
@@ -111,6 +114,10 @@
 		330E6C2E220B299100FF9384 /* HackInProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProject.swift; sourceTree = "<group>"; };
 		330E6C30220B2D3200FF9384 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		330E6C32220B2E3800FF9384 /* NewStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStepViewController.swift; sourceTree = "<group>"; };
+		331E2E162213784500B50AF7 /* Invite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
+		331E2E182213C0CF00B50AF7 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		331E2E1A2213C9FE00B50AF7 /* NotificationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailViewController.swift; sourceTree = "<group>"; };
+		331E2E1D22143E3000B50AF7 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1KennismakingViewController.swift; sourceTree = "<group>"; };
 		332290AD220E5FC00069D044 /* kennisMakingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kennisMakingSteps.swift; sourceTree = "<group>"; };
 		332290B2220ED9450069D044 /* EvalutieHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalutieHack.swift; sourceTree = "<group>"; };
@@ -155,7 +162,6 @@
 		33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33A002D7220F30CD0070DE28 /* StapHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StapHack.swift; sourceTree = "<group>"; };
 		33A583B02207080D00AB4CDA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
 		33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
@@ -206,6 +212,14 @@
 				3369FDCC2211F03A000879F7 /* hackOversightCollectionViewCell.swift */,
 			);
 			path = Kennismaking;
+			sourceTree = "<group>";
+		};
+		331E2E1C22143E0B00B50AF7 /* Testen */ = {
+			isa = PBXGroup;
+			children = (
+				331E2E1D22143E3000B50AF7 /* MoodCollectionViewCell.swift */,
+			);
+			path = Testen;
 			sourceTree = "<group>";
 		};
 		332290AA220E5D940069D044 /* Kennismaking */ = {
@@ -330,6 +344,7 @@
 				338B70F0220BB323005D6D95 /* User.swift */,
 				33640011220DC9D60081AB91 /* Request.swift */,
 				33393F3E2210385E009845E5 /* Hack.swift */,
+				331E2E162213784500B50AF7 /* Invite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,11 +359,12 @@
 				3381CB6D2204FFBF003FF236 /* Aanvraag */,
 				333C84A8221352EC0057BDC7 /* Project */,
 				33EBF5552200FEB400B242AE /* ProfileViewController.swift */,
-				33D4B5D622019D250095DAE6 /* ProjectsViewController.swift */,
 				33D4B5D822019D350095DAE6 /* HomeViewController.swift */,
 				3381CB552202E9F3003FF236 /* RequestViewController.swift */,
 				3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */,
 				33EBB2A622073270008CF5E0 /* ProjectViewController.swift */,
+				331E2E182213C0CF00B50AF7 /* NotificationsViewController.swift */,
+				331E2E1A2213C9FE00B50AF7 /* NotificationDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -394,6 +410,7 @@
 		33D4B5DF2201AE900095DAE6 /* CocoaClasses */ = {
 			isa = PBXGroup;
 			children = (
+				331E2E1C22143E0B00B50AF7 /* Testen */,
 				3306301F221174910038E978 /* Kennismaking */,
 				33F2E8DF2209C02B0005BF35 /* Handleiding */,
 				33EBB2AE22085DF2008CF5E0 /* Project */,
@@ -652,7 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EBB2A722073270008CF5E0 /* ProjectViewController.swift in Sources */,
-				33D4B5D722019D250095DAE6 /* ProjectsViewController.swift in Sources */,
 				3369FDCD2211F03A000879F7 /* hackOversightCollectionViewCell.swift in Sources */,
 				3306302D2211B7010038E978 /* HackPreviewCollectionViewCell.swift in Sources */,
 				338679D72205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift in Sources */,
@@ -669,6 +685,7 @@
 				3306302B2211B3EC0038E978 /* Stap7KennismakingViewController.swift in Sources */,
 				3369FDD822122F6F000879F7 /* LoginViewController.swift in Sources */,
 				330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */,
+				331E2E172213784500B50AF7 /* Invite.swift in Sources */,
 				3369FDD322120638000879F7 /* CustomTabbar.swift in Sources */,
 				33F2E8D42208DEB20005BF35 /* GuideHoldingViewController.swift in Sources */,
 				330E6C25220AE23A00FF9384 /* EditStepViewController.swift in Sources */,
@@ -677,7 +694,9 @@
 				333CDEFD2212A91B00C09B2F /* SignUpViewController.swift in Sources */,
 				338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */,
 				3369FDCB2211EE77000879F7 /* addedHacksViewController.swift in Sources */,
+				331E2E192213C0CF00B50AF7 /* NotificationsViewController.swift in Sources */,
 				33F2E8E12209C04E0005BF35 /* itemNeededCollectionViewCell.swift in Sources */,
+				331E2E1B2213C9FE00B50AF7 /* NotificationDetailViewController.swift in Sources */,
 				3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */,
 				330630272211AD230038E978 /* Stap6KennismakingViewController.swift in Sources */,
 				33F2E8E32209CD0D0005BF35 /* BottomStepIndecatorCollectionViewCell.swift in Sources */,
@@ -704,6 +723,7 @@
 				333C84A3221322410057BDC7 /* Stap1TestHackViewController.swift in Sources */,
 				33063021221174AE0038E978 /* mobiCollectionViewCell.swift in Sources */,
 				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
+				331E2E1E22143E3000B50AF7 /* MoodCollectionViewCell.swift in Sources */,
 				330630252211A5FE0038E978 /* Stap5KennismakingViewController.swift in Sources */,
 				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
 				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,

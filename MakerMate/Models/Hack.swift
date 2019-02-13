@@ -65,7 +65,9 @@ class Hack {
             "name": self.name,
             "referenceToHackId": self.hackId,
             "currentStep": 1,
-            "projectId": projectId
+            "projectId": projectId,
+            "hackTested": false,
+            "hackEvaluated": false
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

@@ -13,7 +13,6 @@ import UIKit
 
 class HackInProject {
     
-    
     private(set) var likes: Int
     private(set) var niveau: Int
     private(set) var currentStep: Int
@@ -21,14 +20,18 @@ class HackInProject {
     private(set) var hackId: String
     private(set) var projectId: String
     private(set) var hackImage: UIImage?
+    var hackTested: Bool
+    var hackEvaluated: Bool
     
-    init(likes: Int, niveau: Int, currentStep: Int, name: String, hackId: String, projectId: String) {
+    init(likes: Int, niveau: Int, currentStep: Int, name: String, hackId: String, projectId: String, hackTested: Bool, hackEvaluated: Bool) {
         self.likes = likes
         self.niveau = niveau
         self.currentStep = currentStep
         self.name = name
         self.hackId = hackId
         self.projectId = projectId
+        self.hackTested = hackTested
+        self.hackEvaluated = hackEvaluated
 
         self.getHackImage(hackId: hackId)
     }
@@ -66,11 +69,18 @@ class HackInProject {
             let projecto = data["projectId"] as! String
             print(projecto)
             print(data)
-            let hack = HackInProject(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", hackId: id, projectId: (data["projectId"] as? String)!)
+            let hack = HackInProject(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", hackId: id, projectId: (data["projectId"] as? String)!, hackTested: data["hackTested"] as! Bool, hackEvaluated: data["hackEvaluated"] as! Bool)
             hacks.append(hack)
         }
         
-      
+        
+        func updateHackAsTested() {
+            
+        }
+        
+        func updateHackAsEvaluated() {
+            
+        }
         
         return hacks
     }

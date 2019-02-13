@@ -24,12 +24,11 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var currentStep = "Kennismaking"
     private var showingAanvraag = true
-    private var showingKennismaking = true
+    private var showingKennismaking = false
     private var showingHacks = false
     private var kennisMakingCompleted = true
     
     var db: Firestore!
-    
     
     @IBOutlet weak var contentViewHolder: UIView!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
@@ -65,22 +64,22 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         db = Firestore.firestore()
         
        
-        
         setupTaps()
         configureViews()
         
         
-    
         let tap = UITapGestureRecognizer(target: self, action: #selector(showHulpView))
         hulpVragenView.addGestureRecognizer(tap)
         hulpVragenView.isUserInteractionEnabled = true
 
         setNavigationBar()
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        self.tabBarController?.tabBar.isHidden = false
         
         projectRef = db.collection("Projects").document("jOueOwfJvR2M6bdKYvxB")
         
@@ -90,7 +89,6 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
             
         }
-        
         
         hacksCollectionRef = projectRef.collection("HacksInProject")
         kennismakingCollectionRef = projectRef.collection("Kennismaking")
@@ -102,7 +100,6 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidAppear(_ animated: Bool) {
         setListener()
         
-    
     }
     
     func setNavigationBar() {
@@ -141,6 +138,19 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             } else {
                 self.kennisMakingCompleted = false
                 self.configureViews()
+            }
+        }
+        
+        
+        var currentProject = Firestore.firestore().collection("Projects").document(LastProject.shared.idLastProject!)
+        
+        
+        //Get project
+        currentProject.getDocument() { (querysnapshot, err) in
+            if let err = err {
+                print("no project found with \(LastProject.shared.idLastProject)")
+            } else {
+                self.project = Project.parseOneData(snapshot: querysnapshot)
             }
         }
         
@@ -184,15 +194,17 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             if kennisMakingCompleted == false {
                 kennisMakingHeight.constant = 372
                 kennisMakingViewNotCompleted.isHidden = false
-                
+                kennisMakingViewCompleted.isHidden = true
             } else {
                 kennisMakingHeight.constant = 741
                 kennisMakingViewNotCompleted.isHidden = true
+                kennisMakingViewCompleted.isHidden = false
             }
         } else {
             collapsIconKennismaking.image = UIImage(named: "arrowStepCollapsed")
             kennisMakingHeight.constant = 54
             kennisMakingViewNotCompleted.isHidden = true
+            kennisMakingViewCompleted.isHidden = true
         }
         
         if showingHacks {
@@ -206,13 +218,9 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         if kennisMakingCompleted {
-            kennisMakingViewNotCompleted.isHidden = true
-            kennisMakingViewCompleted.isHidden = false
             indecatorKennismakingImage.image = UIImage(named: "projectStepDone")
             indecatorHacksImage.isHidden = false
         } else {
-            kennisMakingViewNotCompleted.isHidden = false
-            kennisMakingViewCompleted.isHidden = true
             indecatorKennismakingImage.image = UIImage(named: "projectStepToDo")
             indecatorHacksImage.isHidden = true
         }
@@ -325,7 +333,6 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             //true and false fase project
         }
         
-   
             
         }
     

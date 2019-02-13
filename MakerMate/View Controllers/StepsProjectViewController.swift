@@ -127,8 +127,9 @@ class StepsProjectViewController: UIViewController, UICollectionViewDelegate, UI
             performSegue(withIdentifier: "startKennismaking", sender: nil)
         } else if indexPath.row == 1 {
             if let hackInProject = hackInProject {
-                 let testHackViewController = self.storyboard?.instantiateViewController(withIdentifier: "testDeHackViewController") as! Stap1TestHackViewController
-                self.present(testHackViewController, animated: true, completion: nil)
+                let nextViewController = storyboard!.instantiateViewController(withIdentifier: "navigationTest") as! AlwaysPoppableNavigationController
+                let newVC = nextViewController.viewControllers.first as! Stap1TestHackViewController
+                self.present(nextViewController, animated: true, completion: nil)
             }
         }
     }

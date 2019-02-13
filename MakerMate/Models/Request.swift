@@ -78,6 +78,7 @@ class Request {
                 let documentUpdate = self.db.collection("Projects").document(ref!.documentID)
 
                 LastProject.shared.idLastProject = ref!.documentID
+                UserDefaults.standard.set(ref!.documentID, forKey: "lastProject")
                 // Set the "capital" field of the city 'DC'
                 documentUpdate.updateData([
                     "interests": self.interests

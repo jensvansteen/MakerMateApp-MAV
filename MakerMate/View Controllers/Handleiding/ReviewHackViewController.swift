@@ -23,20 +23,13 @@ class ReviewHackViewController: UIViewController {
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func testDeHack(_ sender: UIButton) {
-        let nextViewController = storyboard!.instantiateViewController(withIdentifier: "oversightProjectView") as! StepsProjectViewController
-        nextViewController.hackInProject = hack
+        
+        let nextViewController = storyboard!.instantiateViewController(withIdentifier: "testHolder") as! AlwaysPoppableNavigationController
+//        let nextViewController = storyboard!.instantiateViewController(withIdentifier: "testHolder") as! StepsProjectViewController
+        let newVC = nextViewController.viewControllers.first as! StepsProjectViewController
+        newVC.hackInProject = hack
         self.present(nextViewController, animated:true, completion:nil)
     }
     
