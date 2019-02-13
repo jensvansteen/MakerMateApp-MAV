@@ -13,7 +13,6 @@ import FirebaseStorage
 
 class EditStepViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-
     @IBOutlet weak var dimmerView: UIView!
     @IBOutlet weak var materialsCollectionView: UICollectionView!
     @IBOutlet weak var descriptionTextField: UITextView!

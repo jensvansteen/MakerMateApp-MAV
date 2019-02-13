@@ -52,8 +52,6 @@ class StapHack {
                 gsReference = referenceToStorage.reference(forURL: "gs://makermate-a22cc.appspot.com/hackSteps/\(orginalHackId!)/stap\(order).jpg")
         }
         
-    
-        
         gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
                 print("the error is \(error)")

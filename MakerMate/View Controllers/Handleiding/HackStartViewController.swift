@@ -83,6 +83,11 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if let hack = hack {
+            readyForTesting = hack.readyForTesting
+        }
+       
+        
         setListener()
         
         // Hide the Navigation Bar

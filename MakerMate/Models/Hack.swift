@@ -20,14 +20,18 @@ class Hack {
     private(set) var likes: Int
     private(set) var niveau: Int
     private(set) var hackId: String
+    private(set) var hackShortTitle: String
     private(set) var hackImage: UIImage?
+  
     
     
-    init(likes: Int, niveau: Int, name: String, hackId: String) {
+    init(likes: Int, niveau: Int, name: String, hackId: String, hackShortTitle: String) {
         self.likes = likes
         self.niveau = niveau
         self.name = name
         self.hackId = hackId
+        self.hackShortTitle = hackShortTitle
+       
         
         self.getHackImage(hackId: hackId)
     }
@@ -67,6 +71,7 @@ class Hack {
             "currentStep": 1,
             "projectId": projectId,
             "hackTested": false,
+            "hackShortTitle": self.hackShortTitle,
             "hackEvaluated": false
         ]) { err in
             if let err = err {
@@ -131,7 +136,8 @@ class Hack {
             let name = data["name"] as! String
             let likes = data["likes"] as! Int
             let niveau = data["niveau"] as! Int
-            let hack = Hack(likes: likes, niveau: niveau, name: name, hackId: id)
+            let hackShortTitle = data["hackShortTitle"] as! String
+            let hack = Hack(likes: likes, niveau: niveau, name: name, hackId: id, hackShortTitle: hackShortTitle)
             hacks.append(hack)
         }
         

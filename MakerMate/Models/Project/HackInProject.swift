@@ -13,6 +13,8 @@ import UIKit
 
 class HackInProject {
     
+    var db: Firestore!
+    
     private(set) var likes: Int
     private(set) var niveau: Int
     private(set) var currentStep: Int
@@ -22,6 +24,7 @@ class HackInProject {
     private(set) var hackImage: UIImage?
     var hackTested: Bool
     var hackEvaluated: Bool
+    var readyForTesting: Bool!
     
     init(likes: Int, niveau: Int, currentStep: Int, name: String, hackId: String, projectId: String, hackTested: Bool, hackEvaluated: Bool) {
         self.likes = likes
@@ -32,7 +35,8 @@ class HackInProject {
         self.projectId = projectId
         self.hackTested = hackTested
         self.hackEvaluated = hackEvaluated
-
+        self.readyForTesting = false
+        
         self.getHackImage(hackId: hackId)
     }
     
@@ -50,14 +54,36 @@ class HackInProject {
                 self.hackImage = image
                 
             }
-    }
+        }
         
     }
     
     
+    func updateHackAsTested() {
+        self.hackTested = true
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        
+        ref = db.collection("Projects").document(projectId)
+        let documenref = ref!.collection("HacksInProject").document("\(self.hackId)")
+        
+        documenref.updateData([
+            "hackTested": true
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
     
     
-    
+    func updateHackAsEvaluated() {
+        
+    }
     
     class func parseData(snapshot: QuerySnapshot?) -> [HackInProject] {
         var hacks = [HackInProject]()
@@ -71,15 +97,6 @@ class HackInProject {
             print(data)
             let hack = HackInProject(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", hackId: id, projectId: (data["projectId"] as? String)!, hackTested: data["hackTested"] as! Bool, hackEvaluated: data["hackEvaluated"] as! Bool)
             hacks.append(hack)
-        }
-        
-        
-        func updateHackAsTested() {
-            
-        }
-        
-        func updateHackAsEvaluated() {
-            
         }
         
         return hacks

@@ -22,7 +22,7 @@ class ProjectCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var statANewLabel: UILabel!
     
 
-    func layoutProject(project: Project) {
+    func layoutProject(project: Project, mate: Bool) {
         self.projectName.isHidden = false
         self.projectStep.isHidden = false
         self.nextStepLabel.isHidden = false
@@ -31,7 +31,11 @@ class ProjectCollectionViewCell: ScalingCarouselCell {
         newProjectLabel.isHidden = true
         addButtonImage.isHidden = true
         self.projectName.text = project.firstNameClient
-        self.projectStep.text = "start met prototyping"
+        if mate {
+            self.projectStep.text = "start de kennismaking"
+        } else {
+          self.projectStep.text = "start met prototyping"
+        }
         self.cellImage.image = UIImage(named: "ActiveProjectCard")
     }
     

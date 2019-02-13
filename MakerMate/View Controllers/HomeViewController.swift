@@ -234,7 +234,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
             
             if indexPath.row < projects.count && LastProject.shared.showProject {
-                cell.layoutProject(project: projects[indexPath.row])
+                cell.layoutProject(project: projects[indexPath.row], mate: currentUser.mate)
                 cell.setNeedsLayout()
                 cell.layoutIfNeeded()
             } else {

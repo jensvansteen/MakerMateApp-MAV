@@ -20,7 +20,7 @@ class hackOversightCollectionViewCell: UICollectionViewCell {
     func setUpCell(hack: Hack) {
         
         hackNameLabel.text = hack.name
-        hackDescriptionLabel.text = "Whoops vergeten een description in de database te zetten"
+        hackDescriptionLabel.text = hack.hackShortTitle
         
         let referenceToStorage = Storage.storage()
         

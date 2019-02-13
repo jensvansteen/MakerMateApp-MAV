@@ -17,11 +17,14 @@ class Stap1TestHackViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak private var nextButton: UIButton!
     @IBOutlet weak private var backView: UIView!
     @IBOutlet weak private var closeView: UIImageView!
+    @IBOutlet weak private var thumbUpImage: UIImageView!
+    @IBOutlet weak private var thumbDownImage: UIImageView!
+    private var hackLiked: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.testTextField.delegate = self
+        testTextField.delegate = self
         
         configureTextGesture()
 
@@ -33,6 +36,15 @@ class Stap1TestHackViewController: UIViewController, UITextViewDelegate {
         let tapClose = UITapGestureRecognizer(target: self, action: #selector(handleClose))
         closeView.addGestureRecognizer(tapClose)
         closeView.isUserInteractionEnabled = true
+        
+        let tapUpp = UITapGestureRecognizer(target: self, action: #selector(handleTapLike))
+        thumbUpImage.addGestureRecognizer(tapUpp)
+        thumbUpImage.isUserInteractionEnabled = true
+        
+        let tapDown = UITapGestureRecognizer(target: self, action: #selector(handleTapNotLike))
+        thumbDownImage.addGestureRecognizer(tapDown)
+        thumbDownImage.isUserInteractionEnabled = true
+        
     }
     
     
@@ -60,9 +72,14 @@ class Stap1TestHackViewController: UIViewController, UITextViewDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     private func checkFields() {
-        if testTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && testTextField.text != placeholder{
+        if testTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && testTextField.text != placeholder && hackLiked != nil {
             fieldsFilledIn = true
             nextButton.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.5843137255, alpha: 1)
             nextButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -72,6 +89,18 @@ class Stap1TestHackViewController: UIViewController, UITextViewDelegate {
             nextButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             nextButton.setTitleColor(#colorLiteral(red: 0.7254901961, green: 0.5882352941, blue: 0.2980392157, alpha: 1), for: .normal)
             nextButton.borderWidth = 1
+        }
+    }
+    
+    private func updateUI() {
+        if let hackLiked = hackLiked {
+            if hackLiked {
+                thumbUpImage.image = UIImage(named: "thumb-up-active")
+                thumbDownImage.image = UIImage(named: "thumb-down")
+            } else {
+                thumbUpImage.image = UIImage(named: "thumb-up")
+                thumbDownImage.image = UIImage(named: "thumb-down-active")
+            }
         }
     }
     
@@ -85,7 +114,26 @@ class Stap1TestHackViewController: UIViewController, UITextViewDelegate {
     }
     
     @objc func handleClose() {
+        HackTest.sharedInstance.clearInstance()
         self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func handleTapLike() {
+        if let hackedliked = hackLiked {
+            hackLiked = !hackedliked
+        } else {
+            hackLiked = true
+        }
+        updateUI()
+    }
+    
+    @objc private func handleTapNotLike() {
+        if let hackedliked = hackLiked {
+            hackLiked = !hackedliked
+        } else {
+            hackLiked = false
+        }
+        updateUI()
     }
     
     @IBAction private func goToStep2(_ sender: UIButton) {

@@ -30,6 +30,10 @@ class ReviewHackViewController: UIViewController {
 //        let nextViewController = storyboard!.instantiateViewController(withIdentifier: "testHolder") as! StepsProjectViewController
         let newVC = nextViewController.viewControllers.first as! StepsProjectViewController
         newVC.hackInProject = hack
+        if let hack = hack {
+            HackTest.sharedInstance.hackToTest = hack
+            hack.readyForTesting = true
+        }
         self.present(nextViewController, animated:true, completion:nil)
     }
     
