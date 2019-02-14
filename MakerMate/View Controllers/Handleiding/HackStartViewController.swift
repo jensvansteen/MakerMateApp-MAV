@@ -68,9 +68,13 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
         // [END setup]
         db = Firestore.firestore()
         
-        referenceHack = referenceProject.collection("HacksInProject").document("\(hack!.hackId)")
+        if let hack = hack {
+            referenceHack = referenceProject.collection("HacksInProject").document("\(hack.hackId)")
+            
+            stepsCollectionRef = referenceHack.collection("Steps")
+        }
         
-        stepsCollectionRef = referenceHack.collection("Steps")
+    
 
         setupTaps()
         
@@ -106,7 +110,7 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
     func setListener() {
         stepsListener = stepsCollectionRef.addSnapshotListener { documentSnapshot, error in
             if let err = error {
-                debugPrint("Error fethcing docs: \(error)")
+                self.hackSteps.removeAll()
             } else {
                 self.hackSteps.removeAll()
                 self.hackSteps = StapHack.parseData(snapshot: documentSnapshot)

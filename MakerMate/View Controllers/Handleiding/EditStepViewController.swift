@@ -71,7 +71,6 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         if mediaType == "public.image" {
             if let originalImage = info[.originalImage] as? UIImage {
                 let imageData = originalImage.jpegData(compressionQuality: 0.8)
-//                LastProject.shared.uploadImageToFirebaseStorage(data: imageData)
                 uploadImageToFirebaseStorage(data: imageData!)
                 let selectedPhoto = info[.originalImage] as! UIImage
                 imageSmall.image = selectedPhoto
@@ -92,16 +91,54 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     @IBAction private func voegFotoToeHandler(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            let picker = UIImagePickerController()
-            let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
-            //            let mediaTypes = [kuTTypeImage as String]
-            picker.mediaTypes = mediaTypes!
-            picker.sourceType = .photoLibrary
-            picker.delegate = self
-            present(picker, animated: true, completion: nil)
-        }
+        let alert = UIAlertController(title: "Kies een afbeelding", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Bibliotheek", style: .default, handler: { _ in
+            self.openGallary()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
+        
+        func openCamera()
+        {
+            if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
+            {
+                picker.sourceType = UIImagePickerController.SourceType.camera
+                picker.allowsEditing = true
+                self.present(picker, animated: true, completion: nil)
+            }
+            else
+            {
+                let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    
+    func openGallary()
+    {
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        picker.allowsEditing = true
+        self.present(picker, animated: true, completion: nil)
+    }
+        
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+//            let picker = UIImagePickerController()
+//            let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
+//            //            let mediaTypes = [kuTTypeImage as String]
+//            picker.mediaTypes = mediaTypes!
+//            picker.sourceType = .photoLibrary
+//            picker.delegate = self
+//            present(picker, animated: true, completion: nil)
+//        }
+//    }
     
     
     private func uploadImageToFirebaseStorage(data: Data) {
@@ -140,8 +177,6 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         textField.resignFirstResponder()
         return true
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
