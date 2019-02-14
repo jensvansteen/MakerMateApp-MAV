@@ -93,8 +93,6 @@ class HackInProject {
             let data = document.data()
             let id = document.documentID
             let projecto = data["projectId"] as! String
-            print(projecto)
-            print(data)
             let hack = HackInProject(likes: data["likes"] as? Int ?? 0, niveau: data["niveau"] as? Int ?? 0, currentStep: data["currentStep"] as? Int ?? 0, name: data["name"] as? String ?? "Hello", hackId: id, projectId: (data["projectId"] as? String)!, hackTested: data["hackTested"] as! Bool, hackEvaluated: data["hackEvaluated"] as! Bool)
             hacks.append(hack)
         }

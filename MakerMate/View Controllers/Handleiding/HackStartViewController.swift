@@ -74,8 +74,6 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
             stepsCollectionRef = referenceHack.collection("Steps")
         }
         
-    
-
         setupTaps()
         
         fillData()

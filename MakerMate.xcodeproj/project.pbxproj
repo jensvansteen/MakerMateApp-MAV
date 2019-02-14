@@ -73,6 +73,8 @@
 		33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */; };
 		33A002D8220F30CD0070DE28 /* StapHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A002D7220F30CD0070DE28 /* StapHack.swift */; };
 		33A583B12207080D00AB4CDA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A583B02207080D00AB4CDA /* Project.swift */; };
+		33A60BFD221562C1007C6476 /* HackInProjectOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60BFC221562C1007C6476 /* HackInProjectOff.swift */; };
+		33A60C01221566C6007C6476 /* currentHackSingelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C00221566C6007C6476 /* currentHackSingelton.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
 		33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */; };
@@ -166,6 +168,8 @@
 		33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33A002D7220F30CD0070DE28 /* StapHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StapHack.swift; sourceTree = "<group>"; };
 		33A583B02207080D00AB4CDA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		33A60BFC221562C1007C6476 /* HackInProjectOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProjectOff.swift; sourceTree = "<group>"; };
+		33A60C00221566C6007C6476 /* currentHackSingelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentHackSingelton.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
 		33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				33640016220E43030081AB91 /* lastProject.swift */,
 				332290AD220E5FC00069D044 /* kennisMakingSteps.swift */,
 				331E2E2322148C6D00B50AF7 /* hackTest.swift */,
+				33A60C00221566C6007C6476 /* currentHackSingelton.swift */,
 			);
 			path = SingeltonClasses;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				33640011220DC9D60081AB91 /* Request.swift */,
 				33393F3E2210385E009845E5 /* Hack.swift */,
 				331E2E162213784500B50AF7 /* Invite.swift */,
+				33A60BFC221562C1007C6476 /* HackInProjectOff.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -744,6 +750,8 @@
 				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,
 				338B70F1220BB323005D6D95 /* User.swift in Sources */,
 				33EBB2AB22085CCC008CF5E0 /* KennisMakingDetailsView.swift in Sources */,
+				33A60BFD221562C1007C6476 /* HackInProjectOff.swift in Sources */,
+				33A60C01221566C6007C6476 /* currentHackSingelton.swift in Sources */,
 				330E6C2B220B08E900FF9384 /* StepInTableView.swift in Sources */,
 				33EBB2A9220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift in Sources */,
 				331E2E2222148BAB00B50AF7 /* Stap4HackTestenViewController.swift in Sources */,

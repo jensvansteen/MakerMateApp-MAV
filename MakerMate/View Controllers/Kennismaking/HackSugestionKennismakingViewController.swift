@@ -75,6 +75,7 @@ class HackSugestionKennismakingViewController: UIViewController, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         performSegue(withIdentifier: "showHackDetailKennis", sender: indexPath)
     }
     
@@ -102,6 +103,8 @@ class HackSugestionKennismakingViewController: UIViewController, UICollectionVie
             
             let selectedIndexPath = sender as? NSIndexPath
             print(hacks[selectedIndexPath!.row])
+            let hackToAdd = hacks[selectedIndexPath!.row] as Hack
+             hackToAdd.addToProject(projectId: LastProject.shared.idLastProject!)
             let detailVC = segue.destination as! HackDetailKennismakingViewController
             detailVC.hack = hacks[selectedIndexPath!.row] as Hack
         }

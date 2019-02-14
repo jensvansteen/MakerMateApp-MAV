@@ -42,7 +42,7 @@ class addedHacksViewController: UIViewController, UICollectionViewDelegate, UICo
 
     @IBAction func addToProject(_ sender: UIButton) {
         kennismakingSteps.sharedInstance.pushToFirebase()
-        hack!.addToProject(projectId: LastProject.shared.idLastProject!)
+//        hack!.addToProject(projectId: LastProject.shared.idLastProject!)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
