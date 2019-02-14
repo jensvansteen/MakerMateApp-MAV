@@ -75,6 +75,9 @@
 		33A583B12207080D00AB4CDA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A583B02207080D00AB4CDA /* Project.swift */; };
 		33A60BFD221562C1007C6476 /* HackInProjectOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60BFC221562C1007C6476 /* HackInProjectOff.swift */; };
 		33A60C01221566C6007C6476 /* currentHackSingelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C00221566C6007C6476 /* currentHackSingelton.swift */; };
+		33A60C03221591CE007C6476 /* OntdekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C02221591CE007C6476 /* OntdekViewController.swift */; };
+		33A60C06221598B2007C6476 /* CatogorieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */; };
+		33A60C082215BEE0007C6476 /* HackInOntdekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
 		33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */; };
@@ -170,6 +173,9 @@
 		33A583B02207080D00AB4CDA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		33A60BFC221562C1007C6476 /* HackInProjectOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProjectOff.swift; sourceTree = "<group>"; };
 		33A60C00221566C6007C6476 /* currentHackSingelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentHackSingelton.swift; sourceTree = "<group>"; };
+		33A60C02221591CE007C6476 /* OntdekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OntdekViewController.swift; sourceTree = "<group>"; };
+		33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatogorieCollectionViewCell.swift; sourceTree = "<group>"; };
+		33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInOntdekCell.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
 		33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
@@ -345,6 +351,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		33A60C042215988F007C6476 /* Ontdek */ = {
+			isa = PBXGroup;
+			children = (
+				33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */,
+			);
+			path = Ontdek;
+			sourceTree = "<group>";
+		};
 		33D4B5D0220197300095DAE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +398,7 @@
 				33EBB2A622073270008CF5E0 /* ProjectViewController.swift */,
 				331E2E182213C0CF00B50AF7 /* NotificationsViewController.swift */,
 				331E2E1A2213C9FE00B50AF7 /* NotificationDetailViewController.swift */,
+				33A60C02221591CE007C6476 /* OntdekViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -429,6 +444,7 @@
 		33D4B5DF2201AE900095DAE6 /* CocoaClasses */ = {
 			isa = PBXGroup;
 			children = (
+				33A60C042215988F007C6476 /* Ontdek */,
 				331E2E1C22143E0B00B50AF7 /* Testen */,
 				3306301F221174910038E978 /* Kennismaking */,
 				33F2E8DF2209C02B0005BF35 /* Handleiding */,
@@ -442,6 +458,7 @@
 				338679D42205DA1300ADD9B5 /* customNavigation.swift */,
 				33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */,
 				3369FDD222120638000879F7 /* CustomTabbar.swift */,
+				33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */,
 			);
 			path = CocoaClasses;
 			sourceTree = "<group>";
@@ -723,6 +740,7 @@
 				331E2E2422148C6D00B50AF7 /* hackTest.swift in Sources */,
 				33F2E8E32209CD0D0005BF35 /* BottomStepIndecatorCollectionViewCell.swift in Sources */,
 				330E6C27220AF43600FF9384 /* StepOrderViewController.swift in Sources */,
+				33A60C06221598B2007C6476 /* CatogorieCollectionViewCell.swift in Sources */,
 				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
 				3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */,
 				330E6C31220B2D3200FF9384 /* Step.swift in Sources */,
@@ -736,6 +754,7 @@
 				3306301E221172350038E978 /* Stap2KennismakingViewController.swift in Sources */,
 				33063023221190130038E978 /* Stap4KennismakingViewController.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
+				33A60C082215BEE0007C6476 /* HackInOntdekCell.swift in Sources */,
 				33F2E8D62208F71E0005BF35 /* GuideStepViewController.swift in Sources */,
 				330E6C21220A4A6F00FF9384 /* ReviewHackViewController.swift in Sources */,
 				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
@@ -761,6 +780,7 @@
 				3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */,
 				338679D52205DA1300ADD9B5 /* customNavigation.swift in Sources */,
 				3369FDC92211C142000879F7 /* HackDetailKennismakingViewController.swift in Sources */,
+				33A60C03221591CE007C6476 /* OntdekViewController.swift in Sources */,
 				33EBB2AD22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift in Sources */,
 				33A002D8220F30CD0070DE28 /* StapHack.swift in Sources */,
 				332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */,

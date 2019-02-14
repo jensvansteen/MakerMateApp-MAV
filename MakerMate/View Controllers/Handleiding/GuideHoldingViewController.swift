@@ -100,7 +100,7 @@ class GuideHoldingViewController: UIViewController, ScrollViewControllerDelegate
         
         viewControllers = viewControllersColl
         
-        initialViewController = 1
+        initialViewController = 0
         
     }
     

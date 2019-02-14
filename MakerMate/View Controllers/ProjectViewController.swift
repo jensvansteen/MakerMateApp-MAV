@@ -81,7 +81,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         self.tabBarController?.tabBar.isHidden = false
         
-        projectRef = db.collection("Projects").document("jOueOwfJvR2M6bdKYvxB")
+//        projectRef = db.collection("Projects").document("2ebbV5XVywZor78c2pty")
         
         if let latestProject = LastProject.shared.idLastProject {
             if latestProject != "" {
@@ -141,16 +141,17 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
         
-        
-        var currentProject = Firestore.firestore().collection("Projects").document(LastProject.shared.idLastProject!)
-        
-        
-        //Get project
-        currentProject.getDocument() { (querysnapshot, err) in
-            if let err = err {
-                print("no project found with \(LastProject.shared.idLastProject)")
-            } else {
-                self.project = Project.parseOneData(snapshot: querysnapshot)
+        if let projectRef = projectRef {
+            var currentProject = Firestore.firestore().collection("Projects").document(LastProject.shared.idLastProject!)
+            
+            
+            //Get project
+            currentProject.getDocument() { (querysnapshot, err) in
+                if let err = err {
+                    print("no project found with \(LastProject.shared.idLastProject)")
+                } else {
+                    self.project = Project.parseOneData(snapshot: querysnapshot)
+                }
             }
         }
         
@@ -196,7 +197,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
                 kennisMakingViewNotCompleted.isHidden = false
                 kennisMakingViewCompleted.isHidden = true
             } else {
-                kennisMakingHeight.constant = 741
+                kennisMakingHeight.constant = 590
                 kennisMakingViewNotCompleted.isHidden = true
                 kennisMakingViewCompleted.isHidden = false
             }

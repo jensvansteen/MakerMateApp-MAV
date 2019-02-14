@@ -25,7 +25,14 @@ class Stap4HackTestenViewController: UIViewController {
 
     @IBAction func completeHack(_ sender: UIButton) {
         HackTest.sharedInstance.hackWasTested()
-        self.navigationController?.popToRootViewController(animated: true)
+        var newVc = storyboard?.instantiateViewController(withIdentifier: "oversightProjectView") as! StepsProjectViewController
+        newVc.hackGetest = true
+        newVc.kennisMakingDone = true
+        newVc.steps[0]["completed"] = true
+        newVc.steps[1]["completed"] = true
+        newVc.steps[1]["access"] = "unlocked"
+        newVc.steps[2]["access"] = "unlocked"
+        self.navigationController?.present(newVc, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
