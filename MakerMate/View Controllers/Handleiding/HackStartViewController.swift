@@ -23,8 +23,8 @@ class HackStartViewController: UIViewController, UIGestureRecognizerDelegate {
     
     let materialsCollected = false
     private var showingHandleiding = true
-    private var showingTesten = true
-    private var readyForTesting = true
+    private var showingTesten = false
+    private var readyForTesting = false
     private var activeStep = 0
     
     

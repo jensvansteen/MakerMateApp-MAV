@@ -51,6 +51,8 @@ class EditStepViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         updateCollectionViewHeight()
         
+        picker.delegate = self
+        
         setUpUI()
     }
     

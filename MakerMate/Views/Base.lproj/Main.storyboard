@@ -10864,9 +10864,7 @@ Fien heeft je een verzoek gestuurd om samen te werken aan “Hack voor Annick”
                         <outlet property="backView" destination="eIr-zl-YAx" id="Bqm-rf-9oS"/>
                         <outlet property="closeView" destination="buC-1v-uMu" id="Yx7-VR-A9E"/>
                         <outlet property="descriptionHackTextField" destination="xO1-UF-vtV" id="A3Q-6g-ohF"/>
-                        <outlet property="doelgroepTextField" destination="xO1-UF-vtV" id="c0I-Ix-Uds"/>
                         <outlet property="nameHackTextField" destination="1PH-uL-FmO" id="Blw-ta-n6t"/>
-                        <outlet property="nameTextField" destination="1PH-uL-FmO" id="5Uk-AG-ufq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCV-3x-OzC" userLabel="First Responder" sceneMemberID="firstResponder"/>

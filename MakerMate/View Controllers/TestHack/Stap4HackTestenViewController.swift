@@ -25,6 +25,7 @@ class Stap4HackTestenViewController: UIViewController {
 
     @IBAction func completeHack(_ sender: UIButton) {
         HackTest.sharedInstance.hackWasTested()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     /*
     // MARK: - Navigation
