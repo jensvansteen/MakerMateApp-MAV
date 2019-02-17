@@ -108,10 +108,26 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1960784314, green: 0.1960784314, blue: 0.1960784314, alpha: 1),
              NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 16.0)!]
         
+        
+        var backBtn = UIImage(named: "backButtonNavigation")
+        backBtn = backBtn?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        
+        self.navigationController!.navigationBar.backIndicatorImage = backBtn;
+        self.navigationController!.navigationBar.backIndicatorTransitionMaskImage = backBtn;
+        
         self.navigationController?.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1450980392, green: 0.2588235294, blue: 0.6156862745, alpha: 1),
                                                                                              NSAttributedString.Key.font: UIFont(name: "AvenirNext", size: 14.0)!], for: .normal)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1450980392, green: 0.2588235294, blue: 0.6156862745, alpha: 1),
+             NSAttributedString.Key.font: UIFont(name: "AvenirNext-Medium", size: 16)!], for: .normal)
+        
+       
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
     }
     
     func setListener() {

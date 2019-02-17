@@ -33,6 +33,9 @@ class NotificationsViewController: UIViewController {
         let tapView = UITapGestureRecognizer(target: self, action: #selector(goToDetail))
         tableVieww.addGestureRecognizer(tapView)
         tableVieww.isUserInteractionEnabled = true
+        
+        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+        statusBar.backgroundColor = .white
     }
     
     

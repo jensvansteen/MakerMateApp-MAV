@@ -78,6 +78,8 @@
 		33A60C03221591CE007C6476 /* OntdekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C02221591CE007C6476 /* OntdekViewController.swift */; };
 		33A60C06221598B2007C6476 /* CatogorieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */; };
 		33A60C082215BEE0007C6476 /* HackInOntdekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */; };
+		33BC080F2219C8E600F32C9F /* MaterialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC080E2219C8E600F32C9F /* MaterialsViewController.swift */; };
+		33BC08122219F47100F32C9F /* MaterialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC08112219F47100F32C9F /* MaterialCollectionViewCell.swift */; };
 		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
 		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
 		33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */; };
@@ -176,6 +178,8 @@
 		33A60C02221591CE007C6476 /* OntdekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OntdekViewController.swift; sourceTree = "<group>"; };
 		33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatogorieCollectionViewCell.swift; sourceTree = "<group>"; };
 		33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInOntdekCell.swift; sourceTree = "<group>"; };
+		33BC080E2219C8E600F32C9F /* MaterialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsViewController.swift; sourceTree = "<group>"; };
+		33BC08112219F47100F32C9F /* MaterialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCollectionViewCell.swift; sourceTree = "<group>"; };
 		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
 		33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				333C84A622133DF80057BDC7 /* HulpVragenViewController.swift */,
+				33BC080E2219C8E600F32C9F /* MaterialsViewController.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -357,6 +362,14 @@
 				33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */,
 			);
 			path = Ontdek;
+			sourceTree = "<group>";
+		};
+		33BC08102219F44C00F32C9F /* materialCell */ = {
+			isa = PBXGroup;
+			children = (
+				33BC08112219F47100F32C9F /* MaterialCollectionViewCell.swift */,
+			);
+			path = materialCell;
 			sourceTree = "<group>";
 		};
 		33D4B5D0220197300095DAE6 /* Controllers */ = {
@@ -466,6 +479,7 @@
 		33EBB2AE22085DF2008CF5E0 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				33BC08102219F44C00F32C9F /* materialCell */,
 				333C84A9221368A10057BDC7 /* hulpZoeken */,
 				33EBB2AF22085DFB008CF5E0 /* Kennismaking */,
 			);
@@ -751,10 +765,12 @@
 				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
 				333C84AB221368D20057BDC7 /* memberTableViewCell.swift in Sources */,
 				338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */,
+				33BC08122219F47100F32C9F /* MaterialCollectionViewCell.swift in Sources */,
 				3306301E221172350038E978 /* Stap2KennismakingViewController.swift in Sources */,
 				33063023221190130038E978 /* Stap4KennismakingViewController.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
 				33A60C082215BEE0007C6476 /* HackInOntdekCell.swift in Sources */,
+				33BC080F2219C8E600F32C9F /* MaterialsViewController.swift in Sources */,
 				33F2E8D62208F71E0005BF35 /* GuideStepViewController.swift in Sources */,
 				330E6C21220A4A6F00FF9384 /* ReviewHackViewController.swift in Sources */,
 				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,

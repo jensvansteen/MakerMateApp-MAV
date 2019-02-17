@@ -36,6 +36,10 @@ class OntdekViewController: UIViewController, UICollectionViewDelegate, UICollec
         alshacksCollection.dataSource = self
 
         searchBar.placeholder = "Ontdek hacks"
+//        searchBar.searchBarStyle = .default
+//        searchBar.tintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+//        searchBar.appearance
+        
         self.navigationItem.titleView = searchBar
         // Do any additional setup after loading the view.
         
@@ -46,9 +50,15 @@ class OntdekViewController: UIViewController, UICollectionViewDelegate, UICollec
         db = Firestore.firestore()
         
         hacksCollectionRef = db.collection("Hacks")
+        
+//        self.navigationController?.navigationBar.barTintColor = .white
+//        self.navigationController?.navigationBar.shadowImage = nil
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        searchBar.barTintColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        
         setListener()
     }
     

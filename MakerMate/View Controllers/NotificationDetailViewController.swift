@@ -15,6 +15,9 @@ class NotificationDetailViewController: UIViewController {
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationItem.title = "Fien"
+        
+        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+        statusBar.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,4 +35,7 @@ class NotificationDetailViewController: UIViewController {
         LastProject.shared.showProject = true
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    
+  
 }
