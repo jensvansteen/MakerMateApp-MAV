@@ -7,22 +7,203 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3306301E221172350038E978 /* Stap2KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306301D221172350038E978 /* Stap2KennismakingViewController.swift */; };
+		33063021221174AE0038E978 /* mobiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33063020221174AE0038E978 /* mobiCollectionViewCell.swift */; };
+		33063023221190130038E978 /* Stap4KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33063022221190130038E978 /* Stap4KennismakingViewController.swift */; };
+		330630252211A5FE0038E978 /* Stap5KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330630242211A5FE0038E978 /* Stap5KennismakingViewController.swift */; };
+		330630272211AD230038E978 /* Stap6KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330630262211AD230038E978 /* Stap6KennismakingViewController.swift */; };
+		330630292211B26F0038E978 /* HackSugestionKennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330630282211B26F0038E978 /* HackSugestionKennismakingViewController.swift */; };
+		3306302B2211B3EC0038E978 /* Stap7KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306302A2211B3EC0038E978 /* Stap7KennismakingViewController.swift */; };
+		3306302D2211B7010038E978 /* HackPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306302C2211B7010038E978 /* HackPreviewCollectionViewCell.swift */; };
+		330E6C21220A4A6F00FF9384 /* ReviewHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C20220A4A6F00FF9384 /* ReviewHackViewController.swift */; };
+		330E6C25220AE23A00FF9384 /* EditStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C24220AE23A00FF9384 /* EditStepViewController.swift */; };
+		330E6C27220AF43600FF9384 /* StepOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C26220AF43600FF9384 /* StepOrderViewController.swift */; };
+		330E6C29220AF87400FF9384 /* stepCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C28220AF87400FF9384 /* stepCellTableViewCell.swift */; };
+		330E6C2B220B08E900FF9384 /* StepInTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2A220B08E900FF9384 /* StepInTableView.swift */; };
+		330E6C2D220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2C220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift */; };
+		330E6C2F220B299100FF9384 /* HackInProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C2E220B299100FF9384 /* HackInProject.swift */; };
+		330E6C31220B2D3200FF9384 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C30220B2D3200FF9384 /* Step.swift */; };
+		330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E6C32220B2E3800FF9384 /* NewStepViewController.swift */; };
+		331E2E172213784500B50AF7 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E162213784500B50AF7 /* Invite.swift */; };
+		331E2E192213C0CF00B50AF7 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E182213C0CF00B50AF7 /* NotificationsViewController.swift */; };
+		331E2E1B2213C9FE00B50AF7 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E1A2213C9FE00B50AF7 /* NotificationDetailViewController.swift */; };
+		331E2E1E22143E3000B50AF7 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E1D22143E3000B50AF7 /* MoodCollectionViewCell.swift */; };
+		331E2E202214877F00B50AF7 /* Stap3TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E1F2214877F00B50AF7 /* Stap3TestViewController.swift */; };
+		331E2E2222148BAB00B50AF7 /* Stap4HackTestenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E2122148BAB00B50AF7 /* Stap4HackTestenViewController.swift */; };
+		331E2E2422148C6D00B50AF7 /* hackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E2E2322148C6D00B50AF7 /* hackTest.swift */; };
+		332290AC220E5DE80069D044 /* Stap1KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */; };
+		332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332290AD220E5FC00069D044 /* kennisMakingSteps.swift */; };
+		33393F3F2210385E009845E5 /* Hack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F3E2210385E009845E5 /* Hack.swift */; };
+		33393F4122109EBF009845E5 /* Stap3KennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */; };
+		333C84A3221322410057BDC7 /* Stap1TestHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */; };
+		333C84A5221323BA0057BDC7 /* Stap2TestHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */; };
+		333C84A722133DF80057BDC7 /* HulpVragenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84A622133DF80057BDC7 /* HulpVragenViewController.swift */; };
+		333C84AB221368D20057BDC7 /* memberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C84AA221368D20057BDC7 /* memberTableViewCell.swift */; };
+		333CDEFD2212A91B00C09B2F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */; };
+		33640012220DC9D60081AB91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640011220DC9D60081AB91 /* Request.swift */; };
+		33640017220E43030081AB91 /* lastProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640016220E43030081AB91 /* lastProject.swift */; };
+		33640019220E4A450081AB91 /* Kennismaking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33640018220E4A450081AB91 /* Kennismaking.swift */; };
+		336659C522050FDD00CE65C3 /* ScalingCarousel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336659C422050FDD00CE65C3 /* ScalingCarousel.framework */; };
+		3369FDC92211C142000879F7 /* HackDetailKennismakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDC82211C142000879F7 /* HackDetailKennismakingViewController.swift */; };
+		3369FDCB2211EE77000879F7 /* addedHacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDCA2211EE77000879F7 /* addedHacksViewController.swift */; };
+		3369FDCD2211F03A000879F7 /* hackOversightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDCC2211F03A000879F7 /* hackOversightCollectionViewCell.swift */; };
+		3369FDD322120638000879F7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDD222120638000879F7 /* CustomTabbar.swift */; };
+		3369FDD522121743000879F7 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3369FDD422121743000879F7 /* Onboarding.storyboard */; };
+		3369FDD822122F6F000879F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369FDD722122F6F000879F7 /* LoginViewController.swift */; };
+		3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB552202E9F3003FF236 /* RequestViewController.swift */; };
+		3381CB592202EE83003FF236 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB582202EE83003FF236 /* BackButton.swift */; };
+		3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */; };
+		3381CB5D22035654003FF236 /* NotoSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3381CB5C22035348003FF236 /* NotoSerif-Italic.ttf */; };
+		3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */; };
+		3381CB6222038605003FF236 /* AanvragenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3381CB6122038605003FF236 /* AanvragenView.xib */; };
+		3381CB6422039569003FF236 /* LockedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3381CB6322039569003FF236 /* LockedView.xib */; };
+		3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB652203A4CA003FF236 /* stapUIView.swift */; };
+		3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */; };
+		3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB692204EB68003FF236 /* UIViewBorder.swift */; };
+		3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */; };
+		3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */; };
+		338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */; };
+		338679D32205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D22205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift */; };
+		338679D52205DA1300ADD9B5 /* customNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D42205DA1300ADD9B5 /* customNavigation.swift */; };
+		338679D72205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */; };
+		338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679D82205F01E00ADD9B5 /* Stap4AanvraagViewController.swift */; };
+		338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */; };
+		338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */; };
+		338B70F1220BB323005D6D95 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B70F0220BB323005D6D95 /* User.swift */; };
+		33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */; };
+		33A002D8220F30CD0070DE28 /* StapHack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A002D7220F30CD0070DE28 /* StapHack.swift */; };
+		33A583B12207080D00AB4CDA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A583B02207080D00AB4CDA /* Project.swift */; };
+		33A60BFD221562C1007C6476 /* HackInProjectOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60BFC221562C1007C6476 /* HackInProjectOff.swift */; };
+		33A60C01221566C6007C6476 /* currentHackSingelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C00221566C6007C6476 /* currentHackSingelton.swift */; };
+		33A60C03221591CE007C6476 /* OntdekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C02221591CE007C6476 /* OntdekViewController.swift */; };
+		33A60C06221598B2007C6476 /* CatogorieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */; };
+		33A60C082215BEE0007C6476 /* HackInOntdekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */; };
+		33BC080F2219C8E600F32C9F /* MaterialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC080E2219C8E600F32C9F /* MaterialsViewController.swift */; };
+		33BC08122219F47100F32C9F /* MaterialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC08112219F47100F32C9F /* MaterialCollectionViewCell.swift */; };
+		33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5D822019D350095DAE6 /* HomeViewController.swift */; };
+		33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */; };
+		33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */; };
+		33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E02201AEC10095DAE6 /* RequestCell.swift */; };
+		33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */; };
+		33D4B60322022D420095DAE6 /* IntrestHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */; };
+		33DD1EED2212BF8A00296A68 /* PersonallInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD1EEC2212BF8A00296A68 /* PersonallInfoViewController.swift */; };
+		33EBB2A722073270008CF5E0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2A622073270008CF5E0 /* ProjectViewController.swift */; };
+		33EBB2A9220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */; };
+		33EBB2AB22085CCC008CF5E0 /* KennisMakingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */; };
+		33EBB2AD22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2AC22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift */; };
+		33EBB2B22208958A008CF5E0 /* HackStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBB2B12208958A008CF5E0 /* HackStartViewController.swift */; };
 		33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5532200FEB400B242AE /* AppDelegate.swift */; };
-		33EBF5562200FEB400B242AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5552200FEB400B242AE /* ViewController.swift */; };
+		33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EBF5552200FEB400B242AE /* ProfileViewController.swift */; };
 		33EBF5592200FEB400B242AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF5572200FEB400B242AE /* Main.storyboard */; };
 		33EBF55B2200FEB600B242AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF55A2200FEB600B242AE /* Assets.xcassets */; };
 		33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EBF55C2200FEB600B242AE /* LaunchScreen.storyboard */; };
+		33F2E8D22208DD050005BF35 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D12208DD050005BF35 /* ScrollViewController.swift */; };
+		33F2E8D42208DEB20005BF35 /* GuideHoldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D32208DEB20005BF35 /* GuideHoldingViewController.swift */; };
+		33F2E8D62208F71E0005BF35 /* GuideStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8D52208F71E0005BF35 /* GuideStepViewController.swift */; };
+		33F2E8E12209C04E0005BF35 /* itemNeededCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8E02209C04E0005BF35 /* itemNeededCollectionViewCell.swift */; };
+		33F2E8E32209CD0D0005BF35 /* BottomStepIndecatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2E8E22209CD0D0005BF35 /* BottomStepIndecatorCollectionViewCell.swift */; };
 		406780833F7FCCF4AD3B7554 /* Pods_MakerMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3306301D221172350038E978 /* Stap2KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap2KennismakingViewController.swift; sourceTree = "<group>"; };
+		33063020221174AE0038E978 /* mobiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiCollectionViewCell.swift; sourceTree = "<group>"; };
+		33063022221190130038E978 /* Stap4KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap4KennismakingViewController.swift; sourceTree = "<group>"; };
+		330630242211A5FE0038E978 /* Stap5KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap5KennismakingViewController.swift; sourceTree = "<group>"; };
+		330630262211AD230038E978 /* Stap6KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap6KennismakingViewController.swift; sourceTree = "<group>"; };
+		330630282211B26F0038E978 /* HackSugestionKennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackSugestionKennismakingViewController.swift; sourceTree = "<group>"; };
+		3306302A2211B3EC0038E978 /* Stap7KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap7KennismakingViewController.swift; sourceTree = "<group>"; };
+		3306302C2211B7010038E978 /* HackPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		330E6C20220A4A6F00FF9384 /* ReviewHackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHackViewController.swift; sourceTree = "<group>"; };
+		330E6C24220AE23A00FF9384 /* EditStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStepViewController.swift; sourceTree = "<group>"; };
+		330E6C26220AF43600FF9384 /* StepOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOrderViewController.swift; sourceTree = "<group>"; };
+		330E6C28220AF87400FF9384 /* stepCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stepCellTableViewCell.swift; sourceTree = "<group>"; };
+		330E6C2A220B08E900FF9384 /* StepInTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepInTableView.swift; sourceTree = "<group>"; };
+		330E6C2C220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInMaterialListEditCollectionViewCell.swift; sourceTree = "<group>"; };
+		330E6C2E220B299100FF9384 /* HackInProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProject.swift; sourceTree = "<group>"; };
+		330E6C30220B2D3200FF9384 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		330E6C32220B2E3800FF9384 /* NewStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStepViewController.swift; sourceTree = "<group>"; };
+		331E2E162213784500B50AF7 /* Invite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
+		331E2E182213C0CF00B50AF7 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		331E2E1A2213C9FE00B50AF7 /* NotificationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailViewController.swift; sourceTree = "<group>"; };
+		331E2E1D22143E3000B50AF7 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		331E2E1F2214877F00B50AF7 /* Stap3TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3TestViewController.swift; sourceTree = "<group>"; };
+		331E2E2122148BAB00B50AF7 /* Stap4HackTestenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap4HackTestenViewController.swift; sourceTree = "<group>"; };
+		331E2E2322148C6D00B50AF7 /* hackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackTest.swift; sourceTree = "<group>"; };
+		332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1KennismakingViewController.swift; sourceTree = "<group>"; };
+		332290AD220E5FC00069D044 /* kennisMakingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kennisMakingSteps.swift; sourceTree = "<group>"; };
+		333024622212AB8600E6E04F /* MakerMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MakerMate.entitlements; sourceTree = "<group>"; };
+		33393F3E2210385E009845E5 /* Hack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hack.swift; sourceTree = "<group>"; };
+		33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3KennismakingViewController.swift; sourceTree = "<group>"; };
+		333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1TestHackViewController.swift; sourceTree = "<group>"; };
+		333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap2TestHackViewController.swift; sourceTree = "<group>"; };
+		333C84A622133DF80057BDC7 /* HulpVragenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulpVragenViewController.swift; sourceTree = "<group>"; };
+		333C84AA221368D20057BDC7 /* memberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberTableViewCell.swift; sourceTree = "<group>"; };
+		333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		33640011220DC9D60081AB91 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		33640016220E43030081AB91 /* lastProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastProject.swift; sourceTree = "<group>"; };
+		33640018220E4A450081AB91 /* Kennismaking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kennismaking.swift; sourceTree = "<group>"; };
+		336659C422050FDD00CE65C3 /* ScalingCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ScalingCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3369FDC82211C142000879F7 /* HackDetailKennismakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackDetailKennismakingViewController.swift; sourceTree = "<group>"; };
+		3369FDCA2211EE77000879F7 /* addedHacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addedHacksViewController.swift; sourceTree = "<group>"; };
+		3369FDCC2211F03A000879F7 /* hackOversightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackOversightCollectionViewCell.swift; sourceTree = "<group>"; };
+		3369FDD222120638000879F7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		3369FDD422121743000879F7 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		3369FDD722122F6F000879F7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3381CB552202E9F3003FF236 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		3381CB582202EE83003FF236 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRequestCollectionViewCell.swift; sourceTree = "<group>"; };
+		3381CB5C22035348003FF236 /* NotoSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Italic.ttf"; sourceTree = "<group>"; };
+		3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsProjectViewController.swift; sourceTree = "<group>"; };
+		3381CB6122038605003FF236 /* AanvragenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AanvragenView.xib; sourceTree = "<group>"; };
+		3381CB6322039569003FF236 /* LockedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedView.xib; sourceTree = "<group>"; };
+		3381CB652203A4CA003FF236 /* stapUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stapUIView.swift; sourceTree = "<group>"; };
+		3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stepsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3381CB692204EB68003FF236 /* UIViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewBorder.swift; sourceTree = "<group>"; };
+		3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStartenViewController.swift; sourceTree = "<group>"; };
+		3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap1AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aanvraagSteps.swift; sourceTree = "<group>"; };
+		338679D22205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap2AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679D42205DA1300ADD9B5 /* customNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customNavigation.swift; sourceTree = "<group>"; };
+		338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap3AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679D82205F01E00ADD9B5 /* Stap4AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap4AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stap5AanvraagViewController.swift; sourceTree = "<group>"; };
+		338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverzichtAanvraagViewController.swift; sourceTree = "<group>"; };
+		338B70F0220BB323005D6D95 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33A002D7220F30CD0070DE28 /* StapHack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StapHack.swift; sourceTree = "<group>"; };
+		33A583B02207080D00AB4CDA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		33A60BFC221562C1007C6476 /* HackInProjectOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProjectOff.swift; sourceTree = "<group>"; };
+		33A60C00221566C6007C6476 /* currentHackSingelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentHackSingelton.swift; sourceTree = "<group>"; };
+		33A60C02221591CE007C6476 /* OntdekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OntdekViewController.swift; sourceTree = "<group>"; };
+		33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatogorieCollectionViewCell.swift; sourceTree = "<group>"; };
+		33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInOntdekCell.swift; sourceTree = "<group>"; };
+		33BC080E2219C8E600F32C9F /* MaterialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsViewController.swift; sourceTree = "<group>"; };
+		33BC08112219F47100F32C9F /* MaterialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialCollectionViewCell.swift; sourceTree = "<group>"; };
+		33D4B5D822019D350095DAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
+		33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
+		33D4B5E02201AEC10095DAE6 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrestHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		33DD1EEC2212BF8A00296A68 /* PersonallInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonallInfoViewController.swift; sourceTree = "<group>"; };
+		33EBB2A622073270008CF5E0 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackInProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennisMakingDetailsView.swift; sourceTree = "<group>"; };
+		33EBB2AC22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKennismakingCollectionViewCell.swift; sourceTree = "<group>"; };
+		33EBB2B12208958A008CF5E0 /* HackStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackStartViewController.swift; sourceTree = "<group>"; };
 		33EBF5502200FEB400B242AE /* MakerMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakerMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EBF5532200FEB400B242AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33EBF5552200FEB400B242AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33EBF5552200FEB400B242AE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		33EBF5582200FEB400B242AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33EBF55A2200FEB600B242AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33EBF55D2200FEB600B242AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33EBF55F2200FEB600B242AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33F2E8D12208DD050005BF35 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrollViewController.swift; path = "MakerMate/View Controllers/Handleiding/ScrollViewController.swift"; sourceTree = SOURCE_ROOT; };
+		33F2E8D32208DEB20005BF35 /* GuideHoldingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideHoldingViewController.swift; sourceTree = "<group>"; };
+		33F2E8D52208F71E0005BF35 /* GuideStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStepViewController.swift; sourceTree = "<group>"; };
+		33F2E8E02209C04E0005BF35 /* itemNeededCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemNeededCollectionViewCell.swift; sourceTree = "<group>"; };
+		33F2E8E22209CD0D0005BF35 /* BottomStepIndecatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStepIndecatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		6F18F3B9B0528F5EF81CBDCC /* Pods-MakerMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakerMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate.release.xcconfig"; sourceTree = "<group>"; };
 		7571866B176500056F929F40 /* Pods-MakerMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakerMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate.debug.xcconfig"; sourceTree = "<group>"; };
 		9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakerMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336659C522050FDD00CE65C3 /* ScalingCarousel.framework in Frameworks */,
 				406780833F7FCCF4AD3B7554 /* Pods_MakerMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +222,294 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3306301F221174910038E978 /* Kennismaking */ = {
+			isa = PBXGroup;
+			children = (
+				33063020221174AE0038E978 /* mobiCollectionViewCell.swift */,
+				3306302C2211B7010038E978 /* HackPreviewCollectionViewCell.swift */,
+				3369FDCC2211F03A000879F7 /* hackOversightCollectionViewCell.swift */,
+			);
+			path = Kennismaking;
+			sourceTree = "<group>";
+		};
+		331E2E1C22143E0B00B50AF7 /* Testen */ = {
+			isa = PBXGroup;
+			children = (
+				331E2E1D22143E3000B50AF7 /* MoodCollectionViewCell.swift */,
+			);
+			path = Testen;
+			sourceTree = "<group>";
+		};
+		332290AA220E5D940069D044 /* Kennismaking */ = {
+			isa = PBXGroup;
+			children = (
+				332290AB220E5DE80069D044 /* Stap1KennismakingViewController.swift */,
+				33393F4022109EBF009845E5 /* Stap3KennismakingViewController.swift */,
+				3306301D221172350038E978 /* Stap2KennismakingViewController.swift */,
+				33063022221190130038E978 /* Stap4KennismakingViewController.swift */,
+				330630242211A5FE0038E978 /* Stap5KennismakingViewController.swift */,
+				330630262211AD230038E978 /* Stap6KennismakingViewController.swift */,
+				330630282211B26F0038E978 /* HackSugestionKennismakingViewController.swift */,
+				3306302A2211B3EC0038E978 /* Stap7KennismakingViewController.swift */,
+				3369FDC82211C142000879F7 /* HackDetailKennismakingViewController.swift */,
+				3369FDCA2211EE77000879F7 /* addedHacksViewController.swift */,
+			);
+			path = Kennismaking;
+			sourceTree = "<group>";
+		};
+		332290AF220ED9070069D044 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				330E6C2E220B299100FF9384 /* HackInProject.swift */,
+				33640018220E4A450081AB91 /* Kennismaking.swift */,
+				33A583B02207080D00AB4CDA /* Project.swift */,
+				33A002D7220F30CD0070DE28 /* StapHack.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		333C84A1221322190057BDC7 /* TestHack */ = {
+			isa = PBXGroup;
+			children = (
+				333C84A2221322410057BDC7 /* Stap1TestHackViewController.swift */,
+				333C84A4221323BA0057BDC7 /* Stap2TestHackViewController.swift */,
+				331E2E1F2214877F00B50AF7 /* Stap3TestViewController.swift */,
+				331E2E2122148BAB00B50AF7 /* Stap4HackTestenViewController.swift */,
+			);
+			path = TestHack;
+			sourceTree = "<group>";
+		};
+		333C84A8221352EC0057BDC7 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				333C84A622133DF80057BDC7 /* HulpVragenViewController.swift */,
+				33BC080E2219C8E600F32C9F /* MaterialsViewController.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		333C84A9221368A10057BDC7 /* hulpZoeken */ = {
+			isa = PBXGroup;
+			children = (
+				333C84AA221368D20057BDC7 /* memberTableViewCell.swift */,
+			);
+			path = hulpZoeken;
+			sourceTree = "<group>";
+		};
+		33640013220DCEAD0081AB91 /* SingeltonClasses */ = {
+			isa = PBXGroup;
+			children = (
+				338679D02205C0F800ADD9B5 /* aanvraagSteps.swift */,
+				33640016220E43030081AB91 /* lastProject.swift */,
+				332290AD220E5FC00069D044 /* kennisMakingSteps.swift */,
+				331E2E2322148C6D00B50AF7 /* hackTest.swift */,
+				33A60C00221566C6007C6476 /* currentHackSingelton.swift */,
+			);
+			path = SingeltonClasses;
+			sourceTree = "<group>";
+		};
+		3369FDD6221223D7000879F7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3369FDD722122F6F000879F7 /* LoginViewController.swift */,
+				333CDEFC2212A91B00C09B2F /* SignUpViewController.swift */,
+				33DD1EEC2212BF8A00296A68 /* PersonallInfoViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3381CB572202EE6C003FF236 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				3381CB582202EE83003FF236 /* BackButton.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		3381CB60220385D1003FF236 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				3381CB6122038605003FF236 /* AanvragenView.xib */,
+				3381CB6322039569003FF236 /* LockedView.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		3381CB6D2204FFBF003FF236 /* Aanvraag */ = {
+			isa = PBXGroup;
+			children = (
+				3381CB6B2204EDB6003FF236 /* ProjectStartenViewController.swift */,
+				3381CB6E2204FFDD003FF236 /* Stap1AanvraagViewController.swift */,
+				338679D22205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift */,
+				338679D62205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift */,
+				338679D82205F01E00ADD9B5 /* Stap4AanvraagViewController.swift */,
+				338679DA2206122800ADD9B5 /* Stap5AanvraagViewController.swift */,
+				338679DC2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift */,
+			);
+			path = Aanvraag;
+			sourceTree = "<group>";
+		};
+		33A60BF722155718007C6476 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		33A60C042215988F007C6476 /* Ontdek */ = {
+			isa = PBXGroup;
+			children = (
+				33A60C05221598B2007C6476 /* CatogorieCollectionViewCell.swift */,
+			);
+			path = Ontdek;
+			sourceTree = "<group>";
+		};
+		33BC08102219F44C00F32C9F /* materialCell */ = {
+			isa = PBXGroup;
+			children = (
+				33BC08112219F47100F32C9F /* MaterialCollectionViewCell.swift */,
+			);
+			path = materialCell;
+			sourceTree = "<group>";
+		};
+		33D4B5D0220197300095DAE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33EBF5532200FEB400B242AE /* AppDelegate.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		33D4B5D12201974B0095DAE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				332290AF220ED9070069D044 /* Project */,
+				330E6C2A220B08E900FF9384 /* StepInTableView.swift */,
+				330E6C30220B2D3200FF9384 /* Step.swift */,
+				338B70F0220BB323005D6D95 /* User.swift */,
+				33640011220DC9D60081AB91 /* Request.swift */,
+				33393F3E2210385E009845E5 /* Hack.swift */,
+				331E2E162213784500B50AF7 /* Invite.swift */,
+				33A60BFC221562C1007C6476 /* HackInProjectOff.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33D4B5D2220197600095DAE6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				333C84A1221322190057BDC7 /* TestHack */,
+				3369FDD6221223D7000879F7 /* Onboarding */,
+				332290AA220E5D940069D044 /* Kennismaking */,
+				33EBB2B022089558008CF5E0 /* Handleiding */,
+				3381CB6D2204FFBF003FF236 /* Aanvraag */,
+				333C84A8221352EC0057BDC7 /* Project */,
+				33EBF5552200FEB400B242AE /* ProfileViewController.swift */,
+				33D4B5D822019D350095DAE6 /* HomeViewController.swift */,
+				3381CB552202E9F3003FF236 /* RequestViewController.swift */,
+				3381CB5E220381C5003FF236 /* StepsProjectViewController.swift */,
+				33EBB2A622073270008CF5E0 /* ProjectViewController.swift */,
+				331E2E182213C0CF00B50AF7 /* NotificationsViewController.swift */,
+				331E2E1A2213C9FE00B50AF7 /* NotificationDetailViewController.swift */,
+				33A60C02221591CE007C6476 /* OntdekViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		33D4B5D3220197780095DAE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3381CB692204EB68003FF236 /* UIViewBorder.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		33D4B5D42201978D0095DAE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33D4B5DA2201AA990095DAE6 /* Fonts */,
+				33EBF55A2200FEB600B242AE /* Assets.xcassets */,
+				33EBF55C2200FEB600B242AE /* LaunchScreen.storyboard */,
+				33EBF55F2200FEB600B242AE /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33D4B5D522019B8F0095DAE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33EBF5572200FEB400B242AE /* Main.storyboard */,
+				3369FDD422121743000879F7 /* Onboarding.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33D4B5DA2201AA990095DAE6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				33D4B5DC2201AADA0095DAE6 /* NotoSerif-Bold.ttf */,
+				3381CB5C22035348003FF236 /* NotoSerif-Italic.ttf */,
+				33D4B5DB2201AADA0095DAE6 /* NotoSerif-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		33D4B5DF2201AE900095DAE6 /* CocoaClasses */ = {
+			isa = PBXGroup;
+			children = (
+				33A60C042215988F007C6476 /* Ontdek */,
+				331E2E1C22143E0B00B50AF7 /* Testen */,
+				3306301F221174910038E978 /* Kennismaking */,
+				33F2E8DF2209C02B0005BF35 /* Handleiding */,
+				33EBB2AE22085DF2008CF5E0 /* Project */,
+				33D4B5E02201AEC10095DAE6 /* RequestCell.swift */,
+				33D4B5E22201BD320095DAE6 /* ProjectCollectionViewCell.swift */,
+				33D4B60222022D420095DAE6 /* IntrestHomeCollectionViewCell.swift */,
+				3381CB5A22033C87003FF236 /* TagsRequestCollectionViewCell.swift */,
+				3381CB652203A4CA003FF236 /* stapUIView.swift */,
+				3381CB67220413A3003FF236 /* stepsCollectionViewCell.swift */,
+				338679D42205DA1300ADD9B5 /* customNavigation.swift */,
+				33EBB2A8220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift */,
+				3369FDD222120638000879F7 /* CustomTabbar.swift */,
+				33A60C072215BEE0007C6476 /* HackInOntdekCell.swift */,
+			);
+			path = CocoaClasses;
+			sourceTree = "<group>";
+		};
+		33EBB2AE22085DF2008CF5E0 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				33BC08102219F44C00F32C9F /* materialCell */,
+				333C84A9221368A10057BDC7 /* hulpZoeken */,
+				33EBB2AF22085DFB008CF5E0 /* Kennismaking */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		33EBB2AF22085DFB008CF5E0 /* Kennismaking */ = {
+			isa = PBXGroup;
+			children = (
+				33EBB2AA22085CCC008CF5E0 /* KennisMakingDetailsView.swift */,
+				33EBB2AC22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift */,
+			);
+			path = Kennismaking;
+			sourceTree = "<group>";
+		};
+		33EBB2B022089558008CF5E0 /* Handleiding */ = {
+			isa = PBXGroup;
+			children = (
+				33F2E8D12208DD050005BF35 /* ScrollViewController.swift */,
+				33F2E8D32208DEB20005BF35 /* GuideHoldingViewController.swift */,
+				33F2E8D52208F71E0005BF35 /* GuideStepViewController.swift */,
+				33EBB2B12208958A008CF5E0 /* HackStartViewController.swift */,
+				330E6C20220A4A6F00FF9384 /* ReviewHackViewController.swift */,
+				330E6C24220AE23A00FF9384 /* EditStepViewController.swift */,
+				330E6C26220AF43600FF9384 /* StepOrderViewController.swift */,
+				330E6C32220B2E3800FF9384 /* NewStepViewController.swift */,
+			);
+			path = Handleiding;
+			sourceTree = "<group>";
+		};
 		33EBF5472200FEB400B242AE = {
 			isa = PBXGroup;
 			children = (
@@ -61,14 +531,32 @@
 		33EBF5522200FEB400B242AE /* MakerMate */ = {
 			isa = PBXGroup;
 			children = (
-				33EBF5532200FEB400B242AE /* AppDelegate.swift */,
-				33EBF5552200FEB400B242AE /* ViewController.swift */,
-				33EBF5572200FEB400B242AE /* Main.storyboard */,
-				33EBF55A2200FEB600B242AE /* Assets.xcassets */,
-				33EBF55C2200FEB600B242AE /* LaunchScreen.storyboard */,
-				33EBF55F2200FEB600B242AE /* Info.plist */,
+				33A60BF722155718007C6476 /* Data */,
+				333024622212AB8600E6E04F /* MakerMate.entitlements */,
+				33640013220DCEAD0081AB91 /* SingeltonClasses */,
+				33A002D5220EFB0C0070DE28 /* GoogleService-Info.plist */,
+				3381CB60220385D1003FF236 /* Nibs */,
+				3381CB572202EE6C003FF236 /* CustomElements */,
+				33D4B5DF2201AE900095DAE6 /* CocoaClasses */,
+				33D4B5D3220197780095DAE6 /* Extensions */,
+				33D4B5D12201974B0095DAE6 /* Models */,
+				33D4B5D2220197600095DAE6 /* View Controllers */,
+				33D4B5D522019B8F0095DAE6 /* Views */,
+				33D4B5D0220197300095DAE6 /* Controllers */,
+				33D4B5D42201978D0095DAE6 /* Supporting Files */,
 			);
 			path = MakerMate;
+			sourceTree = "<group>";
+		};
+		33F2E8DF2209C02B0005BF35 /* Handleiding */ = {
+			isa = PBXGroup;
+			children = (
+				33F2E8E02209C04E0005BF35 /* itemNeededCollectionViewCell.swift */,
+				33F2E8E22209CD0D0005BF35 /* BottomStepIndecatorCollectionViewCell.swift */,
+				330E6C28220AF87400FF9384 /* stepCellTableViewCell.swift */,
+				330E6C2C220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift */,
+			);
+			path = Handleiding;
 			sourceTree = "<group>";
 		};
 		9931080A6C0349016E7E3743 /* Pods */ = {
@@ -83,6 +571,7 @@
 		B471F51279CA3A2CD4FB208E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				336659C422050FDD00CE65C3 /* ScalingCarousel.framework */,
 				9D30593DA29349FD699DB5C6 /* Pods_MakerMate.framework */,
 			);
 			name = Frameworks;
@@ -122,6 +611,11 @@
 				TargetAttributes = {
 					33EBF54F2200FEB400B242AE = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -149,8 +643,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EBF55E2200FEB600B242AE /* LaunchScreen.storyboard in Resources */,
+				3369FDD522121743000879F7 /* Onboarding.storyboard in Resources */,
+				3381CB6222038605003FF236 /* AanvragenView.xib in Resources */,
+				33A002D6220EFB0C0070DE28 /* GoogleService-Info.plist in Resources */,
+				33D4B5DD2201AADA0095DAE6 /* NotoSerif-Regular.ttf in Resources */,
+				3381CB5D22035654003FF236 /* NotoSerif-Italic.ttf in Resources */,
+				33D4B5DE2201AADA0095DAE6 /* NotoSerif-Bold.ttf in Resources */,
 				33EBF55B2200FEB600B242AE /* Assets.xcassets in Resources */,
 				33EBF5592200FEB400B242AE /* Main.storyboard in Resources */,
+				3381CB6422039569003FF236 /* LockedView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,11 +683,29 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MakerMate/Pods-MakerMate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -200,8 +719,90 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33EBF5562200FEB400B242AE /* ViewController.swift in Sources */,
+				33EBB2A722073270008CF5E0 /* ProjectViewController.swift in Sources */,
+				3369FDCD2211F03A000879F7 /* hackOversightCollectionViewCell.swift in Sources */,
+				3306302D2211B7010038E978 /* HackPreviewCollectionViewCell.swift in Sources */,
+				338679D72205EDEC00ADD9B5 /* Stap3AanvraagViewController.swift in Sources */,
+				33D4B60322022D420095DAE6 /* IntrestHomeCollectionViewCell.swift in Sources */,
+				33EBB2B22208958A008CF5E0 /* HackStartViewController.swift in Sources */,
+				33640019220E4A450081AB91 /* Kennismaking.swift in Sources */,
+				338679D32205CA5A00ADD9B5 /* Stap2AanvraagViewController.swift in Sources */,
+				33393F4122109EBF009845E5 /* Stap3KennismakingViewController.swift in Sources */,
+				332290AC220E5DE80069D044 /* Stap1KennismakingViewController.swift in Sources */,
+				33EBF5562200FEB400B242AE /* ProfileViewController.swift in Sources */,
+				33640017220E43030081AB91 /* lastProject.swift in Sources */,
+				33640012220DC9D60081AB91 /* Request.swift in Sources */,
+				333C84A722133DF80057BDC7 /* HulpVragenViewController.swift in Sources */,
+				3306302B2211B3EC0038E978 /* Stap7KennismakingViewController.swift in Sources */,
+				3369FDD822122F6F000879F7 /* LoginViewController.swift in Sources */,
+				330E6C33220B2E3800FF9384 /* NewStepViewController.swift in Sources */,
+				331E2E172213784500B50AF7 /* Invite.swift in Sources */,
+				3369FDD322120638000879F7 /* CustomTabbar.swift in Sources */,
+				33F2E8D42208DEB20005BF35 /* GuideHoldingViewController.swift in Sources */,
+				330E6C25220AE23A00FF9384 /* EditStepViewController.swift in Sources */,
+				33393F3F2210385E009845E5 /* Hack.swift in Sources */,
+				33F2E8D22208DD050005BF35 /* ScrollViewController.swift in Sources */,
+				333CDEFD2212A91B00C09B2F /* SignUpViewController.swift in Sources */,
+				338679D92205F01E00ADD9B5 /* Stap4AanvraagViewController.swift in Sources */,
+				3369FDCB2211EE77000879F7 /* addedHacksViewController.swift in Sources */,
+				331E2E192213C0CF00B50AF7 /* NotificationsViewController.swift in Sources */,
+				33F2E8E12209C04E0005BF35 /* itemNeededCollectionViewCell.swift in Sources */,
+				331E2E202214877F00B50AF7 /* Stap3TestViewController.swift in Sources */,
+				331E2E1B2213C9FE00B50AF7 /* NotificationDetailViewController.swift in Sources */,
+				3381CB68220413A3003FF236 /* stepsCollectionViewCell.swift in Sources */,
+				330630272211AD230038E978 /* Stap6KennismakingViewController.swift in Sources */,
+				331E2E2422148C6D00B50AF7 /* hackTest.swift in Sources */,
+				33F2E8E32209CD0D0005BF35 /* BottomStepIndecatorCollectionViewCell.swift in Sources */,
+				330E6C27220AF43600FF9384 /* StepOrderViewController.swift in Sources */,
+				33A60C06221598B2007C6476 /* CatogorieCollectionViewCell.swift in Sources */,
+				3381CB5B22033C87003FF236 /* TagsRequestCollectionViewCell.swift in Sources */,
+				3381CB6C2204EDB6003FF236 /* ProjectStartenViewController.swift in Sources */,
+				330E6C31220B2D3200FF9384 /* Step.swift in Sources */,
+				330E6C2F220B299100FF9384 /* HackInProject.swift in Sources */,
+				33D4B5E32201BD320095DAE6 /* ProjectCollectionViewCell.swift in Sources */,
+				33D4B5E12201AEC10095DAE6 /* RequestCell.swift in Sources */,
+				33DD1EED2212BF8A00296A68 /* PersonallInfoViewController.swift in Sources */,
+				3381CB592202EE83003FF236 /* BackButton.swift in Sources */,
+				333C84AB221368D20057BDC7 /* memberTableViewCell.swift in Sources */,
+				338679D12205C0F800ADD9B5 /* aanvraagSteps.swift in Sources */,
+				33BC08122219F47100F32C9F /* MaterialCollectionViewCell.swift in Sources */,
+				3306301E221172350038E978 /* Stap2KennismakingViewController.swift in Sources */,
+				33063023221190130038E978 /* Stap4KennismakingViewController.swift in Sources */,
 				33EBF5542200FEB400B242AE /* AppDelegate.swift in Sources */,
+				33A60C082215BEE0007C6476 /* HackInOntdekCell.swift in Sources */,
+				33BC080F2219C8E600F32C9F /* MaterialsViewController.swift in Sources */,
+				33F2E8D62208F71E0005BF35 /* GuideStepViewController.swift in Sources */,
+				330E6C21220A4A6F00FF9384 /* ReviewHackViewController.swift in Sources */,
+				3381CB662203A4CA003FF236 /* stapUIView.swift in Sources */,
+				333C84A5221323BA0057BDC7 /* Stap2TestHackViewController.swift in Sources */,
+				338679DB2206122800ADD9B5 /* Stap5AanvraagViewController.swift in Sources */,
+				333C84A3221322410057BDC7 /* Stap1TestHackViewController.swift in Sources */,
+				33063021221174AE0038E978 /* mobiCollectionViewCell.swift in Sources */,
+				3381CB5F220381C5003FF236 /* StepsProjectViewController.swift in Sources */,
+				331E2E1E22143E3000B50AF7 /* MoodCollectionViewCell.swift in Sources */,
+				330630252211A5FE0038E978 /* Stap5KennismakingViewController.swift in Sources */,
+				3381CB6A2204EB68003FF236 /* UIViewBorder.swift in Sources */,
+				338679DD2206311C00ADD9B5 /* OverzichtAanvraagViewController.swift in Sources */,
+				338B70F1220BB323005D6D95 /* User.swift in Sources */,
+				33EBB2AB22085CCC008CF5E0 /* KennisMakingDetailsView.swift in Sources */,
+				33A60BFD221562C1007C6476 /* HackInProjectOff.swift in Sources */,
+				33A60C01221566C6007C6476 /* currentHackSingelton.swift in Sources */,
+				330E6C2B220B08E900FF9384 /* StepInTableView.swift in Sources */,
+				33EBB2A9220758DB008CF5E0 /* HackInProjectCollectionViewCell.swift in Sources */,
+				331E2E2222148BAB00B50AF7 /* Stap4HackTestenViewController.swift in Sources */,
+				3381CB562202E9F3003FF236 /* RequestViewController.swift in Sources */,
+				33D4B5D922019D350095DAE6 /* HomeViewController.swift in Sources */,
+				330E6C29220AF87400FF9384 /* stepCellTableViewCell.swift in Sources */,
+				3381CB6F2204FFDD003FF236 /* Stap1AanvraagViewController.swift in Sources */,
+				338679D52205DA1300ADD9B5 /* customNavigation.swift in Sources */,
+				3369FDC92211C142000879F7 /* HackDetailKennismakingViewController.swift in Sources */,
+				33A60C03221591CE007C6476 /* OntdekViewController.swift in Sources */,
+				33EBB2AD22085DE5008CF5E0 /* MediaKennismakingCollectionViewCell.swift in Sources */,
+				33A002D8220F30CD0070DE28 /* StapHack.swift in Sources */,
+				332290AE220E5FC00069D044 /* kennisMakingSteps.swift in Sources */,
+				33A583B12207080D00AB4CDA /* Project.swift in Sources */,
+				330630292211B26F0038E978 /* HackSugestionKennismakingViewController.swift in Sources */,
+				330E6C2D220B156C00FF9384 /* ItemInMaterialListEditCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +951,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RZW73LTB7;
-				INFOPLIST_FILE = MakerMate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MakerMate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,7 +970,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RZW73LTB7;
-				INFOPLIST_FILE = MakerMate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MakerMate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
