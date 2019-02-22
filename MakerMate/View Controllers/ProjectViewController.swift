@@ -26,7 +26,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     private var showingAanvraag = true
     private var showingKennismaking = false
     private var showingHacks = false
-    private var kennisMakingCompleted = true
+    private var kennisMakingCompleted = false
     
     var db: Firestore!
     
@@ -63,7 +63,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         // [END setup]
         db = Firestore.firestore()
         
-       
+        
         setupTaps()
         configureViews()
         
@@ -71,7 +71,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         let tap = UITapGestureRecognizer(target: self, action: #selector(showHulpView))
         hulpVragenView.addGestureRecognizer(tap)
         hulpVragenView.isUserInteractionEnabled = true
-
+        
         setNavigationBar()
     }
     
@@ -81,25 +81,22 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         self.tabBarController?.tabBar.isHidden = false
         
-//        projectRef = db.collection("Projects").document("2ebbV5XVywZor78c2pty")
         
         if let latestProject = LastProject.shared.idLastProject {
             if latestProject != "" {
                 projectRef = db.collection("Projects").document(latestProject)
+                hacksCollectionRef = projectRef.collection("HacksInProject")
+                kennismakingCollectionRef = projectRef.collection("Kennismaking")
             }
-            
         }
         
-        hacksCollectionRef = projectRef.collection("HacksInProject")
-        kennismakingCollectionRef = projectRef.collection("Kennismaking")
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setListener()
-        
     }
     
     func setNavigationBar() {
@@ -125,35 +122,39 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1450980392, green: 0.2588235294, blue: 0.6156862745, alpha: 1),
              NSAttributedString.Key.font: UIFont(name: "AvenirNext-Medium", size: 16)!], for: .normal)
         
-       
+        
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
     }
     
     func setListener() {
-        hackListener = hacksCollectionRef.addSnapshotListener { documentSnapshot, error in
-            if let err = error {
-                debugPrint("Error fetching docs: \(err)")
-            }  else {
-                self.hacks.removeAll()
-                self.hacks = HackInProject.parseData(snapshot: documentSnapshot)
-                self.HacksInProjectCollectionView.reloadData()
+        if hacksCollectionRef != nil {
+            hackListener = hacksCollectionRef.addSnapshotListener { documentSnapshot, error in
+                if let err = error {
+                    debugPrint("Error fetching docs: \(err)")
+                }  else {
+                    self.hacks.removeAll()
+                    self.hacks = HackInProject.parseData(snapshot: documentSnapshot)
+                    self.HacksInProjectCollectionView.reloadData()
+                }
             }
         }
         
         
-        kennismakingListener = kennismakingCollectionRef.addSnapshotListener { documentSnapshot, error in
-            if documentSnapshot!.isEmpty == false {
-                if let err = error {
-                    debugPrint("Error fetching docs: \(err)")
-                }  else {
-                    self.kennismakingProject = Kennismaking.parseData(snapshot: documentSnapshot)
-                    self.kennisMakingCompleted = true
+        if kennismakingCollectionRef != nil {
+            kennismakingListener = kennismakingCollectionRef.addSnapshotListener { documentSnapshot, error in
+                if documentSnapshot!.isEmpty == false {
+                    if let err = error {
+                        debugPrint("Error fetching docs: \(err)")
+                    }  else {
+                        self.kennismakingProject = Kennismaking.parseData(snapshot: documentSnapshot)
+                        self.kennisMakingCompleted = true
+                        self.configureViews()
+                    }
+                } else {
+                    self.kennisMakingCompleted = false
                     self.configureViews()
                 }
-            } else {
-                self.kennisMakingCompleted = false
-                self.configureViews()
             }
         }
         
@@ -177,8 +178,13 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        hackListener.remove()
-        kennismakingListener.remove()
+        if hackListener != nil {
+            hackListener.remove()
+        }
+        
+        if kennismakingListener != nil {
+              kennismakingListener.remove()
+        }
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -291,10 +297,10 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hackCell", for: indexPath) as! HackInProjectCollectionViewCell
         
-       if hacks.indices.contains(indexPath.row) {
-        print("happend")
+        if hacks.indices.contains(indexPath.row) {
+            print("happend")
             let currenthack = hacks[indexPath.row]
-        cell.setUpCell(titleHack: currenthack.name, currentStepHack: currenthack.currentStep, hackId: currenthack.hackId)
+            cell.setUpCell(titleHack: currenthack.name, currentStepHack: currenthack.currentStep, hackId: currenthack.hackId)
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
         } else {
@@ -302,20 +308,20 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         print(hacks)
-//        cell.setUpCell(titleHack: hacks[indexPath.row].name, currentStepHack: hacks[indexPath.row].currentStep)
+        //        cell.setUpCell(titleHack: hacks[indexPath.row].name, currentStepHack: hacks[indexPath.row].currentStep)
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            if hacks.indices.contains(indexPath.row) {
-               let destionViewController = storyboard?.instantiateViewController(withIdentifier: "hackDetailProject") as! HackStartViewController
-                destionViewController.hack = hacks[indexPath.row]
-                destionViewController.referenceProject = projectRef
-                self.navigationController?.show(destionViewController, sender: nil)
-            }
-            
+        if hacks.indices.contains(indexPath.row) {
+            let destionViewController = storyboard?.instantiateViewController(withIdentifier: "hackDetailProject") as! HackStartViewController
+            destionViewController.hack = hacks[indexPath.row]
+            destionViewController.referenceProject = projectRef
+            self.navigationController?.show(destionViewController, sender: nil)
+        }
+        
     }
     
     
@@ -327,32 +333,30 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @IBAction func startKennismaking(_ sender: UIButton) {
-        performSegue(withIdentifier: "showProjectDetail", sender: nil)
+        if projectRef != nil {
+             performSegue(withIdentifier: "showProjectDetail", sender: nil)
+        }
     }
     
     @objc private func showHulpView() {
-//        if let project = project {
-//            let hulpVraagView = storyboard?.instantiateViewController(withIdentifier: "hulpVraagView") as! HulpVragenViewController
-//            hulpVraagView.project = project
-//            self.navigationController?.pushViewController(hulpVraagView!, animated: true)
-//        }
-//        let hulpVraagView = storyboard?.instantiateViewController(withIdentifier: "hulpVraagView") as! HulpVragenViewController
-        let hulpVraagView = storyboard?.instantiateViewController(withIdentifier: "hulpVraagView") as! HulpVragenViewController
-        self.navigationController?.pushViewController(hulpVraagView, animated: true)
+        if projectRef != nil {
+            let hulpVraagView = storyboard?.instantiateViewController(withIdentifier: "hulpVraagView") as! HulpVragenViewController
+            self.navigationController?.pushViewController(hulpVraagView, animated: true)
+        }
     }
     
-
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProjectDetail" {
-//            let nv = segue.destination as! UINavigationController
-//            let vc = nv.viewControllers.first as! StepsProjectViewController
-//            vc.currentProjectID =
+            //            let nv = segue.destination as! UINavigationController
+            //            let vc = nv.viewControllers.first as! StepsProjectViewController
+            //            vc.currentProjectID =
             //true and false fase project
         }
         
-            
-        }
+        
+    }
     
- 
+    
     
 }
