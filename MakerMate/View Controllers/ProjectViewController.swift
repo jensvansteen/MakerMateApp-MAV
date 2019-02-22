@@ -133,7 +133,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
     func setListener() {
         hackListener = hacksCollectionRef.addSnapshotListener { documentSnapshot, error in
             if let err = error {
-                debugPrint("Error fetching docs: \(error)")
+                debugPrint("Error fetching docs: \(err)")
             }  else {
                 self.hacks.removeAll()
                 self.hacks = HackInProject.parseData(snapshot: documentSnapshot)
@@ -145,7 +145,7 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
         kennismakingListener = kennismakingCollectionRef.addSnapshotListener { documentSnapshot, error in
             if documentSnapshot!.isEmpty == false {
                 if let err = error {
-                    debugPrint("Error fetching docs: \(error)")
+                    debugPrint("Error fetching docs: \(err)")
                 }  else {
                     self.kennismakingProject = Kennismaking.parseData(snapshot: documentSnapshot)
                     self.kennisMakingCompleted = true
@@ -157,14 +157,14 @@ class ProjectViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
         
-        if let projectRef = projectRef {
-            var currentProject = Firestore.firestore().collection("Projects").document(LastProject.shared.idLastProject!)
+        if projectRef != nil {
+            let currentProject = Firestore.firestore().collection("Projects").document(LastProject.shared.idLastProject!)
             
             
             //Get project
             currentProject.getDocument() { (querysnapshot, err) in
-                if let err = err {
-                    print("no project found with \(LastProject.shared.idLastProject)")
+                if err != nil {
+                    print("no project found with \(LastProject.shared.idLastProject!)")
                 } else {
                     self.project = Project.parseOneData(snapshot: querysnapshot)
                 }

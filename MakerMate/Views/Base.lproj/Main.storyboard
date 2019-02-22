@@ -3353,8 +3353,8 @@ Fien heeft je een verzoek gestuurd om samen te werken aan “Hack voor Annick”
                                                         </constraints>
                                                         <state key="normal" image="Comments"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-Hw-E0B">
-                                                        <rect key="frame" x="276" y="401" width="36" height="35"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-Hw-E0B">
+                                                        <rect key="frame" x="275" y="401" width="36" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="36" id="ciU-H7-s7a"/>
                                                             <constraint firstAttribute="height" constant="35" id="wK3-nl-Kdy"/>
@@ -3436,6 +3436,7 @@ Fien heeft je een verzoek gestuurd om samen te werken aan “Hack voor Annick”
                                                         <constraints>
                                                             <constraint firstItem="69C-PS-VUh" firstAttribute="centerY" secondItem="741-IQ-UAN" secondAttribute="centerY" id="YL5-U4-xHZ"/>
                                                             <constraint firstItem="69C-PS-VUh" firstAttribute="leading" secondItem="741-IQ-UAN" secondAttribute="leading" id="YpW-dG-yRj"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="69C-PS-VUh" secondAttribute="trailing" symbolic="YES" id="s9W-z1-AiR"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="nameItemLabel" destination="69C-PS-VUh" id="6o1-Kq-ABq"/>
@@ -3458,6 +3459,7 @@ Fien heeft je een verzoek gestuurd om samen te werken aan “Hack voor Annick”
                                             <constraint firstItem="VVj-Rs-5Su" firstAttribute="leading" secondItem="mvv-9p-4E1" secondAttribute="leading" constant="23" id="eqW-SN-akd"/>
                                             <constraint firstItem="G4d-c3-agb" firstAttribute="leading" secondItem="mvv-9p-4E1" secondAttribute="leading" constant="23" id="hj4-0j-2dc"/>
                                             <constraint firstItem="erR-se-axj" firstAttribute="top" secondItem="VVj-Rs-5Su" secondAttribute="bottom" constant="20" id="qG7-o4-QdQ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pk1-wM-nXp" secondAttribute="trailing" constant="20" symbolic="YES" id="sVC-jE-6JN"/>
                                             <constraint firstItem="RfO-no-hgC" firstAttribute="top" secondItem="mvv-9p-4E1" secondAttribute="top" id="saD-Cy-WXV"/>
                                         </constraints>
                                     </view>
@@ -9215,7 +9217,7 @@ Fien heeft je een verzoek gestuurd om samen te werken aan “Hack voor Annick”
                                                 <rect key="frame" x="0.0" y="880" width="375" height="52"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categorie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Oz-hc-xUe">
-                                                        <rect key="frame" x="24" y="0.0" width="73" height="22"/>
+                                                        <rect key="frame" x="24" y="0.0" width="341" height="22"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                         <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -9249,6 +9251,7 @@ Fien heeft je een verzoek gestuurd om samen te werken aan “Hack voor Annick”
                                                     <constraint firstItem="0Oz-hc-xUe" firstAttribute="leading" secondItem="m22-pI-AKC" secondAttribute="leading" constant="24" id="6Sf-w7-7PH"/>
                                                     <constraint firstItem="Y9F-RV-u9c" firstAttribute="leading" secondItem="m22-pI-AKC" secondAttribute="leading" constant="29" id="95S-PU-OwG"/>
                                                     <constraint firstItem="Y9F-RV-u9c" firstAttribute="top" secondItem="0Oz-hc-xUe" secondAttribute="bottom" constant="6" id="Idd-4S-Uxj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0Oz-hc-xUe" secondAttribute="trailing" constant="10" id="KfS-NE-FI2"/>
                                                     <constraint firstAttribute="height" constant="52" id="RrJ-8l-o2f"/>
                                                     <constraint firstItem="0Oz-hc-xUe" firstAttribute="top" secondItem="m22-pI-AKC" secondAttribute="top" id="hTE-Bv-7Jo"/>
                                                 </constraints>
